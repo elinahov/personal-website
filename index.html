@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elina Hovakimyan — React Native &amp; Mobile App Developer</title>
+  <meta name="description" content="Elina Hovakimyan is a React Native mobile engineer who helps founders ship iOS and Android apps — from MVP to the App Store. 40+ apps shipped.">
+  <meta name="author" content="Elina Hovakimyan">
+  <link rel="canonical" href="https://elina.dev/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elina.dev/">
+  <meta property="og:title" content="Elina Hovakimyan — React Native &amp; Mobile App Developer">
+  <meta property="og:description" content="I help founders turn mobile app ideas into real products — from MVP to the store. 40+ apps shipped, founder-brain included.">
+  <meta property="og:image" content="https://elina.dev/assets/Elina.JPG">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elina Hovakimyan — React Native &amp; Mobile App Developer">
+  <meta name="twitter:description" content="I help founders turn mobile app ideas into real products — from MVP to the store. 40+ apps shipped, founder-brain included.">
+  <meta name="twitter:image" content="https://elina.dev/assets/Elina.JPG">
+
+  <!-- LLM discoverability -->
+  <link rel="llms" href="https://elina.dev/llms.txt">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Elina Hovakimyan",
+    "url": "https://elina.dev",
+    "jobTitle": "Mobile Engineer",
+    "knowsAbout": ["React Native", "TypeScript", "iOS", "Android", "Mobile App Development", "Node.js", "GraphQL"],
+    "sameAs": [
+      "https://www.linkedin.com/in/elina-hovakimyan/",
+      "https://www.udemy.com/user/elina-hovakimyan/"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); }
+    html { scroll-behavior: smooth; }
+    a { -webkit-tap-highlight-color: transparent; }
+
+    /* ── Color tokens ── */
+    :root {
+      --ink: #16140F;
+      --paper: #FAF6EE;
+      --amber: #F5B400;
+      --slate: #6B675E;
+      --mint: #B9F5C8;
+      --white: #FFFFFF;
+      --ink-80: #16140Fcc;
+      --ink-60: #16140F99;
+      --amber-dark: #D89E00;
+      --amber-tint: #FDF0CC;
+      --mint-ink: #0C2E17;
+      --hairline: #E4DECF;
+      --hairline-ink: #2B2822;
+    }
+
+    /* ── Typography tokens ── */
+    :root {
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --fs-mono-eyebrow: 0.8125rem;
+      --fs-mono-tag: 0.75rem;
+      --fs-mono-caption: 0.8125rem;
+      --tracking-mono: 0.04em;
+    }
+
+    /* ── Spacing & radius tokens ── */
+    :root {
+      --radius-card: 20px;
+      --radius-btn: 12px;
+      --radius-pill: 999px;
+      --appicon-radius: 22%;
+    }
+
+    /* ── Shadow & motion tokens ── */
+    :root {
+      --shadow-sm: 0 1px 2px rgba(22,20,15,0.06);
+      --shadow-card: 0 12px 32px -12px rgba(22,20,15,0.14);
+      --shadow-lift: 0 20px 48px -16px rgba(22,20,15,0.22);
+      --ease-standard: cubic-bezier(0.22,0.61,0.36,1);
+      --dur-fast: 140ms;
+      --dur-base: 220ms;
+    }
+
+    /* ── Component helpers ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      padding: 15px 26px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      cursor: pointer;
+      transition:
+        background var(--dur-base) var(--ease-standard),
+        color var(--dur-base) var(--ease-standard),
+        transform var(--dur-fast) var(--ease-standard),
+        box-shadow var(--dur-base) var(--ease-standard);
+    }
+    .btn-sm { font-size: 15px; padding: 10px 18px; }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: var(--radius-pill);
+    }
+    .btn-primary:hover { background: var(--amber); color: var(--ink); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: var(--radius-btn);
+    }
+    .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+    .btn-secondary:active { transform: scale(0.98); }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tracking-mono);
+      text-transform: lowercase;
+      color: var(--slate);
+    }
+    .eyebrow-ink { color: var(--mint); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono-tag);
+      font-weight: 500;
+      letter-spacing: var(--tracking-mono);
+      line-height: 1;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+    .tag-mint { background: var(--mint); color: var(--mint-ink); border: 1px solid transparent; }
+    .tag-neutral { background: transparent; color: var(--slate); border: 1px solid var(--hairline); }
+
+    /* ── Article row hover ── */
+    .article-row { transition: color .16s var(--ease-standard), padding-left .16s var(--ease-standard); }
+    .article-row:hover { color: var(--amber-dark) !important; padding-left: 16px !important; }
+
+    /* ── Project tile hover ── */
+    .proj-img {
+      transition: transform var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard);
+    }
+    .proj-tile:hover .proj-img {
+      transform: translateY(-4px) !important;
+      box-shadow: var(--shadow-lift) !important;
+    }
+
+    /* ── Review card hover ── */
+    .review-card {
+      transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+    }
+    .review-card:hover {
+      transform: rotate(0deg) translateY(-5px) !important;
+      box-shadow: var(--shadow-lift) !important;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* ── BuildLog marquee ── */
+    @keyframes elin-buildlog-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-buildlog-marquee] { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div style="background:var(--paper);min-height:100vh;font-family:var(--font-body);overflow-x:hidden;">
+
+  <!-- ── NAV ── -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(250,246,238,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;height:72px;">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--ink);text-decoration:none;">
+        <span style="width:20px;height:20px;border-radius:22%;background:var(--amber);display:inline-block;transform:rotate(12deg);"></span>
+        elina<span style="color:var(--amber);">.</span>dev
+      </a>
+      <div style="display:flex;align-items:center;gap:28px;">
+        <a href="#about"    style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">about</a>
+        <a href="#skills"   style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">skills</a>
+        <a href="#work"     style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">work</a>
+        <a href="#writing"  style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">writing</a>
+        <a href="#teaching" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">teaching</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Let's talk</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO (spotlight) ── -->
+  <header id="top">
+    <div style="max-width:920px;margin:0 auto;padding:clamp(48px,7vw,88px) clamp(20px,4vw,48px) clamp(32px,4vw,56px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;">
+      <span class="eyebrow">elina hovakimyan · mobile engineer · react native</span>
+      <h1 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.02;letter-spacing:-0.025em;color:var(--ink);">I turn app ideas<br>into <span style="color:var(--amber);">shipped</span> products.</h1>
+      <p style="margin:0;max-width:52ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:var(--slate);">I help founders turn mobile app ideas into real products — from MVP to the store. 40+ apps shipped, founder-brain included.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:4px;">
+        <a href="#contact" class="btn btn-primary">Let's talk</a>
+        <a href="#work"    class="btn btn-secondary">See my work</a>
+      </div>
+
+      <!-- Hero photo with app-icon stack decoration -->
+      <div id="hero-area" style="position:relative;margin-top:20px;display:flex;justify-content:center;">
+        <!-- stickers -->
+        <div class="stk" data-rot="-12" data-parallax="0.12" style="position:absolute;top:-6%;left:6%;width:56px;height:56px;border-radius:22%;background:var(--mint);transform:rotate(-12deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--mint-ink);box-shadow:var(--shadow-card);z-index:3;">&lt;/&gt;</div>
+        <div class="stk" data-rot="10"  data-parallax="0.15" style="position:absolute;top:4%;right:2%;width:48px;height:48px;border-radius:22%;background:var(--ink);transform:rotate(10deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--paper);box-shadow:var(--shadow-card);z-index:3;">TS</div>
+        <div class="stk" data-rot="-7"  data-parallax="0.11" style="position:absolute;bottom:-4%;left:14%;width:46px;height:46px;border-radius:22%;background:var(--amber);transform:rotate(-7deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:17px;font-weight:700;color:var(--ink);box-shadow:var(--shadow-card);z-index:3;">$</div>
+        <!-- AppIconStack size=300 -->
+        <div style="position:relative;width:300px;height:300px;flex-shrink:0;">
+          <div style="position:absolute;border-radius:var(--appicon-radius);width:186px;height:186px;background:var(--ink);top:-18px;right:-15px;transform:rotate(8deg);"></div>
+          <div style="position:absolute;border-radius:var(--appicon-radius);width:144px;height:144px;background:var(--mint);bottom:-15px;left:-18px;transform:rotate(-6deg);"></div>
+          <div style="position:absolute;inset:0;width:300px;height:300px;border-radius:var(--appicon-radius);background:var(--amber);transform:rotate(-3deg);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;">
+            <img src="assets/Elina.JPG" alt="Elina Hovakimyan" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── BUILD LOG MARQUEE ── -->
+  <div style="background:var(--ink);padding:14px 0;overflow:hidden;">
+    <div data-buildlog-marquee style="display:flex;gap:48px;width:max-content;animation:elin-buildlog-scroll 26s linear infinite;">
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Evoria — AI event planning — 2026</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Culinar — recipes &amp; meal planning — 2024</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Travio — trip planning &amp; maps — 2022</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Prehab101 — guided recovery — 2020</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Casana — home &amp; lifestyle — 2019</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>stack: React Native · TypeScript · Node.js · GraphQL</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>currently: helping founders ship — remotely</span>
+      <!-- duplicate for seamless loop -->
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Evoria — AI event planning — 2026</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Culinar — recipes &amp; meal planning — 2024</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Travio — trip planning &amp; maps — 2022</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Prehab101 — guided recovery — 2020</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>shipped: Casana — home &amp; lifestyle — 2019</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>stack: React Native · TypeScript · Node.js · GraphQL</span>
+      <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>currently: helping founders ship — remotely</span>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" style="background:var(--ink);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-30px;right:8%;width:120px;height:120px;border-radius:22%;background:var(--mint);opacity:.14;transform:rotate(-8deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-40px;right:22%;width:90px;height:90px;border-radius:22%;border:2px solid rgba(250,246,238,.16);transform:rotate(12deg);"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
+      <span class="eyebrow eyebrow-ink">about me</span>
+      <p style="margin:20px 0 0;max-width:22ch;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.6vw,2.9rem);line-height:1.1;letter-spacing:-0.02em;color:var(--paper);">I've built more mobile apps than I've had full nights of sleep this year.</p>
+      <p style="margin:24px 0 0;max-width:56ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:rgba(250,246,238,.72);">I'm a mobile engineer who builds with React Native — and a founder who's shipped my own products from zero. That mix means I know what actually needs to exist before launch and what can wait. I do the engineering and the founder-brain, so you get an app in real stores, not a backlog.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="tag tag-mint">React Native</span>
+        <span class="tag tag-mint">TypeScript</span>
+        <span class="tag tag-mint">iOS &amp; Android</span>
+        <span class="tag tag-mint">40+ apps shipped</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" style="background:var(--paper);position:relative;overflow:hidden;">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:44px;">
+        <span class="eyebrow">what i work with</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">The whole stack — try to catch it.</h2>
+        <p style="margin:0;font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:var(--slate);">$ hover — the pills scatter</p>
+      </div>
+      <div style="position:relative;max-width:960px;margin:0 auto;">
+        <div aria-hidden="true" style="position:absolute;inset:-14px -6px;border:1.5px dashed var(--hairline);border-radius:36px;transform:rotate(-1.4deg);background:rgba(255,255,255,.45);"></div>
+        <div aria-hidden="true" style="position:absolute;top:-22px;left:-10px;width:56px;height:56px;border-radius:22%;background:var(--mint);transform:rotate(-9deg);box-shadow:var(--shadow-card);z-index:2;"></div>
+        <div aria-hidden="true" style="position:absolute;bottom:-24px;right:-8px;width:44px;height:44px;border-radius:22%;background:var(--ink);transform:rotate(11deg);box-shadow:var(--shadow-card);z-index:2;"></div>
+        <div id="skill-cloud" style="position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:12px;padding:40px 28px;min-height:340px;">
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Native</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">TypeScript</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">JavaScript</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React.js</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Node.js</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Redux</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Next.js</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Stripe</span>
+          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">REST APIs</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Code</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Cursor</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Copilot</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Video Calls</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Purchases</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Messaging</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Video streaming</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Animations</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Authentication</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Hooks</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GraphQL</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Apple Pay</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Pay</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Mixpanel</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AppsFlyer</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Analytics</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Jest</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">RN Testing Library</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">E2E Testing</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Unit Testing</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Visual Testing</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CircleCI</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Vibe Coding</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CI/CD</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">E2E Testing</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GitHub Actions</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Git</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GitHub</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GitLab</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Bitbucket</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">npm</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Yarn</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Profiling</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Reactatron</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Native SDKs</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Code Splitting</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Lazy Loading</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Code Reviews</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Agile</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Scrum</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">UI / UX</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">App Store</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Play</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Lovable</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Canva</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Figma</span>
+          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORK ── -->
+  <section id="work" style="background:var(--paper);border-top:1px solid var(--hairline);position:relative;overflow:hidden;">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
+      <span class="eyebrow">selected work</span>
+      <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Apps I've shipped.</h2>
+      <p style="margin:0 0 52px;max-width:50ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">A selection of mobile products I've built, shipped, and learned from.</p>
+      <div id="proj-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:28px 24px;align-items:start;">
+
+        <!-- Evoria -->
+        <div class="proj-tile" style="will-change:transform;">
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="proj-img" style="aspect-ratio:1/1;width:100%;border-radius:var(--appicon-radius);background:var(--ink);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;">
+              <img src="assets/evoria.png" alt="Evoria" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Evoria — AI event planning</span>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Expo</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Claude Code</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">AI</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Culinar -->
+        <div class="proj-tile" style="will-change:transform;">
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="proj-img" style="aspect-ratio:1/1;width:100%;border-radius:var(--appicon-radius);background:var(--ink);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;">
+              <img src="assets/culinar.png" alt="Culinar" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Culinar — recipes &amp; meal planning</span>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">React Native</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">AI</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Travio -->
+        <div class="proj-tile" style="will-change:transform;">
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="proj-img" style="aspect-ratio:1/1;width:100%;border-radius:var(--appicon-radius);background:var(--ink);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;">
+              <img src="assets/travio.png" alt="Travio" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Travio — trip planning &amp; maps</span>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Expo</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Google Maps</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2022</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prehab101 -->
+        <div class="proj-tile" style="will-change:transform;">
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="proj-img" style="aspect-ratio:1/1;width:100%;border-radius:var(--appicon-radius);background:var(--ink);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;">
+              <img src="assets/prehab101.png" alt="Prehab101" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Prehab101 — guided recovery</span>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">React Native</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">In-App Purchases</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2020</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Casana -->
+        <div class="proj-tile" style="will-change:transform;">
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="proj-img" style="aspect-ratio:1/1;width:100%;border-radius:var(--appicon-radius);background:var(--ink);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;">
+              <img src="assets/casana.png" alt="Casana" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Casana — home &amp; lifestyle</span>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">React Native</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Videos</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2019</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WRITING ── -->
+  <section id="writing" style="background:var(--amber-tint);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-26px;left:6%;width:70px;height:70px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(-9deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-30px;right:10%;width:56px;height:56px;border-radius:22%;border:2px solid rgba(22,20,15,.14);transform:rotate(13deg);"></div>
+    <div style="max-width:960px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
+      <span class="eyebrow">writing</span>
+      <h2 style="margin:16px 0 40px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Things I've written.</h2>
+      <div style="display:flex;flex-direction:column;">
+
+        <!--
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">01</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Why Most Mobile App Ideas Never Make It to the App Store</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 6 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+        -->
+
+        <a href="apple-review.html" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">01</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Features Your App Should Have to Pass Apple Review</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">guide · 8 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+
+        <!--
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">03</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">How I Think About MVPs After Building 40+ Mobile Apps</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 7 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+        -->
+
+        <a href="react-native-vs-native-apps.html" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">02</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">React Native vs Native Apps: What Founders Actually Need to Know</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">guide · 9 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+
+        <!--
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">05</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Why AI-Generated Apps Break When Real Users Touch Them</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 5 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+        -->
+
+        <div style="border-top:1px solid rgba(22,20,15,.12);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TEACHING ── -->
+  <section id="teaching" style="background:var(--paper);border-top:1px solid var(--hairline);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-24px;right:7%;width:78px;height:78px;border-radius:22%;background:var(--mint);opacity:.5;transform:rotate(-9deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:40px;left:4%;width:46px;height:46px;border-radius:22%;border:2px solid var(--hairline);transform:rotate(12deg);"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:12px;">
+        <div>
+          <span class="eyebrow">teaching</span>
+          <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">I teach what I ship.</h2>
+          <p style="margin:0;max-width:52ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">My React Native &amp; React.js courses on Udemy has taught developers around the world to build and ship real mobile apps. Here's what a few of them had to say.</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="tag tag-mint">React Native · Udemy</span>
+          <span class="tag tag-mint">5500+ satisfied students worldwide</span>
+        </div>
+      </div>
+
+      <div id="review-grid" style="column-width:340px;column-gap:26px;margin-top:40px;">
+
+        <!-- Review: Hemanthkumar -->
+        <div class="review-card" style="break-inside:avoid;display:inline-block;width:100%;margin:0 0 26px;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;will-change:transform;">
+          <div style="display:flex;align-items:center;gap:13px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:700;letter-spacing:.02em;">H</span>
+            <div style="min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);">Hemanthkumar</span>
+              </div>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">updated 4 months ago</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:15px;letter-spacing:2px;color:var(--amber);line-height:1;">★★★★★</div>
+          <p style="margin:14px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">I always wanted to make apps but I was doing web development. I thought that was my fate — until I met your React Native course. Thanks for keeping my dream alive, you're the best. Keep making such courses.</p>
+        </div>
+
+        <!-- Review: Adriansyah Ravindra -->
+        <div class="review-card" style="break-inside:avoid;display:inline-block;width:100%;margin:0 0 26px;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;will-change:transform;">
+          <div style="display:flex;align-items:center;gap:13px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:700;letter-spacing:.02em;">AR</span>
+            <div style="min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);">Adriansyah Ravindra</span>
+              </div>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">updated 2 months ago</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:15px;letter-spacing:2px;color:var(--amber);line-height:1;">★★★★★</div>
+          <p style="margin:14px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">The materials presented are highly structured, clear, and easy to understand. I gained a solid understanding of fundamental concepts and best practices in React Native app development. I highly recommend this course to anyone looking to expand their skills in mobile app development.</p>
+        </div>
+
+        <!-- Review: Baron Pollak (business + highlights) -->
+        <div class="review-card" style="break-inside:avoid;display:inline-block;width:100%;margin:0 0 26px;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;will-change:transform;">
+          <div style="display:flex;align-items:center;gap:13px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:700;letter-spacing:.02em;">BP</span>
+            <div style="min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);">Baron Pollak</span>
+                <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;padding:3px 7px;border-radius:6px;background:var(--mint);color:var(--mint-ink);">udemy business</span>
+              </div>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">updated 1 month ago</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:15px;letter-spacing:2px;color:var(--amber);line-height:1;">★★★★★</div>
+          <p style="margin:14px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">Very clear and concise, she explains all the core abilities very well. So far, she doesn't run astray and keeps on task. This is awesome for teachers, as I have found that sometimes people run astray when talking about specific tasks.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--hairline);">
+            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.02em;color:var(--mint-ink);background:var(--mint);padding:5px 10px 5px 8px;border-radius:999px;"><span style="flex-shrink:0;width:14px;height:14px;border-radius:50%;background:var(--mint-ink);color:var(--mint);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;line-height:1;">✓</span>Valuable information</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.02em;color:var(--mint-ink);background:var(--mint);padding:5px 10px 5px 8px;border-radius:999px;"><span style="flex-shrink:0;width:14px;height:14px;border-radius:50%;background:var(--mint-ink);color:var(--mint);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;line-height:1;">✓</span>Clear explanations</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.02em;color:var(--mint-ink);background:var(--mint);padding:5px 10px 5px 8px;border-radius:999px;"><span style="flex-shrink:0;width:14px;height:14px;border-radius:50%;background:var(--mint-ink);color:var(--mint);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;line-height:1;">✓</span>Engaging delivery</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.02em;color:var(--mint-ink);background:var(--mint);padding:5px 10px 5px 8px;border-radius:999px;"><span style="flex-shrink:0;width:14px;height:14px;border-radius:50%;background:var(--mint-ink);color:var(--mint);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;line-height:1;">✓</span>Helpful practice activities</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.02em;color:var(--mint-ink);background:var(--mint);padding:5px 10px 5px 8px;border-radius:999px;"><span style="flex-shrink:0;width:14px;height:14px;border-radius:50%;background:var(--mint-ink);color:var(--mint);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;line-height:1;">✓</span>Accurate course description</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.02em;color:var(--mint-ink);background:var(--mint);padding:5px 10px 5px 8px;border-radius:999px;"><span style="flex-shrink:0;width:14px;height:14px;border-radius:50%;background:var(--mint-ink);color:var(--mint);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;line-height:1;">✓</span>Knowledgeable instructor</span>
+          </div>
+        </div>
+
+        <!-- Review: Ryan Malekya -->
+        <div class="review-card" style="break-inside:avoid;display:inline-block;width:100%;margin:0 0 26px;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;will-change:transform;">
+          <div style="display:flex;align-items:center;gap:13px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:700;letter-spacing:.02em;">RM</span>
+            <div style="min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);">Ryan Malekya</span>
+              </div>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">updated 2 months ago</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:15px;letter-spacing:2px;color:var(--amber);line-height:1;">★★★★★</div>
+          <p style="margin:14px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">It was a very good course — really enjoyed it. Worth every penny.</p>
+        </div>
+
+        <!-- Review: Tyler VanBlargan (business) -->
+        <div class="review-card" style="break-inside:avoid;display:inline-block;width:100%;margin:0 0 26px;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;will-change:transform;">
+          <div style="display:flex;align-items:center;gap:13px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:700;letter-spacing:.02em;">TV</span>
+            <div style="min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);">Tyler VanBlargan</span>
+                <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;padding:3px 7px;border-radius:6px;background:var(--mint);color:var(--mint-ink);">udemy business</span>
+              </div>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">updated 5 months ago</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:15px;letter-spacing:2px;color:var(--amber);line-height:1;">★★★★★</div>
+          <p style="margin:14px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">Does a great job at going into more detail at the right time, as far as how hooks or functions are written.</p>
+        </div>
+
+        <!-- Review: Akash Saha -->
+        <div class="review-card" style="break-inside:avoid;display:inline-block;width:100%;margin:0 0 26px;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;will-change:transform;">
+          <div style="display:flex;align-items:center;gap:13px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:700;letter-spacing:.02em;">AS</span>
+            <div style="min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);">Akash Saha</span>
+              </div>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">updated 2 months ago</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:15px;letter-spacing:2px;color:var(--amber);line-height:1;">★★★★★</div>
+          <p style="margin:14px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">This course is great — huge learning and lots of mobile app building. After finishing it I am confident enough to work on real projects.</p>
+        </div>
+
+      </div>
+
+      <div style="margin-top:36px;">
+        <a href="https://www.udemy.com/user/elina-hovakimyan/" target="_blank" rel="noopener" class="btn btn-secondary">See my courses on Udemy →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / FOOTER ── -->
+  <footer id="contact" style="background:var(--ink);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:8%;right:6%;width:100px;height:100px;border-radius:22%;background:var(--amber);transform:rotate(-8deg);box-shadow:var(--shadow-card);"></div>
+    <div aria-hidden="true" style="position:absolute;top:34%;right:20%;width:52px;height:52px;border-radius:22%;border:2px solid rgba(250,246,238,.18);transform:rotate(12deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-24px;right:12%;width:64px;height:64px;border-radius:22%;background:var(--amber);opacity:.28;transform:rotate(6deg);"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px);position:relative;">
+      <span class="eyebrow eyebrow-ink">let's build something</span>
+      <h2 style="margin:18px 0 0;max-width:16ch;font-family:var(--font-display);font-weight:700;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-0.02em;color:var(--paper);">Have an app idea? Let's <span style="color:var(--amber);">ship it</span>.</h2>
+      <p style="margin:22px 0 0;max-width:48ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:rgba(250,246,238,.72);">Tell me what you're building. I'll tell you what it takes to get it into real users' hands — honestly, and fast.</p>
+      <div style="margin-top:32px;">
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--amber);color:var(--ink);">Let's talk →</a>
+      </div>
+      <div style="display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;padding-top:28px;border-top:1px solid var(--hairline-ink);">
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:14px;letter-spacing:.04em;color:var(--paper);text-decoration:none;">$ linkedin.com/in/elina</a>
+        <a href="mailto:elinahovakimyan@gmail.com" style="font-family:var(--font-mono);font-size:14px;letter-spacing:.04em;color:var(--paper);text-decoration:none;">$ email me</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ── Skill cloud physics ──
+  (function() {
+    const cloud = document.getElementById('skill-cloud');
+    if (!cloud) return;
+
+    let pills, homes, P, mouse = null, raf, t0, bound = false;
+
+    function reduced() {
+      return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    function measure() {
+      if (!pills) return;
+      homes = pills.map(p => ({ x: p.offsetLeft + p.offsetWidth / 2, y: p.offsetTop + p.offsetHeight / 2 }));
+    }
+
+    function applyMint() {
+      if (!pills) return;
+      pills.forEach(p => {
+        if (p.dataset.mint === 'true') {
+          p.style.background = 'var(--mint)';
+          p.style.color = 'var(--mint-ink)';
+          p.style.border = '1px solid transparent';
+          p.style.fontWeight = '600';
+        }
+      });
+    }
+
+    function acquire() {
+      pills = Array.from(cloud.querySelectorAll('.skill-pill'));
+      if (!pills.length) return;
+      applyMint();
+      if (!P || P.length !== pills.length) {
+        P = pills.map(() => ({ dx: 0, dy: 0, vx: 0, vy: 0, phase: Math.random() * Math.PI * 2 }));
+      }
+      measure();
+    }
+
+    function loop() {
+      raf = requestAnimationFrame(loop);
+      if (!pills || !pills.length || !homes) return;
+      const t = (performance.now() - t0) / 1000;
+      const R = 155, k = 0.055, damp = 0.86;
+      for (let i = 0; i < pills.length; i++) {
+        const p = P[i], h = homes[i], el = pills[i];
+        let fx = -p.dx * k, fy = -p.dy * k;
+        fx += Math.sin(t * 3.1 + p.phase) * 0.3;
+        fy += Math.cos(t * 2.4 + p.phase) * 0.3;
+        if (mouse) {
+          const cx = h.x + p.dx, cy = h.y + p.dy;
+          const ddx = cx - mouse.x, ddy = cy - mouse.y;
+          const dist = Math.hypot(ddx, ddy) || 0.001;
+          if (dist < R) {
+            const f = 1 - dist / R;
+            fx += (ddx / dist) * f * 3.6;
+            fy += (ddy / dist) * f * 3.6;
+          }
+        }
+        p.vx = (p.vx + fx) * damp;
+        p.vy = (p.vy + fy) * damp;
+        p.dx += p.vx;
+        p.dy += p.vy;
+        el.style.transform = 'translate(' + p.dx.toFixed(2) + 'px,' + p.dy.toFixed(2) + 'px)';
+      }
+    }
+
+    function start() {
+      if (!cloud.isConnected) return;
+      acquire();
+      mouse = null;
+      if (!bound) {
+        cloud.addEventListener('mousemove', e => {
+          const r = cloud.getBoundingClientRect();
+          mouse = { x: e.clientX - r.left, y: e.clientY - r.top };
+        });
+        cloud.addEventListener('mouseleave', () => { mouse = null; });
+        window.addEventListener('resize', measure);
+        bound = true;
+      }
+      t0 = performance.now();
+      cancelAnimationFrame(raf);
+      loop();
+    }
+
+    if (reduced()) return;
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => requestAnimationFrame(start));
+    } else {
+      requestAnimationFrame(start);
+    }
+  })();
+
+  // ── Hero sticker parallax ──
+  (function() {
+    const hero = document.getElementById('hero-area');
+    if (!hero) return;
+    if (typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const items = Array.from(hero.querySelectorAll('.stk'));
+    items.forEach(it => { it.style.transition = 'transform .28s cubic-bezier(0.22,0.61,0.36,1)'; });
+
+    hero.addEventListener('pointermove', e => {
+      const r = hero.getBoundingClientRect();
+      const mx = (e.clientX - (r.left + r.width / 2))  / (r.width / 2);
+      const my = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+      items.forEach(it => {
+        const d   = parseFloat(it.dataset.parallax) || 0;
+        const rot = it.dataset.rot || 0;
+        it.style.transform = 'translate(' + (-mx * d * 42).toFixed(1) + 'px,' + (-my * d * 42).toFixed(1) + 'px) rotate(' + rot + 'deg)';
+      });
+    });
+    hero.addEventListener('pointerleave', () => {
+      items.forEach(it => { it.style.transform = 'translate(0,0) rotate(' + (it.dataset.rot || 0) + 'deg)'; });
+    });
+  })();
+
+  // ── Project tile stagger tilt ──
+  (function() {
+    const grid = document.getElementById('proj-grid');
+    if (!grid) return;
+    const tiles = Array.from(grid.querySelectorAll('.proj-tile'));
+    const rots = [-2.4, 1.6, -1.2, 2.2, -1.6];
+    const dys  = [20, 0, 30, 6, 22];
+    tiles.forEach((t, i) => {
+      const base = 'translateY(' + dys[i % dys.length] + 'px) rotate(' + rots[i % rots.length] + 'deg)';
+      t.dataset.base = base;
+      t.style.transition = 'transform .2s cubic-bezier(0.22,0.61,0.36,1)';
+      t.style.transform  = base;
+      t.addEventListener('mouseenter', () => { t.style.transform = 'translateY(-6px) rotate(0deg)'; });
+      t.addEventListener('mouseleave', () => { t.style.transform = t.dataset.base; });
+    });
+  })();
+
+  // ── Review card scatter tilt ──
+  (function() {
+    const grid = document.getElementById('review-grid');
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll('.review-card'));
+    const rots  = [-2.2, 1.8, -1.4, 2.4, -1.8, 1.2];
+    cards.forEach((c, i) => {
+      const base = 'rotate(' + rots[i % rots.length] + 'deg)';
+      c.dataset.base = base;
+      c.style.transition = 'transform .2s cubic-bezier(0.22,0.61,0.36,1), box-shadow .2s cubic-bezier(0.22,0.61,0.36,1)';
+      c.style.transform  = base;
+    });
+  })();
+</script>
+
+</body>
+</html>

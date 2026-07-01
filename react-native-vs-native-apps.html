@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>React Native vs Native Apps: What Founders Actually Need to Know — Elina Hovakimyan</title>
+  <meta name="description" content="A practical breakdown of when to choose React Native vs native iOS and Android — based on product stage, team, and technical risk, not hype.">
+  <meta name="author" content="Elina Hovakimyan">
+  <link rel="canonical" href="https://elina.dev/react-native-vs-native-apps.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://elina.dev/react-native-vs-native-apps.html">
+  <meta property="og:title" content="React Native vs Native Apps: What Founders Actually Need to Know">
+  <meta property="og:description" content="A practical breakdown of when to choose React Native vs native iOS and Android — based on product stage, team, and technical risk, not hype.">
+  <meta property="og:image" content="https://elina.dev/assets/Elina.JPG">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="React Native vs Native Apps: What Founders Actually Need to Know">
+  <meta name="twitter:description" content="A practical breakdown of when to choose React Native vs native iOS and Android — based on product stage, team, and technical risk, not hype.">
+  <meta name="twitter:image" content="https://elina.dev/assets/Elina.JPG">
+
+  <!-- LLM discoverability -->
+  <link rel="llms" href="https://elina.dev/llms.txt">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "React Native vs Native Apps: What Founders Actually Need to Know",
+    "description": "A practical breakdown of when to choose React Native vs native iOS and Android — based on product stage, team, and technical risk, not hype.",
+    "author": {
+      "@type": "Person",
+      "name": "Elina Hovakimyan",
+      "url": "https://elina.dev"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Elina Hovakimyan",
+      "url": "https://elina.dev"
+    },
+    "url": "https://elina.dev/react-native-vs-native-apps.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); }
+    html { scroll-behavior: smooth; }
+    a { -webkit-tap-highlight-color: transparent; }
+
+    :root {
+      --ink: #16140F;
+      --paper: #FAF6EE;
+      --amber: #F5B400;
+      --slate: #6B675E;
+      --mint: #B9F5C8;
+      --white: #FFFFFF;
+      --ink-80: #16140Fcc;
+      --ink-60: #16140F99;
+      --amber-dark: #D89E00;
+      --amber-tint: #FDF0CC;
+      --mint-ink: #0C2E17;
+      --hairline: #E4DECF;
+      --hairline-ink: #2B2822;
+    }
+    :root {
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --fs-mono-eyebrow: 0.8125rem;
+      --fs-mono-tag: 0.75rem;
+      --fs-mono-caption: 0.8125rem;
+      --tracking-mono: 0.04em;
+    }
+    :root {
+      --radius-card: 20px;
+      --radius-btn: 12px;
+      --radius-pill: 999px;
+    }
+    :root {
+      --shadow-sm: 0 1px 2px rgba(22,20,15,0.06);
+      --shadow-card: 0 12px 32px -12px rgba(22,20,15,0.14);
+      --shadow-lift: 0 20px 48px -16px rgba(22,20,15,0.22);
+      --ease-standard: cubic-bezier(0.22,0.61,0.36,1);
+      --dur-fast: 140ms;
+      --dur-base: 220ms;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      padding: 15px 26px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      cursor: pointer;
+      transition:
+        background var(--dur-base) var(--ease-standard),
+        color var(--dur-base) var(--ease-standard),
+        transform var(--dur-fast) var(--ease-standard),
+        box-shadow var(--dur-base) var(--ease-standard);
+    }
+    .btn-sm { font-size: 15px; padding: 10px 18px; }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: var(--radius-pill);
+    }
+    .btn-primary:hover { background: var(--amber); color: var(--ink); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: var(--radius-btn);
+    }
+    .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+    .btn-secondary:active { transform: scale(0.98); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono-tag);
+      font-weight: 500;
+      letter-spacing: var(--tracking-mono);
+      line-height: 1;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+    .tag-mint { background: var(--mint); color: var(--mint-ink); border: 1px solid transparent; }
+
+    /* ── Article prose ── */
+    .prose {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .prose p { margin: 0 0 1.4em; }
+    .prose h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 2.8em 0 0.6em;
+      padding-top: 2em;
+      border-top: 1px solid var(--hairline);
+    }
+    .prose strong { font-weight: 600; color: var(--ink); }
+    .prose ul {
+      margin: 0.6em 0 1.4em;
+      padding: 0;
+      list-style: none;
+    }
+    .prose ul li {
+      position: relative;
+      padding-left: 1.4em;
+      margin-bottom: 0.45em;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    .prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+    .prose .callout {
+      background: var(--amber-tint);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 1.6em 0;
+    }
+    .prose .callout strong {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.04em;
+      text-transform: lowercase;
+      display: block;
+      margin-bottom: 0.4em;
+      color: var(--amber-dark);
+    }
+    .prose .callout p { margin: 0; font-size: 16px; }
+
+    /* ── Comparison table ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0 40px;
+    }
+    @media (max-width: 520px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    .compare-card {
+      background: var(--white);
+      border: 1px solid var(--hairline);
+      border-radius: 16px;
+      padding: 20px 22px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .compare-card .card-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      color: var(--mint-ink);
+      background: var(--mint);
+      border-radius: 999px;
+      padding: 4px 10px;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+    .compare-card.ink .card-label {
+      color: var(--paper);
+      background: var(--ink);
+    }
+    .compare-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .compare-card ul li {
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink);
+      padding: 6px 0 6px 22px;
+      position: relative;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .compare-card ul li:last-child { border-bottom: none; }
+    .compare-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+  </style>
+</head>
+<body>
+
+<div style="background:var(--paper);min-height:100vh;font-family:var(--font-body);overflow-x:hidden;">
+
+  <!-- ── NAV ── -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(250,246,238,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;height:72px;">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--ink);text-decoration:none;">
+        <span style="width:20px;height:20px;border-radius:22%;background:var(--amber);display:inline-block;transform:rotate(12deg);"></span>
+        elina<span style="color:var(--amber);">.</span>dev
+      </a>
+      <a href="index.html#writing" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">← writing</a>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HERO ── -->
+  <header style="background:var(--ink);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-30px;right:8%;width:120px;height:120px;border-radius:22%;background:var(--mint);opacity:.1;transform:rotate(-8deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-40px;right:22%;width:90px;height:90px;border-radius:22%;border:2px solid rgba(250,246,238,.1);transform:rotate(12deg);"></div>
+    <div style="max-width:800px;margin:0 auto;padding:clamp(56px,8vw,100px) clamp(20px,4vw,48px) clamp(48px,6vw,80px);position:relative;">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
+        <span class="tag tag-mint">guide</span>
+        <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:.04em;color:rgba(250,246,238,.4);">9 min read</span>
+      </div>
+      <h1 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-0.025em;color:var(--paper);">React Native vs Native Apps: What Founders Actually Need to Know</h1>
+      <p style="margin:22px 0 0;max-width:54ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:rgba(250,246,238,.6);">React Native and native development are not good or bad by themselves. They are tools. The right choice depends on your product, your budget, your timeline, and your technical risk.</p>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:32px;">
+        <img src="assets/Elina.JPG" alt="Elina Hovakimyan" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);">
+        <span style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:rgba(250,246,238,.5);">Elina Hovakimyan</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article style="background:var(--paper);">
+    <div style="max-width:720px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,48px) clamp(64px,8vw,100px);">
+      <div class="prose">
+
+        <p>Founders often ask: "Should we build in React Native or native?"</p>
+
+        <p>But that is not the best question.</p>
+
+        <p>The better question is:</p>
+
+        <p><strong>What kind of product are we building, what stage are we at, and what trade-offs can we afford?</strong></p>
+
+        <p>I have seen founders overpay for fully native apps they did not need yet. I have also seen teams choose React Native to "move faster," then struggle later because the app needed deep native performance, custom SDKs, or platform-specific behavior they underestimated.</p>
+
+        <p>So let's make the decision practical.</p>
+
+        <h2>What Native Means</h2>
+
+        <p>A native app is built separately for each platform.</p>
+
+        <p>For iOS, that usually means Swift, SwiftUI, or UIKit. For Android, that usually means Kotlin and Jetpack Compose.</p>
+
+        <p>This gives you maximum platform control, but it also means two codebases, two teams or skill sets, and more maintenance.</p>
+
+        <p>Native is usually stronger when the app depends heavily on device features, advanced performance, or platform-specific behavior.</p>
+
+        <h2>What React Native Means</h2>
+
+        <p>React Native lets developers build iOS and Android apps using React, JavaScript, or TypeScript.</p>
+
+        <p>It is not just a website wrapped in an app. React Native components map to native platform UI, which is why a well-built React Native app can feel very close to native.</p>
+
+        <p>React Native has also matured a lot. It is no longer only for prototypes. Many serious production apps are built with it.</p>
+
+        <p>But React Native is not magic.</p>
+
+        <p>It does not remove iOS and Android complexity. It gives you a shared codebase, but you still deal with two platforms, two app stores, two permission systems, two build pipelines, and two sets of edge cases.</p>
+
+        <p>That distinction matters.</p>
+
+        <h2>When React Native Makes Sense</h2>
+
+        <p>React Native is often the smarter choice when the main risk is product validation.</p>
+
+        <p>For example:</p>
+        <ul>
+          <li>Marketplaces</li>
+          <li>Booking apps</li>
+          <li>AI apps</li>
+          <li>SaaS companion apps</li>
+          <li>Content apps</li>
+          <li>Subscription apps</li>
+          <li>Internal business tools</li>
+          <li>Founder-led MVPs</li>
+        </ul>
+
+        <p>In these cases, the most important questions are usually:</p>
+        <ul>
+          <li>Will users want this?</li>
+          <li>Will they pay?</li>
+          <li>Can we launch fast enough?</li>
+          <li>Can we test the business model?</li>
+          <li>Can we maintain both platforms without a big team?</li>
+        </ul>
+
+        <p>For many early-stage products, React Native is practical because much of the product logic can be shared across iOS and Android: screens, forms, navigation, API integration, validation, analytics, onboarding, and state management.</p>
+
+        <p>A founder does not get extra points for building the most technically perfect app that nobody uses.</p>
+
+        <h2>When Native Makes Sense</h2>
+
+        <p>Native becomes the better choice when the app's value depends heavily on the platform itself.</p>
+
+        <p>For example:</p>
+        <ul>
+          <li>Camera-heavy apps</li>
+          <li>Video editing apps</li>
+          <li>Real-time audio apps</li>
+          <li>High-performance games</li>
+          <li>Fitness tracking apps</li>
+          <li>Medical device apps</li>
+          <li>Advanced Bluetooth, NFC, AR, HealthKit, widgets, or background processing</li>
+          <li>Apps where iOS and Android need very different experiences</li>
+        </ul>
+
+        <p>In these cases, native gives you more control, fewer abstraction layers, and faster access to new platform features.</p>
+
+        <p>React Native can still support advanced native work, but the more your app depends on native modules, custom SDKs, device APIs, and background behavior, the more native knowledge you need anyway.</p>
+
+        <p>That is the part many founders miss:</p>
+
+        <p><strong>A complex React Native app still needs native expertise.</strong></p>
+
+        <h2>The Real Trade-Off</h2>
+
+        <p>React Native usually gives you more speed. Native usually gives you more control.</p>
+
+        <p>So the decision is not: cheap vs expensive, fast vs slow, good vs bad.</p>
+
+        <p>The real question is:</p>
+
+        <p><strong>How much platform control do you need right now?</strong></p>
+
+        <p>If you are still looking for product-market fit, too much native perfection can become waste. If the app is technically demanding from day one, too much cross-platform abstraction can become debt.</p>
+
+        <h2>The Cost Myth</h2>
+
+        <p>Many founders choose React Native because they think it means "one app instead of two."</p>
+
+        <p>Not exactly.</p>
+
+        <p>You still have two apps. You just share a large part of the codebase.</p>
+
+        <p>That can save a lot of time and money, but only if the product fits React Native and the team knows what they are doing.</p>
+
+        <p>Bad React Native code can become just as expensive as bad native code. Sometimes worse, because you may end up debugging JavaScript, native modules, third-party packages, iOS issues, Android issues, and build problems all at once.</p>
+
+        <div class="callout">
+          <strong>honest take</strong>
+          <p>React Native can be more cost-efficient when the product fits the framework and the team is experienced with it. Not always. Not automatically.</p>
+        </div>
+
+        <h2>Performance Is Not Just About the Stack</h2>
+
+        <p>Founders often hear that native apps are faster. Technically, native has the highest performance ceiling. But in many real apps, performance problems come from bad engineering, not the framework.</p>
+
+        <p>Common causes are:</p>
+        <ul>
+          <li>Poor architecture</li>
+          <li>Heavy images</li>
+          <li>Slow APIs</li>
+          <li>Unoptimized lists</li>
+          <li>Messy state management</li>
+          <li>Too many re-renders</li>
+          <li>Bad caching</li>
+          <li>Low-quality third-party libraries</li>
+        </ul>
+
+        <p>A well-built React Native app can feel excellent. A poorly built native app can feel terrible.</p>
+
+        <p>So do not only ask, "Which technology is faster?" Ask:</p>
+
+        <p><strong>Can this team build it well?</strong></p>
+
+        <p>That answer matters more.</p>
+
+        <h2>Hiring Reality</h2>
+
+        <p>React Native is attractive when you already have strong React or TypeScript developers. A smaller team can cover more product surface.</p>
+
+        <p>Native is attractive when your product needs deep iOS and Android expertise, or when you have the budget to maintain separate platform teams.</p>
+
+        <p>But here is the brutal truth:</p>
+        <ul>
+          <li>A weak React Native team will not save you money.</li>
+          <li>A weak native team will not save you quality.</li>
+          <li>A cheap app built badly is not an MVP. It is future cleanup.</li>
+        </ul>
+
+        <p>Founders should care less about the label and more about the team's ability to ship, debug, maintain, and improve the app after launch.</p>
+
+        <h2>Simple Decision Rule</h2>
+
+        <p>If your biggest risk is <strong>market risk</strong>, React Native is usually a strong choice.</p>
+
+        <p>Market risk means:</p>
+        <ul>
+          <li>Will people use it?</li>
+          <li>Will they pay?</li>
+          <li>Will onboarding work?</li>
+          <li>Will retention work?</li>
+          <li>Can we test fast enough?</li>
+        </ul>
+
+        <p>If your biggest risk is <strong>technical platform risk</strong>, native is usually safer.</p>
+
+        <p>Technical platform risk means:</p>
+        <ul>
+          <li>Can we make the camera flawless?</li>
+          <li>Can we process video smoothly?</li>
+          <li>Can background tracking work reliably?</li>
+          <li>Can we integrate deeply with hardware, sensors, health data, or system APIs?</li>
+        </ul>
+
+        <p>Most early-stage founders have market risk, not technical platform risk.</p>
+
+        <p>That is why React Native is often the better first move.</p>
+
+        <h2>My Honest Take</h2>
+
+        <p>For most founder-led consumer apps, marketplaces, booking platforms, SaaS companion apps, and AI-powered products, I would usually start with React Native.</p>
+
+        <p>It is fast, practical, mature, and good enough for far more apps than people admit.</p>
+
+        <p>But I would not use it blindly. Before choosing React Native, I would check:</p>
+        <ul>
+          <li>What native SDKs are needed?</li>
+          <li>Are there complex background tasks?</li>
+          <li>Are there heavy media or animation features?</li>
+          <li>Do we need deep Apple or Android-specific features?</li>
+          <li>Can the team handle native issues if needed?</li>
+          <li>Are the libraries actively maintained?</li>
+        </ul>
+
+        <p>If the answers look safe, React Native is a strong choice. If the app is deeply platform-specific from day one, native is the safer path.</p>
+
+        <p>The worst decision is not choosing React Native or native.</p>
+
+        <p>The worst decision is choosing based on ego, trend, or fear.</p>
+
+        <p>A founder does not need the most technically respected stack.</p>
+
+        <p>A founder needs the stack that gets the product shipped, tested, maintained, and improved without creating unnecessary debt.</p>
+
+      </div>
+
+      <!-- Comparison cards -->
+      <div class="compare-grid">
+        <div class="compare-card">
+          <span class="card-label">react native — good fit when</span>
+          <ul>
+            <li>Main risk is product-market fit</li>
+            <li>MVP or early-stage product</li>
+            <li>Standard screens, forms, navigation</li>
+            <li>Subscription, SaaS, or content app</li>
+            <li>Small team covering both platforms</li>
+            <li>Strong React/TypeScript team</li>
+          </ul>
+        </div>
+        <div class="compare-card ink">
+          <span class="card-label">native — good fit when</span>
+          <ul>
+            <li>App value depends on platform depth</li>
+            <li>Camera, video, audio, or AR features</li>
+            <li>Heavy background processing</li>
+            <li>Custom hardware or sensor integration</li>
+            <li>iOS and Android need very different UX</li>
+            <li>Budget for separate platform teams</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── CTA ── -->
+  <section style="background:var(--amber-tint);border-top:1px solid var(--hairline);">
+    <div style="max-width:720px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
+      <div>
+        <p style="margin:0 0 8px;font-family:var(--font-mono);font-size:var(--fs-mono-eyebrow);letter-spacing:var(--tracking-mono);color:var(--slate);">building a mobile app?</p>
+        <p style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.2;letter-spacing:-0.02em;color:var(--ink);">I can help you ship it the right way.</p>
+      </div>
+      <a href="index.html#contact" class="btn btn-primary">Let's talk →</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer style="background:var(--ink);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:8%;right:6%;width:100px;height:100px;border-radius:22%;background:var(--amber);transform:rotate(-8deg);box-shadow:var(--shadow-card);opacity:.6;"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,48px);position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--paper);text-decoration:none;">
+        <span style="width:20px;height:20px;border-radius:22%;background:var(--amber);display:inline-block;transform:rotate(12deg);"></span>
+        elina<span style="color:var(--amber);">.</span>dev
+      </a>
+      <div style="display:flex;gap:28px;flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:rgba(250,246,238,.55);text-decoration:none;">linkedin</a>
+        <a href="mailto:hello@elina.dev" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:rgba(250,246,238,.55);text-decoration:none;">hello@elina.dev</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

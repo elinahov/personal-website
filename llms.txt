@@ -1,0 +1,35 @@
+# elina.dev
+
+> Elina Hovakimyan is a React Native mobile engineer and founder who helps startups ship iOS and Android apps — from MVP to the App Store. 40+ apps shipped.
+
+Elina Hovakimyan is a mobile engineer specializing in React Native, TypeScript, iOS, and Android development. She has a founder background, having built and shipped her own products from zero. Her work spans consumer apps, AI-powered apps, marketplaces, subscription products, and SaaS tools. She also teaches React Native and React.js on Udemy with 5500+ students worldwide.
+
+## Services
+
+- React Native mobile app development (iOS & Android)
+- MVP scoping and shipping to the App Store and Google Play
+- Full-stack mobile: React Native, TypeScript, Node.js, GraphQL, Firebase, Stripe
+- Founder-led product development — engineering plus product thinking
+
+## Selected Work
+
+- Evoria — AI event planning app (2026, Expo, Claude Code, AI)
+- Culinar — recipes and meal planning app (2024, React Native, AI)
+- Travio — trip planning and maps app (2022, Expo, Google Maps)
+- Prehab101 — guided recovery app (2020, React Native, In-App Purchases)
+- Casana — home and lifestyle app (2019, React Native, video streaming)
+
+## Writing
+
+- [Features Your App Should Have to Pass Apple Review](https://elina.dev/apple-review.html): A practical guide to Apple Review compliance — Privacy Policy, account deletion, Sign in with Apple, paywalls, user-generated content moderation, permissions, App Tracking Transparency, privacy manifests, and review readiness.
+- [React Native vs Native Apps: What Founders Actually Need to Know](https://elina.dev/react-native-vs-native-apps.html): A practical breakdown of when to choose React Native vs native iOS/Android development, based on product stage, team, and technical risk — not hype.
+
+## Teaching
+
+Elina teaches React Native and React.js on Udemy. Her courses cover building and shipping real mobile apps. 5500+ students. Available at udemy.com/user/elina-hovakimyan/.
+
+## Contact
+
+- Email: hello@elina.dev
+- LinkedIn: https://www.linkedin.com/in/elina-hovakimyan/
+- Website: https://elina.dev
