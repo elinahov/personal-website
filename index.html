@@ -16,6 +16,7 @@
   <title>Mobile App &amp; Website Development for Founders — Elina Hovakimyan</title>
   <meta name="description" content="I build and ship mobile apps and websites for founders — from idea to the App Store and Google Play. Also 1:1 Claude Code training. 40+ apps shipped.">
   <meta name="author" content="Elina Hovakimyan">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://elinahovakimyan.com/">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
@@ -43,12 +44,78 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://elinahovakimyan.com/#website",
+        "url": "https://elinahovakimyan.com/",
+        "name": "Elina Hovakimyan",
+        "alternateName": "elina.dev",
+        "description": "Mobile app and website development for founders, by a React Native engineer who has shipped 40+ apps.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://elinahovakimyan.com/#elina"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://elinahovakimyan.com/#webpage",
+        "url": "https://elinahovakimyan.com/",
+        "name": "Mobile App & Website Development for Founders — Elina Hovakimyan",
+        "description": "I build and ship mobile apps and websites for founders — from idea to the App Store and Google Play. Also 1:1 Claude Code training.",
+        "isPartOf": {
+          "@id": "https://elinahovakimyan.com/#website"
+        },
+        "about": {
+          "@id": "https://elinahovakimyan.com/#elina"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://elinahovakimyan.com/#elina-photo"
+        },
+        "inLanguage": "en",
+        "datePublished": "2026-07-02",
+        "dateModified": "2026-09-21"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://elinahovakimyan.com/#elina-photo",
+        "url": "https://elinahovakimyan.com/assets/Elina.JPG",
+        "contentUrl": "https://elinahovakimyan.com/assets/Elina.JPG",
+        "caption": "Elina Hovakimyan"
+      },
+      {
         "@type": "Person",
         "@id": "https://elinahovakimyan.com/#elina",
         "name": "Elina Hovakimyan",
-        "url": "https://elinahovakimyan.com",
+        "url": "https://elinahovakimyan.com/",
+        "image": {
+          "@id": "https://elinahovakimyan.com/#elina-photo"
+        },
+        "email": "elinahovakimyan@gmail.com",
         "jobTitle": "Mobile Engineer",
-        "knowsAbout": ["React Native", "TypeScript", "iOS", "Android", "Mobile App Development", "Node.js", "GraphQL", "Claude Code"],
+        "description": "React Native mobile engineer and founder. Builds and ships iOS and Android apps for founders, from MVP scope through App Store and Google Play launch, and teaches React Native on Udemy.",
+        "knowsAbout": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "JavaScript",
+          "iOS app development",
+          "Android app development",
+          "Mobile app development",
+          "App Store submission",
+          "Google Play submission",
+          "Apple App Review",
+          "MVP development",
+          "Node.js",
+          "GraphQL",
+          "Firebase",
+          "Stripe",
+          "In-app purchases",
+          "Claude Code",
+          "AI integrations"
+        ],
+        "knowsLanguage": "en",
+        "worksFor": {
+          "@id": "https://elinahovakimyan.com/#services"
+        },
         "sameAs": [
           "https://www.linkedin.com/in/elina-hovakimyan/",
           "https://www.udemy.com/user/elina-hovakimyan/"
@@ -59,20 +126,152 @@
         "@id": "https://elinahovakimyan.com/#services",
         "name": "Elina Hovakimyan — Mobile & Web Development",
         "url": "https://elinahovakimyan.com/#services",
-        "founder": { "@id": "https://elinahovakimyan.com/#elina" },
-        "areaServed": "Worldwide",
-        "availableLanguage": "English",
+        "description": "Mobile app and website development for founders: new builds from scratch, and rescues of existing apps and sites. Engagement models are MVP sprint, full build, or ongoing retainer. Every project starts with a short scoping call.",
+        "image": {
+          "@id": "https://elinahovakimyan.com/#elina-photo"
+        },
+        "founder": {
+          "@id": "https://elinahovakimyan.com/#elina"
+        },
+        "employee": {
+          "@id": "https://elinahovakimyan.com/#elina"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Worldwide"
+        },
+        "availableLanguage": "en",
         "email": "elinahovakimyan@gmail.com",
+        "serviceType": [
+          "Mobile app development",
+          "React Native development",
+          "Website development",
+          "App rescue and code audit",
+          "1:1 developer training"
+        ],
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Startup founders, solo founders, designers and non-technical builders"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Build a mobile app from scratch", "description": "iOS and Android apps built in React Native, from MVP scope to the App Store and Google Play." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Build a website from scratch", "description": "A fast, modern marketing site or web app, designed, built and deployed end to end." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Improve an existing app or website", "description": "Audit, fix and rescue existing codebases — performance, crashes, App Store rejections and stalled builds." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "1:1 Claude Code training", "description": "A personalized 1:1 program teaching founders and designers to build and maintain their own mobile app or website with Claude Code." } }
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://elinahovakimyan.com/#service-mobile",
+                "name": "Build a mobile app from scratch",
+                "serviceType": "Mobile app development",
+                "provider": {
+                  "@id": "https://elinahovakimyan.com/#services"
+                },
+                "areaServed": "Worldwide",
+                "description": "iOS and Android apps built in React Native, from MVP scope to the App Store and Google Play. Best for founders with an idea and no app yet."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://elinahovakimyan.com/#service-web",
+                "name": "Build a website from scratch",
+                "serviceType": "Website development",
+                "provider": {
+                  "@id": "https://elinahovakimyan.com/#services"
+                },
+                "areaServed": "Worldwide",
+                "description": "A fast, modern marketing site or web app, designed, built and deployed end to end. Best for founders who need a real web presence or web product, not a template."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://elinahovakimyan.com/#service-improve",
+                "name": "Improve an existing app or website",
+                "serviceType": "App rescue and code audit",
+                "provider": {
+                  "@id": "https://elinahovakimyan.com/#services"
+                },
+                "areaServed": "Worldwide",
+                "description": "Audit, fix and rescue existing codebases: performance, crashes, App Store rejections, inherited or half-finished builds. Best for founders with something already live or in progress."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://elinahovakimyan.com/#service-training",
+                "name": "1:1 Claude Code training",
+                "serviceType": "1:1 developer training",
+                "provider": {
+                  "@id": "https://elinahovakimyan.com/#services"
+                },
+                "areaServed": "Worldwide",
+                "description": "A personalized 1:1 program teaching founders, designers and non-traditional builders to build a real mobile app or website with Claude Code on their own project, and to ship and maintain it independently afterwards. Application-based, not self-serve."
+              }
+            }
           ]
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://elinahovakimyan.com/#faq",
+        "isPartOf": {
+          "@id": "https://elinahovakimyan.com/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does an MVP take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on scope, and anyone who quotes you a number before understanding your idea is guessing. What I can tell you is how I work: we agree on the smallest version that is genuinely useful to your first users, and I give you a realistic range for that before we start — not an optimistic one I’d have to walk back later. If the scope you want can’t fit the timeline you need, I’ll say so on the first call."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I own the code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — all of it. The repository, the accounts, the App Store and Google Play listings, the keys. Everything is in your name and handed over as we go, not at the end. You are never in a position where you need me in order to keep your own product running."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do we communicate during a build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You get regular written updates and working builds you can actually open on your phone, so progress is something you can see rather than something you’re told about. We agree on a check-in rhythm at the start that fits how involved you want to be. No status theatre, and no month-long silences."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you take over a project another developer started?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — this is a big part of what I do. I start with an audit of what exists: what works, what’s broken, what’s worth keeping and what will cost you more to patch than to rebuild. You get that assessment honestly, even when the answer is that less of it is salvageable than you hoped."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What’s the difference between the Udemy courses and 1:1 training?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The courses are self-serve and teach general skills on example projects — great value, but you’re on your own when your specific thing breaks. The 1:1 program is built around your project: we build the app you actually want to launch, I explain every decision as we make it, and you finish able to vibe code new features, ship, change and maintain it yourself. It’s the difference between watching someone build and building yours with help."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I have an idea but no technical background — can you still help?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, and it’s most of who I work with. You don’t need to know what React Native is, and you won’t be asked to make technical decisions you have no basis for making. My job is to translate: to tell you what a choice costs, what it buys you, and what I’d do in your position — and then to build it."
+            }
+          }
+        ]
       }
     ]
   }
@@ -393,7 +592,7 @@
 <div style="background:var(--paper);min-height:100vh;font-family:var(--font-body);overflow-x:hidden;">
 
   <!-- ── NAV ── -->
-  <nav style="position:sticky;top:0;z-index:50;background:rgba(250,246,238,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline);">
+  <nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:rgba(250,246,238,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline);">
     <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;height:72px;">
       <a href="#top" style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--ink);text-decoration:none;">
         <span style="width:20px;height:20px;border-radius:22%;background:var(--amber);display:inline-block;transform:rotate(12deg);"></span>
@@ -408,6 +607,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main">
 
   <!-- ── HERO (spotlight) ── -->
   <header id="top">
@@ -460,7 +661,7 @@
   </div>
 
   <!-- ── SERVICES ── -->
-  <section id="services" style="background:var(--paper);position:relative;overflow:hidden;">
+  <section id="services" aria-label="Services" style="background:var(--paper);position:relative;overflow:hidden;">
     <div aria-hidden="true" style="position:absolute;top:-28px;left:5%;width:84px;height:84px;border-radius:22%;background:var(--mint);opacity:.45;transform:rotate(-9deg);"></div>
     <div aria-hidden="true" style="position:absolute;bottom:-30px;right:6%;width:58px;height:58px;border-radius:22%;border:2px solid var(--hairline);transform:rotate(12deg);"></div>
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
@@ -550,7 +751,7 @@
   </section>
 
   <!-- ── ABOUT ── -->
-  <section id="about" style="background:var(--ink);position:relative;overflow:hidden;">
+  <section id="about" aria-label="About" style="background:var(--ink);position:relative;overflow:hidden;">
     <div aria-hidden="true" style="position:absolute;top:-30px;right:8%;width:120px;height:120px;border-radius:22%;background:var(--mint);opacity:.14;transform:rotate(-8deg);"></div>
     <div aria-hidden="true" style="position:absolute;bottom:-40px;right:22%;width:90px;height:90px;border-radius:22%;border:2px solid rgba(250,246,238,.16);transform:rotate(12deg);"></div>
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
@@ -567,7 +768,7 @@
   </section>
 
   <!-- ── SKILLS ── -->
-  <section id="skills" style="background:var(--paper);position:relative;overflow:hidden;">
+  <section id="skills" aria-label="Skills" style="background:var(--paper);position:relative;overflow:hidden;">
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
       <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:44px;">
         <span class="eyebrow">what i work with</span>
@@ -663,7 +864,7 @@
   </section>
 
   <!-- ── WORK ── -->
-  <section id="work" style="background:var(--paper);border-top:1px solid var(--hairline);position:relative;overflow:hidden;">
+  <section id="work" aria-label="Selected work" style="background:var(--paper);border-top:1px solid var(--hairline);position:relative;overflow:hidden;">
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
       <span class="eyebrow">selected work</span>
       <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Apps I've shipped.</h2>
@@ -836,7 +1037,7 @@
   </section>
 
   <!-- ── TRAINING (1:1) ── -->
-  <section id="training" style="background:var(--ink);position:relative;overflow:hidden;">
+  <section id="training" aria-label="1:1 training" style="background:var(--ink);position:relative;overflow:hidden;">
     <div aria-hidden="true" style="position:absolute;top:-30px;right:8%;width:120px;height:120px;border-radius:22%;background:var(--mint);opacity:.14;transform:rotate(-8deg);"></div>
     <div aria-hidden="true" style="position:absolute;bottom:-40px;right:24%;width:90px;height:90px;border-radius:22%;border:2px solid rgba(250,246,238,.16);transform:rotate(12deg);"></div>
     <div aria-hidden="true" style="position:absolute;top:30%;left:4%;width:52px;height:52px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(-11deg);"></div>
@@ -874,7 +1075,7 @@
   </section>
 
   <!-- ── TEACHING ── -->
-  <section id="teaching" style="background:var(--paper);border-top:1px solid var(--hairline);position:relative;overflow:hidden;">
+  <section id="teaching" aria-label="Teaching" style="background:var(--paper);border-top:1px solid var(--hairline);position:relative;overflow:hidden;">
     <div aria-hidden="true" style="position:absolute;top:-24px;right:7%;width:78px;height:78px;border-radius:22%;background:var(--mint);opacity:.5;transform:rotate(-9deg);"></div>
     <div aria-hidden="true" style="position:absolute;bottom:40px;left:4%;width:46px;height:46px;border-radius:22%;border:2px solid var(--hairline);transform:rotate(12deg);"></div>
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
@@ -1002,7 +1203,7 @@
   </section>
 
   <!-- ── WRITING ── -->
-  <section id="writing" style="background:var(--amber-tint);position:relative;overflow:hidden;">
+  <section id="writing" aria-label="Writing" style="background:var(--amber-tint);position:relative;overflow:hidden;">
     <div aria-hidden="true" style="position:absolute;top:-26px;left:6%;width:70px;height:70px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(-9deg);"></div>
     <div aria-hidden="true" style="position:absolute;bottom:-30px;right:10%;width:56px;height:56px;border-radius:22%;border:2px solid rgba(22,20,15,.14);transform:rotate(13deg);"></div>
     <div style="max-width:960px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
@@ -1057,7 +1258,7 @@
   </section>
 
   <!-- ── FAQ ── -->
-  <section id="faq" style="background:var(--amber-tint);position:relative;overflow:hidden;">
+  <section id="faq" aria-label="Frequently asked questions" style="background:var(--amber-tint);position:relative;overflow:hidden;">
     <div aria-hidden="true" style="position:absolute;top:-26px;right:7%;width:70px;height:70px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(9deg);"></div>
     <div aria-hidden="true" style="position:absolute;bottom:-30px;left:8%;width:56px;height:56px;border-radius:22%;border:2px solid rgba(22,20,15,.14);transform:rotate(-13deg);"></div>
     <div style="max-width:960px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
@@ -1092,6 +1293,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ── CONTACT / FOOTER ── -->
   <footer id="contact" style="background:var(--ink);position:relative;overflow:hidden;">

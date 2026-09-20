@@ -16,6 +16,8 @@
   <title>Features Your App Should Have to Pass Apple Review — Elina Hovakimyan</title>
   <meta name="description" content="A practical guide to the features Apple Review checks for — from Privacy Policy and account deletion to paywalls, user-generated content, and App Tracking Transparency.">
   <meta name="author" content="Elina Hovakimyan">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="article:published_time" content="2026-07-02">
   <link rel="canonical" href="https://elinahovakimyan.com/apple-review.html">
 
   <!-- Open Graph -->
@@ -38,20 +40,126 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Features Your App Should Have to Pass Apple Review",
-    "description": "A practical guide to the features Apple Review checks for — from Privacy Policy and account deletion to paywalls, user-generated content, and App Tracking Transparency.",
-    "author": {
-      "@type": "Person",
-      "name": "Elina Hovakimyan",
-      "url": "https://elinahovakimyan.com"
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Elina Hovakimyan",
-      "url": "https://elinahovakimyan.com"
-    },
-    "url": "https://elinahovakimyan.com/apple-review.html"
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://elinahovakimyan.com/apple-review.html#article",
+        "headline": "Features Your App Should Have to Pass Apple Review",
+        "description": "A practical guide to the features Apple Review checks for — from Privacy Policy and account deletion to paywalls, user-generated content, and App Tracking Transparency.",
+        "url": "https://elinahovakimyan.com/apple-review.html",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://elinahovakimyan.com/apple-review.html"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://elinahovakimyan.com/assets/Elina.JPG"
+        },
+        "author": {
+          "@id": "https://elinahovakimyan.com/#elina"
+        },
+        "publisher": {
+          "@id": "https://elinahovakimyan.com/#elina"
+        },
+        "isPartOf": {
+          "@id": "https://elinahovakimyan.com/#website"
+        },
+        "datePublished": "2026-07-02",
+        "dateModified": "2026-09-21",
+        "inLanguage": "en",
+        "articleSection": "App Store & Apple Review",
+        "keywords": [
+          "Apple App Review",
+          "App Store rejection",
+          "App Store guidelines",
+          "privacy policy",
+          "account deletion",
+          "Sign in with Apple",
+          "App Tracking Transparency",
+          "privacy manifest",
+          "in-app purchases",
+          "user-generated content moderation",
+          "iOS app submission"
+        ],
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Apple App Review"
+          },
+          {
+            "@type": "Thing",
+            "name": "App Store submission"
+          },
+          {
+            "@type": "Thing",
+            "name": "iOS app development"
+          }
+        ],
+        "timeRequired": "PT8M",
+        "wordCount": 2506,
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Startup founders and product owners"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://elinahovakimyan.com/#elina",
+        "name": "Elina Hovakimyan",
+        "url": "https://elinahovakimyan.com/",
+        "image": "https://elinahovakimyan.com/assets/Elina.JPG",
+        "jobTitle": "Mobile Engineer",
+        "description": "React Native mobile engineer and founder. Builds and ships iOS and Android apps for founders, from MVP scope through App Store and Google Play launch.",
+        "knowsAbout": [
+          "React Native",
+          "iOS app development",
+          "Android app development",
+          "Apple App Review",
+          "App Store submission",
+          "MVP development",
+          "TypeScript",
+          "Expo"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/elina-hovakimyan/",
+          "https://www.udemy.com/user/elina-hovakimyan/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://elinahovakimyan.com/#website",
+        "url": "https://elinahovakimyan.com/",
+        "name": "Elina Hovakimyan",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://elinahovakimyan.com/#elina"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://elinahovakimyan.com/apple-review.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://elinahovakimyan.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Writing",
+            "item": "https://elinahovakimyan.com/#writing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Features Your App Should Have to Pass Apple Review",
+            "item": "https://elinahovakimyan.com/apple-review.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -327,7 +435,10 @@
       <p style="margin:22px 0 0;max-width:54ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:rgba(250,246,238,.6);">Passing Apple Review is not only about writing clean code. Many rejections happen because the app is missing basic trust, privacy, account, payment, or safety features.</p>
       <div style="display:flex;align-items:center;gap:14px;margin-top:32px;">
         <img src="assets/Elina.JPG" alt="Elina Hovakimyan" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);">
-        <span style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:rgba(250,246,238,.5);">Elina Hovakimyan</span>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <span style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:rgba(250,246,238,.78);">Elina Hovakimyan &middot; React&nbsp;Native engineer</span>
+          <span style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;font-size:12px;color:rgba(250,246,238,.45);">Published <time datetime="2026-07-02">2 July 2026</time> &middot; written from 40+ shipped apps</span>
+        </div>
       </div>
     </div>
   </header>
@@ -660,6 +771,22 @@
     </div>
   </article>
 
+  <!-- ── AUTHOR ── -->
+  <section aria-label="About the author" style="background:var(--paper);border-top:1px solid var(--hairline);">
+    <div style="max-width:720px;margin:0 auto;padding:clamp(36px,5vw,52px) clamp(20px,4vw,48px);display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
+      <img src="assets/Elina.JPG" alt="Elina Hovakimyan" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);flex-shrink:0;">
+      <div style="flex:1;min-width:240px;">
+        <p style="margin:0 0 8px;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--ink);">Written by Elina Hovakimyan</p>
+        <p style="margin:0 0 14px;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--slate);">React Native engineer and founder. I&rsquo;ve shipped 40+ mobile apps to the App Store and Google Play, built my own products from zero, and taught 5,500+ developers to ship on Udemy. I write from what I&rsquo;ve had to get through review myself &mdash; not from the docs.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="index.html#services" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--amber);">$ what i build</a>
+          <a href="index.html#training" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--amber);">$ 1:1 training</a>
+          <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener me" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:var(--slate);text-decoration:none;">$ linkedin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CTA ── -->
   <section style="background:var(--amber-tint);border-top:1px solid var(--hairline);">
     <div style="max-width:720px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
@@ -667,7 +794,7 @@
         <p style="margin:0 0 8px;font-family:var(--font-mono);font-size:var(--fs-mono-eyebrow);letter-spacing:var(--tracking-mono);color:var(--slate);">building a mobile app?</p>
         <p style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.2;letter-spacing:-0.02em;color:var(--ink);">I can help you ship it the right way.</p>
       </div>
-      <a href="index.html#contact" class="btn btn-primary">Let's talk →</a>
+      <a href="index.html?service=mobile-app#contact" class="btn btn-primary">Start a project →</a>
     </div>
   </section>
 
