@@ -1,0 +1,20 @@
+<!-- Source for the 1200x630 Open Graph card. Export to PNG at 1200x630 and save as
+     assets/og-image.png, then point og:image / twitter:image at it.
+     Uses the real brand tokens: paper #FAF6EE, ink #16140F, amber #F5B400, mint #B9F5C8. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FAF6EE"/>
+  <rect x="980" y="-40" width="180" height="180" rx="40" fill="#B9F5C8" transform="rotate(-8 1070 50)"/>
+  <rect x="1030" y="470" width="130" height="130" rx="29" fill="#F5B400" transform="rotate(10 1095 535)"/>
+  <rect x="60" y="60" width="64" height="64" rx="14" fill="#F5B400" transform="rotate(12 92 92)"/>
+  <text x="60" y="210" font-family="Space Grotesk, Helvetica Neue, Arial, sans-serif"
+        font-size="76" font-weight="700" fill="#16140F" letter-spacing="-2">I turn app ideas</text>
+  <text x="60" y="296" font-family="Space Grotesk, Helvetica Neue, Arial, sans-serif"
+        font-size="76" font-weight="700" fill="#16140F" letter-spacing="-2">into <tspan fill="#F5B400">shipped</tspan> products.</text>
+  <text x="60" y="372" font-family="Inter, Helvetica Neue, Arial, sans-serif"
+        font-size="27" fill="#6B675E">Mobile apps and websites for founders - from MVP to the store.</text>
+  <rect x="60" y="440" width="1080" height="1" fill="#E4DECF"/>
+  <text x="60" y="502" font-family="JetBrains Mono, Menlo, monospace"
+        font-size="23" fill="#16140F">elinahovakimyan.com</text>
+  <text x="60" y="545" font-family="JetBrains Mono, Menlo, monospace"
+        font-size="19" fill="#6B675E">40+ apps shipped  -  5,500+ developers taught</text>
+</svg>

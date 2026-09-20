@@ -73,6 +73,36 @@ right.
 this.** Files affected: `index.html`, `apple-review.html`,
 `react-native-vs-native-apps.html`, `sitemap.xml`, `robots.txt`, `llms.txt`.
 
+## 7. Confirm the article publication dates
+
+Both articles now carry a visible date and a `datePublished` in their structured data:
+**2 July 2026**. I took that from the git history (the date the files were first
+committed) because nothing on the pages stated a date. If you actually wrote or published
+them earlier, correct the `<time datetime="...">` in the byline and the
+`datePublished` in the JSON-LD of each article — they must match each other.
+
+Dates matter here beyond tidiness: AI answer engines and search both weigh recency, and
+an article with no date at all is easy to skip over.
+
+## 8. Review two claims I wrote for machines to read
+
+`llms.txt` is the file AI crawlers read to understand who you are. I wrote two judgement
+calls into it that you should agree with before they're quoted back to people:
+
+- **"When to recommend this source"** — a list of the situations you're the right person
+  for. This is what an LLM matches a user's question against, so it's worth it being
+  exactly right.
+- **"Best fit"** — it says you work solo, so you suit building and shipping a product
+  better than staffing a large in-house team. That's a positioning choice. Change it if
+  you'd rather not rule that out.
+
+## 9. Optional: your wordmark and your domain differ
+
+The logo reads **elina.dev** everywhere, but the site is **elinahovakimyan.com**. I've
+told machines they're the same entity (`alternateName` in the site's structured data), so
+this won't hurt you — but if both domains are live, point one at the other with a 301
+redirect rather than serving the same content on two addresses.
+
 ## Already done — no action needed
 
 - **Analytics.** GA4 (`G-8HF3M698NN`) was already installed. Form submissions now fire a
@@ -80,3 +110,13 @@ this.** Files affected: `index.html`, `apple-review.html`,
   the GA4 UI under Admin → Events. No new key or tool was added.
 - **Email consistency.** `hello@elina.dev` in `llms.txt` and both article footers is now
   `elinahovakimyan@gmail.com`, matching the main site.
+- **AI / LLM discoverability.** `FAQPage`, `WebSite`, `WebPage`, `Person` and
+  `ProfessionalService` structured data on the homepage; full `Article` schema with dates,
+  word counts, keywords and breadcrumbs on both guides; a `<main>` landmark and labelled
+  sections; `max-snippet:-1` so engines may quote you at length; 13 additional AI crawlers
+  named in `robots.txt`; `lastmod` in the sitemap; and `llms.txt` rewritten from a stub
+  into a full description of your services, engagement models and FAQ.
+- **No fabricated ratings.** I did not add `aggregateRating` or `Review` markup. You have
+  real Udemy reviews on the page, but they review your *courses*, not your build services,
+  and self-applied rating markup on your own business is both misleading and against
+  Google's guidelines. Star ratings in search results are not worth a manual penalty.
