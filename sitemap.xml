@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://elina.dev/</loc>
+    <loc>https://elinahovakimyan.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://elina.dev/apple-review.html</loc>
+    <loc>https://elinahovakimyan.com/apple-review.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://elina.dev/react-native-vs-native-apps.html</loc>
+    <loc>https://elinahovakimyan.com/react-native-vs-native-apps.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

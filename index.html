@@ -13,41 +13,67 @@
     gtag('config', 'G-8HF3M698NN');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Elina Hovakimyan — React Native &amp; Mobile App Developer</title>
-  <meta name="description" content="Elina Hovakimyan is a React Native mobile engineer who helps founders ship iOS and Android apps — from MVP to the App Store. 40+ apps shipped.">
+  <title>Mobile App &amp; Website Development for Founders — Elina Hovakimyan</title>
+  <meta name="description" content="I build and ship mobile apps and websites for founders — from idea to the App Store and Google Play. Also 1:1 Claude Code training. 40+ apps shipped.">
   <meta name="author" content="Elina Hovakimyan">
-  <link rel="canonical" href="https://elina.dev/">
+  <link rel="canonical" href="https://elinahovakimyan.com/">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://elina.dev/">
-  <meta property="og:title" content="Elina Hovakimyan — React Native &amp; Mobile App Developer">
-  <meta property="og:description" content="I help founders turn mobile app ideas into real products — from MVP to the store. 40+ apps shipped, founder-brain included.">
-  <meta property="og:image" content="https://elina.dev/assets/logo.png">
+  <meta property="og:url" content="https://elinahovakimyan.com/">
+  <meta property="og:title" content="Mobile App &amp; Website Development for Founders — Elina Hovakimyan">
+  <meta property="og:description" content="I build and ship mobile apps and websites for founders — from idea to the store. 40+ apps shipped, founder-brain included.">
+  <!-- TODO(elin): replace with a 1200x630 preview image — logo.png is square and crops badly as a large card. See SETUP.md -->
+  <meta property="og:image" content="https://elinahovakimyan.com/assets/logo.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Elina Hovakimyan — React Native &amp; Mobile App Developer">
-  <meta name="twitter:description" content="I help founders turn mobile app ideas into real products — from MVP to the store. 40+ apps shipped, founder-brain included.">
-  <meta name="twitter:image" content="https://elina.dev/assets/logo.png">
+  <meta name="twitter:title" content="Mobile App &amp; Website Development for Founders — Elina Hovakimyan">
+  <meta name="twitter:description" content="I build and ship mobile apps and websites for founders — from idea to the store. 40+ apps shipped, founder-brain included.">
+  <meta name="twitter:image" content="https://elinahovakimyan.com/assets/logo.png">
 
   <!-- LLM discoverability -->
-  <link rel="llms" href="https://elina.dev/llms.txt">
+  <link rel="llms" href="https://elinahovakimyan.com/llms.txt">
 
   <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Elina Hovakimyan",
-    "url": "https://elina.dev",
-    "jobTitle": "Mobile Engineer",
-    "knowsAbout": ["React Native", "TypeScript", "iOS", "Android", "Mobile App Development", "Node.js", "GraphQL"],
-    "sameAs": [
-      "https://www.linkedin.com/in/elina-hovakimyan/",
-      "https://www.udemy.com/user/elina-hovakimyan/"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://elinahovakimyan.com/#elina",
+        "name": "Elina Hovakimyan",
+        "url": "https://elinahovakimyan.com",
+        "jobTitle": "Mobile Engineer",
+        "knowsAbout": ["React Native", "TypeScript", "iOS", "Android", "Mobile App Development", "Node.js", "GraphQL", "Claude Code"],
+        "sameAs": [
+          "https://www.linkedin.com/in/elina-hovakimyan/",
+          "https://www.udemy.com/user/elina-hovakimyan/"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://elinahovakimyan.com/#services",
+        "name": "Elina Hovakimyan — Mobile & Web Development",
+        "url": "https://elinahovakimyan.com/#services",
+        "founder": { "@id": "https://elinahovakimyan.com/#elina" },
+        "areaServed": "Worldwide",
+        "availableLanguage": "English",
+        "email": "elinahovakimyan@gmail.com",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Build a mobile app from scratch", "description": "iOS and Android apps built in React Native, from MVP scope to the App Store and Google Play." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Build a website from scratch", "description": "A fast, modern marketing site or web app, designed, built and deployed end to end." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Improve an existing app or website", "description": "Audit, fix and rescue existing codebases — performance, crashes, App Store rejections and stalled builds." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "1:1 Claude Code training", "description": "A personalized 1:1 program teaching founders and designers to build and maintain their own mobile app or website with Claude Code." } }
+          ]
+        }
+      }
     ]
   }
   </script>
@@ -205,6 +231,161 @@
     @media (prefers-reduced-motion: reduce) {
       [data-buildlog-marquee] { animation: none !important; }
     }
+
+    /* ── Nav: scroll the link row on phones instead of overflowing the page ── */
+    .nav-links { display:flex; align-items:center; gap:28px; min-width:0; }
+    /* The contact footer's decorative squares sit behind the text, but the taller
+       form pushes them onto the headline on phones — cream on amber is unreadable. */
+    @media (max-width: 720px) {
+      .deco-contact { display: none !important; }
+    }
+
+    /* Phones: drop the text links so the primary CTA is never pushed off-screen.
+       Every section is still reachable by scrolling. */
+    @media (max-width: 720px) {
+      .nav-links > a:not(.btn) { display: none; }
+    }
+    @media (min-width: 721px) and (max-width: 860px) {
+      .nav-links {
+        gap: 18px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        padding-left: 12px;
+        mask-image: linear-gradient(90deg, transparent 0, #000 12px);
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12px);
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links > a { flex: 0 0 auto; }
+    }
+
+    /* ── Service cards ── */
+    .svc-card { transition: transform var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard); }
+    .svc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+
+    /* ── Skills: full-stack expander ── */
+    .skill-extra { display: none; }
+    #skill-cloud.is-expanded .skill-extra { display: inline-flex; }
+    #skill-cloud.is-expanded .skill-group-label.skill-extra { display: block; }
+    .skill-group-label {
+      flex-basis: 100%;
+      text-align: center;
+      margin: 4px 0 2px;
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono-tag);
+      letter-spacing: var(--tracking-mono);
+      color: var(--slate);
+    }
+    .stack-toggle {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: var(--tracking-mono);
+      color: var(--slate);
+      background: none;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: var(--radius-pill);
+      transition: color var(--dur-fast) var(--ease-standard), background var(--dur-fast) var(--ease-standard);
+    }
+    .stack-toggle:hover { color: var(--ink); background: rgba(22,20,15,.05); }
+
+    /* ── FAQ accordion (native details/summary — keyboard + aria for free) ── */
+    .faq-item { border-top: 1px solid rgba(22,20,15,.12); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 8px;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(1.02rem,1.8vw,1.28rem);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      transition: color .16s var(--ease-standard), padding-left .16s var(--ease-standard);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--amber-dark); padding-left: 16px; }
+    .faq-item summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 6px; }
+    .faq-item summary::after {
+      content: '+';
+      margin-left: auto;
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 20px;
+      line-height: 1;
+      color: var(--slate);
+    }
+    .faq-item[open] summary::after { content: '–'; }
+    .faq-answer {
+      margin: 0 0 24px;
+      padding: 0 8px;
+      max-width: 68ch;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--slate);
+    }
+
+    /* ── Contact form (sits on the ink footer) ── */
+    .field-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: var(--tracking-mono);
+      text-transform: lowercase;
+      color: rgba(250,246,238,.62);
+      margin-bottom: 8px;
+    }
+    .field-req { color: var(--amber); }
+    .field-input {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--paper);
+      background: rgba(250,246,238,.05);
+      border: 1px solid var(--hairline-ink);
+      border-radius: var(--radius-btn);
+      padding: 13px 14px;
+      transition: border-color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard);
+    }
+    .field-input::placeholder { color: rgba(250,246,238,.34); }
+    .field-input:focus { outline: none; border-color: var(--amber); background: rgba(250,246,238,.09); }
+    .field-input[aria-invalid="true"] { border-color: #FF8A73; }
+    select.field-input {
+      appearance: none;
+      -webkit-appearance: none;
+      padding-right: 40px;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23FAF6EE' fill-opacity='.55' d='M1.4 0 6 4.6 10.6 0 12 1.4 6 7.4 0 1.4z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+    }
+    select.field-input option { background: var(--ink); color: var(--paper); }
+    textarea.field-input { resize: vertical; min-height: 120px; line-height: 1.55; }
+    .field-error {
+      display: none;
+      margin: 7px 0 0;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: var(--tracking-mono);
+      color: #FF8A73;
+    }
+    .field-error.is-visible { display: block; }
+    /* Honeypot — off-screen, never shown, never announced */
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-note {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: var(--tracking-mono);
+      color: rgba(250,246,238,.5);
+      line-height: 1.6;
+    }
+    #contact-status:focus { outline: none; }
   </style>
 </head>
 <body>
@@ -218,13 +399,12 @@
         <span style="width:20px;height:20px;border-radius:22%;background:var(--amber);display:inline-block;transform:rotate(12deg);"></span>
         elina<span style="color:var(--amber);">.</span>dev
       </a>
-      <div style="display:flex;align-items:center;gap:28px;">
-        <a href="#about"    style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">about</a>
-        <a href="#skills"   style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">skills</a>
+      <div class="nav-links">
+        <a href="#services" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">services</a>
         <a href="#work"     style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">work</a>
+        <a href="#training" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">training</a>
         <a href="#writing"  style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">writing</a>
-        <a href="#teaching" style="font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);text-decoration:none;">teaching</a>
-        <a href="#contact" class="btn btn-primary btn-sm">Let's talk</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Start a project</a>
       </div>
     </div>
   </nav>
@@ -279,6 +459,96 @@
     </div>
   </div>
 
+  <!-- ── SERVICES ── -->
+  <section id="services" style="background:var(--paper);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-28px;left:5%;width:84px;height:84px;border-radius:22%;background:var(--mint);opacity:.45;transform:rotate(-9deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-30px;right:6%;width:58px;height:58px;border-radius:22%;border:2px solid var(--hairline);transform:rotate(12deg);"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
+      <span class="eyebrow">what i do</span>
+      <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Three ways I help founders ship.</h2>
+      <p style="margin:0 0 44px;max-width:52ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">Pick the one that sounds like you — every project starts with a short call to scope it honestly.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:stretch;">
+
+        <!-- Service: Build a mobile app from scratch -->
+        <div class="svc-card" style="display:flex;flex-direction:column;gap:16px;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:30px 28px 28px;">
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:1.28rem;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);">Build a mobile app from scratch</h3>
+          <p style="margin:0;font-family:var(--font-body);font-size:15.5px;line-height:1.62;color:var(--slate);">iOS + Android, from idea to the App Store and Google Play. I scope the MVP, build it in React Native, and ship it to real stores — with the founder-brain to tell you what has to exist for launch and what can wait.</p>
+          <p style="margin:0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-60);"><span style="opacity:.55;">$&nbsp;</span>best for: founders with an idea and no app yet.</p>
+          <div style="margin-top:auto;padding-top:6px;">
+            <a href="#contact" data-service="mobile-app" class="btn btn-primary btn-sm">Start your app →</a>
+          </div>
+        </div>
+        <!-- Service: Build a website from scratch -->
+        <div class="svc-card" style="display:flex;flex-direction:column;gap:16px;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:30px 28px 28px;">
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:1.28rem;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);">Build a website from scratch</h3>
+          <p style="margin:0;font-family:var(--font-body);font-size:15.5px;line-height:1.62;color:var(--slate);">A fast, modern marketing site or web app, built and launched end-to-end. Design, build, and deploy — no hand-off gaps.</p>
+          <p style="margin:0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-60);"><span style="opacity:.55;">$&nbsp;</span>best for: founders who need a real web presence or web product, not a template.</p>
+          <div style="margin-top:auto;padding-top:6px;">
+            <a href="#contact" data-service="website" class="btn btn-primary btn-sm">Build my site →</a>
+          </div>
+        </div>
+        <!-- Service: Improve an existing app or website -->
+        <div class="svc-card" style="display:flex;flex-direction:column;gap:16px;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:30px 28px 28px;">
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:1.28rem;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);">Improve an existing app or website</h3>
+          <p style="margin:0;font-family:var(--font-body);font-size:15.5px;line-height:1.62;color:var(--slate);">Inherited a messy codebase, a slow app, or a stalled build? I audit what you have, fix what&rsquo;s broken, and get it back to shipping — performance, crashes, App Store rejections, or a rescue of a half-finished product.</p>
+          <p style="margin:0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-60);"><span style="opacity:.55;">$&nbsp;</span>best for: founders with something already live or in progress.</p>
+          <div style="margin-top:auto;padding-top:6px;">
+            <a href="#contact" data-service="improve" class="btn btn-primary btn-sm">Fix what I have →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── How we work together ── -->
+      <div style="margin-top:44px;border:1.5px dashed var(--hairline);border-radius:var(--radius-card);background:rgba(255,255,255,.5);padding:30px clamp(20px,3vw,34px);">
+        <span class="eyebrow">how we work together</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px 28px;margin-top:20px;">
+          <div>
+            <span class="tag tag-mint">MVP sprint</span>
+            <p style="margin:12px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--slate);">A focused build to get your first version into real users&rsquo; hands, fast.</p>
+          </div>
+          <div>
+            <span class="tag tag-mint">Full build</span>
+            <p style="margin:12px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--slate);">End-to-end from scope to store launch, with you in the loop the whole way.</p>
+          </div>
+          <div>
+            <span class="tag tag-mint">Retainer / improvements</span>
+            <p style="margin:12px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--slate);">Ongoing work to fix, optimize, and keep shipping after launch.</p>
+          </div>
+        </div>
+        <p style="margin:26px 0 0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-80);"><span style="opacity:.55;">$&nbsp;</span>every project starts with a short call to scope it honestly — you&rsquo;ll know what it takes before you commit.</p>
+      </div>
+
+      <!--
+        TODO(elin): client testimonials — see SETUP.md
+        Uncomment this block and fill in 2–3 real quotes from founders/clients you have built for.
+        Student reviews live in #teaching; these should be CLIENT quotes, which buyers of build
+        services weigh far more heavily. Nothing is rendered until you fill these in.
+
+      <div style="margin-top:48px;">
+        <span class="eyebrow">what clients say</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:22px;">
+
+          <div class="review-card" style="background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;">
+            <p style="margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">TODO(elin): client quote</p>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--hairline);">
+              <span style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:13px;font-weight:700;">??</span>
+              <div>
+                <div style="font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--ink);">TODO(elin): name</div>
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">TODO(elin): role, company</span>
+              </div>
+            </div>
+          </div>
+
+          (repeat the card above for testimonial 2 and 3)
+
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
   <!-- ── ABOUT ── -->
   <section id="about" style="background:var(--ink);position:relative;overflow:hidden;">
     <div aria-hidden="true" style="position:absolute;top:-30px;right:8%;width:120px;height:120px;border-radius:22%;background:var(--mint);opacity:.14;transform:rotate(-8deg);"></div>
@@ -301,85 +571,92 @@
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
       <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:44px;">
         <span class="eyebrow">what i work with</span>
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">The whole stack — try to catch it.</h2>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Built to ship, not to impress.</h2>
         <p style="margin:0;font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:var(--slate);">$ hover — the pills scatter</p>
       </div>
       <div style="position:relative;max-width:960px;margin:0 auto;">
         <div aria-hidden="true" style="position:absolute;inset:-14px -6px;border:1.5px dashed var(--hairline);border-radius:36px;transform:rotate(-1.4deg);background:rgba(255,255,255,.45);"></div>
         <div aria-hidden="true" style="position:absolute;top:-22px;left:-10px;width:56px;height:56px;border-radius:22%;background:var(--mint);transform:rotate(-9deg);box-shadow:var(--shadow-card);z-index:2;"></div>
         <div aria-hidden="true" style="position:absolute;bottom:-24px;right:-8px;width:44px;height:44px;border-radius:22%;background:var(--ink);transform:rotate(11deg);box-shadow:var(--shadow-card);z-index:2;"></div>
-        <div id="skill-cloud" style="position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:12px;padding:40px 28px;min-height:340px;">
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Native</span>
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">TypeScript</span>
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">JavaScript</span>
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Expo</span>
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React.js</span>
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Node.js</span>
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Redux</span>
-          <span class="skill-pill" data-mint="true"  style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Next.js</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">REST APIs</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Code</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Cursor</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Copilot</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Messaging</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Video streaming</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Animations</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Calls</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Authentication</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Hooks</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Apple Pay</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Pay</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Mixpanel</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AppsFlyer</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Analytics</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Jest</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Purchases</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Stripe</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">E2E Testing</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Unit Testing</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Visual Testing</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CircleCI</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CI/CD</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Git</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GitHub Actions</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">npm</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Yarn</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GraphQL</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Profiling</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Reactatron</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Native SDKs</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Lazy Loading</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Code Reviews</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Agile</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Scrum</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">UI / UX</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">App Store</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Play</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Figma</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Design</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Fastlane</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Push Notifications</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Deep Linking</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Offline Mode</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Maps / Geolocation</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Permissions</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Social Login</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">i18n / Localization</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Accessibility</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">WebSockets</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Monorepo</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Design Systems</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Feature Flags</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Sentry</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase Crashlytics</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Performance Optimization</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Detox</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Flipper</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">OpenAI API</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AI Integrations</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Prompt Engineering</span>
-          <span class="skill-pill" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Automation</span>
+        <div id="skill-cloud" style="position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:12px;padding:36px 28px;min-height:230px;">
+          <span class="skill-group-label" aria-hidden="true">$ ship</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Native</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Expo</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">App Store</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Play</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Push Notifications</span>
+          <span class="skill-group-label" aria-hidden="true">$ scale</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">TypeScript</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Node.js</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GraphQL</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CI/CD</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase</span>
+          <span class="skill-group-label" aria-hidden="true">$ ai</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Code</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">OpenAI API</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Prompt Engineering</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AI Integrations</span>
+          <span class="skill-group-label skill-extra" aria-hidden="true">$ the rest of the stack</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">JavaScript</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React.js</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Redux</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Next.js</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">REST APIs</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Cursor</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Copilot</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Messaging</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Video streaming</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Animations</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Calls</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Authentication</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Hooks</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Apple Pay</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Pay</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Mixpanel</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AppsFlyer</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Analytics</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Jest</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Purchases</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Stripe</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">E2E Testing</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Unit Testing</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Visual Testing</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CircleCI</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Git</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GitHub Actions</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">npm</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Yarn</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Profiling</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Reactatron</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Native SDKs</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Lazy Loading</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Code Reviews</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Agile</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Scrum</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">UI / UX</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Figma</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Design</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Fastlane</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Deep Linking</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Offline Mode</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Maps / Geolocation</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Permissions</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Social Login</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">i18n / Localization</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Accessibility</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">WebSockets</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Monorepo</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Design Systems</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Feature Flags</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Sentry</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase Crashlytics</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Performance Optimization</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Detox</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Flipper</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Automation</span>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:10px;">
+          <button type="button" id="stack-toggle" class="stack-toggle" aria-expanded="false" aria-controls="skill-cloud">$ show full stack &rarr;</button>
         </div>
       </div>
     </div>
@@ -390,7 +667,7 @@
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
       <span class="eyebrow">selected work</span>
       <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Apps I've shipped.</h2>
-      <p style="margin:0 0 52px;max-width:50ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">A selection of mobile products I've built, shipped, and learned from.</p>
+      <p style="margin:0 0 52px;max-width:50ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">Real products, in real stores, used by real people — not concepts or prototypes.</p>
       <div id="proj-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:28px 24px;align-items:start;">
 
         <!-- Evoria -->
@@ -401,12 +678,27 @@
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Evoria — AI event planning</span>
+              <!--
+                TODO(elin): outcome line — see SETUP.md
+                One line of real proof: "Live on iOS + Android", "12k downloads", "shipped in 9 weeks",
+                "featured by Apple", or the problem it solved. Uncomment once the value is real.
+                Nothing renders until then — no invented numbers.
+              <span style="font-family:var(--font-body);font-size:14px;line-height:1.5;color:var(--slate);">TODO(elin): outcome</span>
+              -->
               <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Expo</span>
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Claude Code</span>
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">AI</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">Expo</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">Claude Code</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">AI</span>
                 <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2026</span>
               </div>
+              <!--
+                TODO(elin): store / live links — see SETUP.md
+                Paste the real URLs and delete any row that doesn't exist for this project.
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">App&nbsp;Store &rarr;</a>
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">Google&nbsp;Play &rarr;</a>
+              </div>
+              -->
             </div>
           </div>
         </div>
@@ -419,11 +711,26 @@
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Culinar — recipes &amp; meal planning</span>
+              <!--
+                TODO(elin): outcome line — see SETUP.md
+                One line of real proof: "Live on iOS + Android", "12k downloads", "shipped in 9 weeks",
+                "featured by Apple", or the problem it solved. Uncomment once the value is real.
+                Nothing renders until then — no invented numbers.
+              <span style="font-family:var(--font-body);font-size:14px;line-height:1.5;color:var(--slate);">TODO(elin): outcome</span>
+              -->
               <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">React Native</span>
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">AI</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">React Native</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">AI</span>
                 <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2024</span>
               </div>
+              <!--
+                TODO(elin): store / live links — see SETUP.md
+                Paste the real URLs and delete any row that doesn't exist for this project.
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">App&nbsp;Store &rarr;</a>
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">Google&nbsp;Play &rarr;</a>
+              </div>
+              -->
             </div>
           </div>
         </div>
@@ -436,11 +743,26 @@
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Travio — trip planning &amp; maps</span>
+              <!--
+                TODO(elin): outcome line — see SETUP.md
+                One line of real proof: "Live on iOS + Android", "12k downloads", "shipped in 9 weeks",
+                "featured by Apple", or the problem it solved. Uncomment once the value is real.
+                Nothing renders until then — no invented numbers.
+              <span style="font-family:var(--font-body);font-size:14px;line-height:1.5;color:var(--slate);">TODO(elin): outcome</span>
+              -->
               <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Expo</span>
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Google Maps</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">Expo</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">Google Maps</span>
                 <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2022</span>
               </div>
+              <!--
+                TODO(elin): store / live links — see SETUP.md
+                Paste the real URLs and delete any row that doesn't exist for this project.
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">App&nbsp;Store &rarr;</a>
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">Google&nbsp;Play &rarr;</a>
+              </div>
+              -->
             </div>
           </div>
         </div>
@@ -453,11 +775,26 @@
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Prehab101 — guided recovery</span>
+              <!--
+                TODO(elin): outcome line — see SETUP.md
+                One line of real proof: "Live on iOS + Android", "12k downloads", "shipped in 9 weeks",
+                "featured by Apple", or the problem it solved. Uncomment once the value is real.
+                Nothing renders until then — no invented numbers.
+              <span style="font-family:var(--font-body);font-size:14px;line-height:1.5;color:var(--slate);">TODO(elin): outcome</span>
+              -->
               <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">React Native</span>
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">In-App Purchases</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">React Native</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">In-App Purchases</span>
                 <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2020</span>
               </div>
+              <!--
+                TODO(elin): store / live links — see SETUP.md
+                Paste the real URLs and delete any row that doesn't exist for this project.
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">App&nbsp;Store &rarr;</a>
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">Google&nbsp;Play &rarr;</a>
+              </div>
+              -->
             </div>
           </div>
         </div>
@@ -470,11 +807,26 @@
             </div>
             <div style="display:flex;flex-direction:column;gap:8px;">
               <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);font-weight:700;letter-spacing:var(--tracking-mono);color:var(--ink);">Casana — home &amp; lifestyle</span>
+              <!--
+                TODO(elin): outcome line — see SETUP.md
+                One line of real proof: "Live on iOS + Android", "12k downloads", "shipped in 9 weeks",
+                "featured by Apple", or the problem it solved. Uncomment once the value is real.
+                Nothing renders until then — no invented numbers.
+              <span style="font-family:var(--font-body);font-size:14px;line-height:1.5;color:var(--slate);">TODO(elin): outcome</span>
+              -->
               <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">React Native</span>
-                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:var(--mint);color:var(--mint-ink);">Videos</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">React Native</span>
+                <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);font-weight:500;letter-spacing:var(--tracking-mono);padding:4px 9px;border-radius:var(--radius-pill);background:transparent;color:var(--slate);border:1px solid var(--hairline);">Videos</span>
                 <span style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);color:var(--slate);">2019</span>
               </div>
+              <!--
+                TODO(elin): store / live links — see SETUP.md
+                Paste the real URLs and delete any row that doesn't exist for this project.
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">App&nbsp;Store &rarr;</a>
+                <a href="TODO(elin)" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--fs-mono-tag);letter-spacing:var(--tracking-mono);color:var(--ink);text-decoration:none;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:5px 11px;">Google&nbsp;Play &rarr;</a>
+              </div>
+              -->
             </div>
           </div>
         </div>
@@ -483,57 +835,40 @@
     </div>
   </section>
 
-  <!-- ── WRITING ── -->
-  <section id="writing" style="background:var(--amber-tint);position:relative;overflow:hidden;">
-    <div aria-hidden="true" style="position:absolute;top:-26px;left:6%;width:70px;height:70px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(-9deg);"></div>
-    <div aria-hidden="true" style="position:absolute;bottom:-30px;right:10%;width:56px;height:56px;border-radius:22%;border:2px solid rgba(22,20,15,.14);transform:rotate(13deg);"></div>
-    <div style="max-width:960px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
-      <span class="eyebrow">writing</span>
-      <h2 style="margin:16px 0 40px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Things I've written.</h2>
-      <div style="display:flex;flex-direction:column;">
+  <!-- ── TRAINING (1:1) ── -->
+  <section id="training" style="background:var(--ink);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-30px;right:8%;width:120px;height:120px;border-radius:22%;background:var(--mint);opacity:.14;transform:rotate(-8deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-40px;right:24%;width:90px;height:90px;border-radius:22%;border:2px solid rgba(250,246,238,.16);transform:rotate(12deg);"></div>
+    <div aria-hidden="true" style="position:absolute;top:30%;left:4%;width:52px;height:52px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(-11deg);"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
+      <span class="eyebrow eyebrow-ink">work with me 1:1</span>
+      <h2 style="margin:18px 0 0;max-width:20ch;font-family:var(--font-display);font-weight:700;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.06;letter-spacing:-0.02em;color:var(--paper);">Learn to build your own app &mdash; with me in your <span style="color:var(--amber);">corner</span>.</h2>
+      <p style="margin:22px 0 0;max-width:58ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:rgba(250,246,238,.72);">A personalized 1:1 program where I teach you to build a real mobile app or website with Claude Code &mdash; step by step, on your project. Not a pre-recorded course. We build your idea together until you can ship it, change it, and maintain it without me.</p>
 
-        <!--
-        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
-          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">01</span>
-          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Why Most Mobile App Ideas Never Make It to the App Store</span>
-          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 6 min</span>
-          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
-        </a>
-        -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px 40px;margin-top:38px;max-width:900px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:50%;background:var(--mint);color:var(--mint-ink);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;line-height:1;">&check;</span>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.55;color:rgba(250,246,238,.78);"><strong style="color:var(--paper);font-weight:600;">Your project, not a toy example</strong> &mdash; we build the thing you actually want to launch.</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:50%;background:var(--mint);color:var(--mint-ink);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;line-height:1;">&check;</span>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.55;color:rgba(250,246,238,.78);"><strong style="color:var(--paper);font-weight:600;">Every step explained</strong> &mdash; you understand why, not just what to paste, so you&rsquo;re never stuck.</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:50%;background:var(--mint);color:var(--mint-ink);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;line-height:1;">&check;</span>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.55;color:rgba(250,246,238,.78);"><strong style="color:var(--paper);font-weight:600;">Built to maintain</strong> &mdash; you leave knowing how to fix bugs, add features, and keep it running.</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:50%;background:var(--mint);color:var(--mint-ink);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;line-height:1;">&check;</span>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.55;color:rgba(250,246,238,.78);"><strong style="color:var(--paper);font-weight:600;">Direct access to me</strong> &mdash; a working engineer and founder, not a course forum.</p>
+          </div>
+      </div>
 
-        <a href="apple-review.html" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
-          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">01</span>
-          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Features Your App Should Have to Pass Apple Review</span>
-          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">guide · 8 min</span>
-          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
-        </a>
+      <p style="margin:34px 0 0;max-width:56ch;font-family:var(--font-body);font-size:16px;line-height:1.6;color:rgba(250,246,238,.62);"><span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--mint);">$&nbsp;who it&rsquo;s for &mdash;&nbsp;</span>Founders, designers, and non-traditional builders who want to stop waiting on developers and build (and own) their product themselves.</p>
 
-        <!--
-        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
-          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">03</span>
-          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">How I Think About MVPs After Building 40+ Mobile Apps</span>
-          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 7 min</span>
-          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
-        </a>
-        -->
-
-        <a href="react-native-vs-native-apps.html" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
-          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">02</span>
-          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">React Native vs Native Apps: What Founders Actually Need to Know</span>
-          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">guide · 9 min</span>
-          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
-        </a>
-
-        <!--
-        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
-          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">05</span>
-          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Why AI-Generated Apps Break When Real Users Touch Them</span>
-          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 5 min</span>
-          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
-        </a>
-        -->
-
-        <div style="border-top:1px solid rgba(22,20,15,.12);"></div>
+      <div style="margin-top:34px;">
+        <a href="#contact" data-service="training" class="btn btn-primary" style="background:var(--amber);color:var(--ink);">Apply for 1:1 training &rarr;</a>
+        <p style="margin:14px 0 0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:rgba(250,246,238,.5);line-height:1.6;">Tell me what you want to build &mdash; I&rsquo;ll reply personally to see if it&rsquo;s a fit.</p>
       </div>
     </div>
   </section>
@@ -545,9 +880,10 @@
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
       <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:12px;">
         <div>
-          <span class="eyebrow">teaching</span>
-          <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">I teach what I ship.</h2>
-          <p style="margin:0;max-width:52ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">My React Native &amp; React.js courses on Udemy has taught developers around the world to build and ship real mobile apps. Here's what a few of them had to say.</p>
+          <span class="eyebrow">proof i can teach this</span>
+          <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">5,500+ developers have learned to ship from me.</h2>
+          <p style="margin:0;max-width:54ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">My React Native &amp; React.js courses on Udemy have taught developers around the world to build and ship real mobile apps. Here's what a few of them had to say.</p>
+          <p style="margin:16px 0 0;max-width:54ch;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);line-height:1.6;color:var(--ink-80);"><span style="opacity:.55;">$&nbsp;</span>want that, but personal and built around your idea? <a href="#training" style="color:var(--amber-dark);text-decoration:none;border-bottom:1px solid var(--amber);">&rarr; 1:1 training</a></p>
         </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <span class="tag tag-mint">React Native · Udemy</span>
@@ -665,21 +1001,191 @@
     </div>
   </section>
 
+  <!-- ── WRITING ── -->
+  <section id="writing" style="background:var(--amber-tint);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-26px;left:6%;width:70px;height:70px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(-9deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-30px;right:10%;width:56px;height:56px;border-radius:22%;border:2px solid rgba(22,20,15,.14);transform:rotate(13deg);"></div>
+    <div style="max-width:960px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
+      <span class="eyebrow">writing</span>
+      <h2 style="margin:16px 0 40px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Things I've written.</h2>
+      <div style="display:flex;flex-direction:column;">
+
+        <!--
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">01</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Why Most Mobile App Ideas Never Make It to the App Store</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 6 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+        -->
+
+        <a href="apple-review.html" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">01</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Features Your App Should Have to Pass Apple Review</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">guide · 8 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+
+        <!--
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">03</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">How I Think About MVPs After Building 40+ Mobile Apps</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 7 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+        -->
+
+        <a href="react-native-vs-native-apps.html" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">02</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">React Native vs Native Apps: What Founders Actually Need to Know</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">guide · 9 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+
+        <!--
+        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="article-row" style="display:flex;align-items:center;gap:20px;padding:20px 8px;border-top:1px solid rgba(22,20,15,.12);color:var(--ink);text-decoration:none;">
+          <span style="flex-shrink:0;width:38px;height:38px;border-radius:22%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:700;transform:rotate(-6deg);">05</span>
+          <span style="flex:1;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.25;letter-spacing:-0.01em;">Why AI-Generated Apps Break When Real Users Touch Them</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);flex-shrink:0;white-space:nowrap;">essay · 5 min</span>
+          <span style="font-family:var(--font-mono);font-size:13px;flex-shrink:0;">read →</span>
+        </a>
+        -->
+
+        <div style="border-top:1px solid rgba(22,20,15,.12);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq" style="background:var(--amber-tint);position:relative;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;top:-26px;right:7%;width:70px;height:70px;border-radius:22%;background:var(--amber);opacity:.5;transform:rotate(9deg);"></div>
+    <div aria-hidden="true" style="position:absolute;bottom:-30px;left:8%;width:56px;height:56px;border-radius:22%;border:2px solid rgba(22,20,15,.14);transform:rotate(-13deg);"></div>
+    <div style="max-width:960px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
+      <span class="eyebrow">before you ask</span>
+      <h2 style="margin:16px 0 36px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">The questions founders actually ask.</h2>
+      <div>
+        <details class="faq-item">
+          <summary>How long does an MVP take?</summary>
+          <p class="faq-answer">It depends on scope, and anyone who quotes you a number before understanding your idea is guessing. What I can tell you is how I work: we agree on the smallest version that is genuinely useful to your first users, and I give you a realistic range for <em>that</em> before we start &mdash; not an optimistic one I&rsquo;d have to walk back later. If the scope you want can&rsquo;t fit the timeline you need, I&rsquo;ll say so on the first call.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I own the code?</summary>
+          <p class="faq-answer">Yes &mdash; all of it. The repository, the accounts, the App Store and Google Play listings, the keys. Everything is in your name and handed over as we go, not at the end. You are never in a position where you need me in order to keep your own product running.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do we communicate during a build?</summary>
+          <p class="faq-answer">You get regular written updates and working builds you can actually open on your phone, so progress is something you can see rather than something you&rsquo;re told about. We agree on a check-in rhythm at the start that fits how involved you want to be. No status theatre, and no month-long silences.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you take over a project another developer started?</summary>
+          <p class="faq-answer">Yes &mdash; this is a big part of what I do. I start with an audit of what exists: what works, what&rsquo;s broken, what&rsquo;s worth keeping and what will cost you more to patch than to rebuild. You get that assessment honestly, even when the answer is that less of it is salvageable than you hoped.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What&rsquo;s the difference between the Udemy courses and 1:1 training?</summary>
+          <p class="faq-answer">The courses are self-serve and teach general skills on example projects &mdash; great value, but you&rsquo;re on your own when your specific thing breaks. The 1:1 program is built around <em>your</em> project: we build the app you actually want to launch, I explain every decision as we make it, and you finish able to vibe code new features, ship, change and maintain it yourself. It&rsquo;s the difference between watching someone build and building yours with help.</p>
+        </details>
+        <details class="faq-item">
+          <summary>I have an idea but no technical background &mdash; can you still help?</summary>
+          <p class="faq-answer">Yes, and it&rsquo;s most of who I work with. You don&rsquo;t need to know what React Native is, and you won&rsquo;t be asked to make technical decisions you have no basis for making. My job is to translate: to tell you what a choice costs, what it buys you, and what I&rsquo;d do in your position &mdash; and then to build it.</p>
+        </details>
+        <div style="border-top:1px solid rgba(22,20,15,.12);"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CONTACT / FOOTER ── -->
   <footer id="contact" style="background:var(--ink);position:relative;overflow:hidden;">
-    <div aria-hidden="true" style="position:absolute;top:8%;right:6%;width:100px;height:100px;border-radius:22%;background:var(--amber);transform:rotate(-8deg);box-shadow:var(--shadow-card);"></div>
-    <div aria-hidden="true" style="position:absolute;top:34%;right:20%;width:52px;height:52px;border-radius:22%;border:2px solid rgba(250,246,238,.18);transform:rotate(12deg);"></div>
-    <div aria-hidden="true" style="position:absolute;bottom:-24px;right:12%;width:64px;height:64px;border-radius:22%;background:var(--amber);opacity:.28;transform:rotate(6deg);"></div>
+    <div aria-hidden="true" class="deco-contact" style="position:absolute;top:8%;right:6%;width:100px;height:100px;border-radius:22%;background:var(--amber);transform:rotate(-8deg);box-shadow:var(--shadow-card);"></div>
+    <div aria-hidden="true" class="deco-contact" style="position:absolute;top:34%;right:20%;width:52px;height:52px;border-radius:22%;border:2px solid rgba(250,246,238,.18);transform:rotate(12deg);"></div>
+    <div aria-hidden="true" class="deco-contact" style="position:absolute;bottom:-24px;right:12%;width:64px;height:64px;border-radius:22%;background:var(--amber);opacity:.28;transform:rotate(6deg);"></div>
     <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px);position:relative;">
-      <span class="eyebrow eyebrow-ink">let's build something</span>
-      <h2 style="margin:18px 0 0;max-width:16ch;font-family:var(--font-display);font-weight:700;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-0.02em;color:var(--paper);">Have an app idea? Let's <span style="color:var(--amber);">ship it</span>.</h2>
-      <p style="margin:22px 0 0;max-width:48ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:rgba(250,246,238,.72);">Tell me what you're building. I'll tell you what it takes to get it into real users' hands — honestly, and fast.</p>
-      <div style="margin-top:32px;">
-        <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--amber);color:var(--ink);">Let's talk →</a>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:52px clamp(32px,5vw,72px);align-items:start;">
+
+        <div>
+          <span class="eyebrow eyebrow-ink">let's build something</span>
+          <h2 style="margin:18px 0 0;max-width:16ch;font-family:var(--font-display);font-weight:700;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-0.02em;color:var(--paper);">Have an app idea? Let's <span style="color:var(--amber);">ship it</span>.</h2>
+          <p style="margin:22px 0 0;max-width:44ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:rgba(250,246,238,.72);">Tell me what you're building. I'll tell you what it takes to get it into real users' hands &mdash; honestly, and fast.</p>
+          <ul style="list-style:none;margin:30px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;align-items:flex-start;gap:10px;">
+            <span aria-hidden="true" style="flex-shrink:0;margin-top:1px;font-family:var(--font-mono);font-size:13px;color:var(--amber);">$</span>
+            <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);line-height:1.6;color:rgba(250,246,238,.62);">I reply personally, usually within a day.</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:10px;">
+            <span aria-hidden="true" style="flex-shrink:0;margin-top:1px;font-family:var(--font-mono);font-size:13px;color:var(--amber);">$</span>
+            <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);line-height:1.6;color:rgba(250,246,238,.62);">Remote &mdash; working with founders worldwide.</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:10px;">
+            <span aria-hidden="true" style="flex-shrink:0;margin-top:1px;font-family:var(--font-mono);font-size:13px;color:var(--amber);">$</span>
+            <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);line-height:1.6;color:rgba(250,246,238,.62);">You own all the code, the accounts and the store listings.</span>
+          </li>
+          </ul>
+        </div>
+
+        <div>
+          <form id="contact-form" novalidate style="display:flex;flex-direction:column;gap:18px;">
+
+            <!-- Honeypot: hidden from people and from screen readers; bots fill it in. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="cf-company">Company (leave this empty)</label>
+              <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+          <div>
+            <label class="field-label" for="cf-name">name <span class="field-req" aria-hidden="true">*</span></label>
+            <input class="field-input" type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name">
+            <p class="field-error" id="cf-name-error"></p>
+          </div>
+
+          <div>
+            <label class="field-label" for="cf-email">email <span class="field-req" aria-hidden="true">*</span></label>
+            <input class="field-input" type="email" id="cf-email" name="email" autocomplete="email" placeholder="you@company.com">
+            <p class="field-error" id="cf-email-error"></p>
+          </div>
+
+          <div>
+            <label class="field-label" for="cf-service">what do you need? <span class="field-req" aria-hidden="true">*</span></label>
+            <select class="field-input" id="cf-service" name="service">
+              <option value="" disabled selected>Choose one&hellip;</option>
+              <option value="mobile-app">Build a mobile app from scratch</option>
+              <option value="website">Build a website from scratch</option>
+              <option value="improve">Improve an existing app/website</option>
+              <option value="training">1:1 Claude Code training</option>
+              <option value="other">Something else</option>
+            </select>
+            <p class="field-error" id="cf-service-error"></p>
+          </div>
+
+          <div>
+            <label class="field-label" for="cf-message">tell me about it <span class="field-req" aria-hidden="true">*</span></label>
+            <textarea class="field-input" id="cf-message" name="message" rows="5" placeholder="What are you building, and where are you now?"></textarea>
+            <p class="field-error" id="cf-message-error"></p>
+          </div>
+
+          <div>
+            <label class="field-label" for="cf-timeline">timeline <span style="opacity:.5;">(optional)</span></label>
+            <select class="field-input" id="cf-timeline" name="timeline">
+              <option value="" selected>No rush to say</option>
+              <option value="exploring">Just exploring</option>
+              <option value="1-3-months">Next 1&ndash;3 months</option>
+              <option value="asap">ASAP</option>
+            </select>
+            <p class="field-error" id="cf-timeline-error"></p>
+          </div>
+
+            <div style="margin-top:6px;">
+              <button type="submit" id="cf-submit" class="btn btn-primary" style="background:var(--amber);color:var(--ink);width:100%;">Send it &rarr;</button>
+            </div>
+            <p class="form-note" style="margin:0;">No newsletter, no CRM sequence &mdash; this goes straight to my inbox.</p>
+          </form>
+
+          <div id="contact-status" role="status" aria-live="polite" tabindex="-1" hidden style="border:1px solid var(--hairline-ink);border-radius:var(--radius-card);padding:26px 24px;background:rgba(250,246,238,.05);"></div>
+        </div>
+
       </div>
       <div style="display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;padding-top:28px;border-top:1px solid var(--hairline-ink);">
         <a href="https://www.linkedin.com/in/elina-hovakimyan/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:14px;letter-spacing:.04em;color:var(--paper);text-decoration:none;">$ connect on linkedin</a>
         <a href="mailto:elinahovakimyan@gmail.com" style="font-family:var(--font-mono);font-size:14px;letter-spacing:.04em;color:var(--paper);text-decoration:none;">$ email me</a>
+        <a href="https://www.udemy.com/user/elina-hovakimyan/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:14px;letter-spacing:.04em;color:var(--paper);text-decoration:none;">$ courses on udemy</a>
       </div>
     </div>
   </footer>
@@ -687,6 +1193,20 @@
 </div>
 
 <script>
+  /* ────────────────────────────────────────────────────────────────
+     CONTACT FORM ENDPOINT — the only value you need to set by hand.
+
+     TODO(elin): create a form at https://formspree.io (free tier),
+     set its notification address to elinahovakimyan@gmail.com, and
+     paste the endpoint URL below. See SETUP.md.
+
+     Until this is filled in, the form validates and then shows an
+     error instead of pretending the message was sent.
+
+     This ID is public by design — it is not a secret and is safe to commit.
+     ──────────────────────────────────────────────────────────────── */
+  const CONTACT_ENDPOINT = ''; // e.g. 'https://formspree.io/f/abcdwxyz'
+
   // ── Skill cloud physics ──
   (function() {
     const cloud = document.getElementById('skill-cloud');
@@ -764,6 +1284,8 @@
         });
         cloud.addEventListener('mouseleave', () => { mouse = null; });
         window.addEventListener('resize', measure);
+        // The expander adds pills after load — re-acquire so they join the scatter.
+        cloud.addEventListener('elin:skills-changed', () => acquire());
         bound = true;
       }
       t0 = performance.now();
@@ -832,6 +1354,171 @@
       c.style.transition = 'transform .2s cubic-bezier(0.22,0.61,0.36,1), box-shadow .2s cubic-bezier(0.22,0.61,0.36,1)';
       c.style.transform  = base;
     });
+  })();
+
+  // ── Skills: full-stack expander ──
+  (function() {
+    const btn   = document.getElementById('stack-toggle');
+    const cloud = document.getElementById('skill-cloud');
+    if (!btn || !cloud) return;
+
+    btn.addEventListener('click', () => {
+      const expanded = cloud.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', String(expanded));
+      btn.innerHTML = expanded ? '$ show less &uarr;' : '$ show full stack &rarr;';
+      // Physics measures layout positions once, so it must re-measure now.
+      cloud.dispatchEvent(new CustomEvent('elin:skills-changed'));
+    });
+  })();
+
+  // ── Contact form ──
+  (function() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const status   = document.getElementById('contact-status');
+    const submitEl = document.getElementById('cf-submit');
+    const openedAt = Date.now();
+
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const FIELDS = [
+      { id: 'cf-name',    empty: 'Please tell me your name.' },
+      { id: 'cf-email',   empty: 'Please add an email so I can reply.',
+                          test: v => EMAIL_RE.test(v), invalid: "That email doesn't look right." },
+      { id: 'cf-service', empty: 'Pick the option that fits best.' },
+      { id: 'cf-message', empty: 'A sentence or two is plenty.' }
+    ];
+
+    function setError(el, msg) {
+      const note = document.getElementById(el.id + '-error');
+      if (msg) {
+        el.setAttribute('aria-invalid', 'true');
+        el.setAttribute('aria-describedby', el.id + '-error');
+        if (note) { note.textContent = msg; note.classList.add('is-visible'); }
+      } else {
+        el.removeAttribute('aria-invalid');
+        el.removeAttribute('aria-describedby');
+        if (note) { note.textContent = ''; note.classList.remove('is-visible'); }
+      }
+    }
+
+    function validateField(spec) {
+      const el = document.getElementById(spec.id);
+      if (!el) return true;
+      const val = (el.value || '').trim();
+      if (!val)                        { setError(el, spec.empty);   return false; }
+      if (spec.test && !spec.test(val)) { setError(el, spec.invalid); return false; }
+      setError(el, null);
+      return true;
+    }
+
+    // Re-check a field as it's corrected, but only once it has already errored.
+    FIELDS.forEach(spec => {
+      const el = document.getElementById(spec.id);
+      if (!el) return;
+      const recheck = () => { if (el.getAttribute('aria-invalid') === 'true') validateField(spec); };
+      el.addEventListener('input', recheck);
+      el.addEventListener('change', recheck);
+      el.addEventListener('blur', () => { if (el.getAttribute('aria-invalid') === 'true') validateField(spec); });
+    });
+
+    function showStatus(kind, html, replaceForm) {
+      if (!status) return;
+      status.innerHTML = html;
+      status.style.borderColor = kind === 'ok' ? 'var(--amber)' : '#FF8A73';
+      status.hidden = false;
+      if (replaceForm) form.hidden = true;
+      status.focus();
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const results = FIELDS.map(validateField);
+      if (results.indexOf(false) !== -1) {
+        const firstBad = form.querySelector('[aria-invalid="true"]');
+        if (firstBad) firstBad.focus();
+        return;
+      }
+
+      // Honeypot: an off-screen field only a bot fills in. Silently accept and drop,
+      // so the bot gets no signal about which check caught it.
+      const hp = form.querySelector('[name="company"]');
+      if (hp && hp.value) {
+        showStatus('ok', "<p style=\"margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--paper);\">Got it &mdash; I'll reply to you personally, usually within a day.</p>", true);
+        return;
+      }
+
+      // Fill-time floor: a second, weaker bot signal. This one must NEVER silently drop
+      // the message — autofill and password managers can make a real person look instant,
+      // and telling someone "got it" while binning their message is far worse than
+      // letting a bot through. So: ask for one more press, and let it send next time.
+      if ((Date.now() - openedAt) < 2500 && !form.dataset.retried) {
+        form.dataset.retried = '1';
+        showStatus('err', "<p style=\"margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--paper);\">Just checking you&rsquo;re human &mdash; press <strong>Send it</strong> once more and it&rsquo;ll go through.</p>", false);
+        return;
+      }
+
+      if (!CONTACT_ENDPOINT) {
+        console.warn('[contact] CONTACT_ENDPOINT is empty — see the TODO at the top of this script and SETUP.md. Nothing was sent.');
+        showStatus('err', "<p style=\"margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--paper);\">This form isn't connected yet &mdash; sorry. Please email me directly at <a href=\"mailto:elinahovakimyan@gmail.com\" style=\"color:var(--amber);\">elinahovakimyan@gmail.com</a> and I'll reply the same way.</p>", false);
+        return;
+      }
+
+      const original = submitEl.innerHTML;
+      submitEl.disabled = true;
+      submitEl.innerHTML = 'Sending&hellip;';
+
+      try {
+        const res = await fetch(CONTACT_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+
+        showStatus('ok', "<p style=\"margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--paper);\">Got it &mdash; I'll reply to you personally, usually within a day.</p>", true);
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            service:  (document.getElementById('cf-service')  || {}).value || '',
+            timeline: (document.getElementById('cf-timeline') || {}).value || ''
+          });
+        }
+        form.reset();
+      } catch (err) {
+        console.error('[contact] submit failed:', err);
+        showStatus('err', "<p style=\"margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--paper);\">That didn't go through &mdash; please try again. If it keeps failing, email me at <a href=\"mailto:elinahovakimyan@gmail.com\" style=\"color:var(--amber);\">elinahovakimyan@gmail.com</a>.</p>", false);
+      } finally {
+        submitEl.disabled = false;
+        submitEl.innerHTML = original;
+      }
+    });
+  })();
+
+  // ── Pre-select the service when arriving from a section CTA ──
+  (function() {
+    const select = document.getElementById('cf-service');
+    if (!select) return;
+
+    const VALID = ['mobile-app', 'website', 'improve', 'training', 'other'];
+    function pick(value) {
+      if (VALID.indexOf(value) === -1) return;
+      select.value = value;
+      select.removeAttribute('aria-invalid');
+      const note = document.getElementById('cf-service-error');
+      if (note) { note.textContent = ''; note.classList.remove('is-visible'); }
+    }
+
+    // Any CTA on the page: <a href="#contact" data-service="...">
+    document.addEventListener('click', (e) => {
+      const cta = e.target.closest('[data-service]');
+      if (cta) pick(cta.getAttribute('data-service'));
+    });
+
+    // Deep links from elsewhere, e.g. /?service=training#contact
+    const fromUrl = new URLSearchParams(location.search).get('service');
+    if (fromUrl) pick(fromUrl);
   })();
 </script>
 

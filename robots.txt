@@ -29,4 +29,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://elina.dev/sitemap.xml
+Sitemap: https://elinahovakimyan.com/sitemap.xml
