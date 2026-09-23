@@ -846,46 +846,114 @@
 
   <main id="main">
 
-  <!-- ── HERO (spotlight) ── -->
-  <header id="top">
-    <div style="max-width:920px;margin:0 auto;padding:clamp(48px,7vw,88px) clamp(20px,4vw,48px) clamp(32px,4vw,56px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;">
-      <span class="eyebrow">elina hovakimyan · mobile engineer · react native</span>
-      <h1 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.02;letter-spacing:-0.025em;color:var(--ink);">I turn app ideas<br>into <span style="color:var(--amber);">shipped</span> products.</h1>
-      <p style="margin:0;max-width:52ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:var(--slate);">I help founders turn mobile app ideas into real products — from MVP to the store. 40+ apps shipped, founder-brain included.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:4px;">
-        <a href="#contact" class="btn btn-primary nudge">Start a project <span class="arrow">&rarr;</span></a>
-        <a href="#work"    class="btn btn-secondary">See my work</a>
+  <!-- ── HERO (split: pitch + animated product illustration) ── -->
+  <header id="top" style="position:relative;">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(48px,6vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,5vw,72px);align-items:center;">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;">
+        <span class="eyebrow">elina hovakimyan · mobile &amp; web engineer</span>
+        <h1 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:-0.025em;color:var(--ink);text-wrap:balance;">I turn app ideas into <span style="position:relative;display:inline-block;white-space:nowrap;"><span id="hero-mark" aria-hidden="true" style="position:absolute;left:-0.06em;right:-0.06em;bottom:0.08em;height:0.4em;background:var(--amber);border-radius:0.12em;transform:rotate(-1.5deg);transform-origin:left center;"></span><span style="position:relative;">shipped</span></span> products.</h1>
+        <p style="margin:0;max-width:46ch;font-family:var(--font-body);font-size:18px;line-height:1.6;color:var(--slate);text-wrap:pretty;">I help founders turn mobile app and website ideas into real products — from MVP to the App Store, Google Play, and the web. React Native specialist, founder-brain included.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:4px;">
+          <a href="#contact" class="btn btn-primary nudge">Tell me about your app <span class="arrow">&rarr;</span></a>
+          <a href="#work"    class="btn btn-secondary">See my work</a>
+        </div>
+        <!-- Risk-reducer at the point of first decision. Both claims are ones the site
+             already makes further down (a short scoping call; a reply within a day). -->
+        <p class="hero-reassure">Free scoping call &middot; I reply personally, usually within a day</p>
+        <!-- Proof stats. Every figure here already appears elsewhere on the site. -->
+        <div style="display:flex;flex-wrap:wrap;gap:20px 40px;width:100%;margin-top:12px;padding-top:24px;border-top:1px solid var(--hairline);">
+          <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1;letter-spacing:-0.02em;color:var(--ink);">40+</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--slate);">apps shipped</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1;letter-spacing:-0.02em;color:var(--ink);">5500+</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--slate);">students taught</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1;letter-spacing:-0.02em;color:var(--ink);">MVP → store</span><span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--slate);">ios · android · web</span></div>
+        </div>
       </div>
-      <!-- Risk-reducer at the point of first decision. Both claims are ones the site
-           already makes further down (a short scoping call; a reply within a day). -->
-      <p class="hero-reassure">Free scoping call &middot; I reply personally, usually within a day</p>
 
-      <!-- ── P0-1: trust bar. Every figure here already appears elsewhere on the
-           site; nothing new is claimed. ── -->
-      <div class="trust-bar">
-        <span class="trust-item">40+ apps shipped</span>
-        <span class="trust-item">live on the App&nbsp;Store &amp; Google&nbsp;Play</span>
-        <span class="trust-item">5,500+ developers taught</span>
-      </div>
+      <!-- Animated product illustration (browser + code editor + phone). Decorative. -->
+      <div id="hero-illo" aria-hidden="true" style="position:relative;width:100%;max-width:600px;justify-self:center;aspect-ratio:1/0.96;container-type:inline-size;">
+        <div class="illo-3d" style="position:absolute;inset:0;">
+        <div style="position:absolute;right:0;top:14cqw;width:60cqw;height:60cqw;border-radius:22%;background:var(--amber);transform:rotate(-6deg);"></div>
 
-      <!-- Hero photo with app-icon stack decoration -->
-      <div id="hero-area" style="position:relative;margin-top:20px;display:flex;justify-content:center;">
-        <!-- stickers -->
-        <div class="stk" data-rot="-12" data-parallax="0.12" style="position:absolute;top:-6%;left:6%;width:56px;height:56px;border-radius:22%;background:var(--mint);transform:rotate(-12deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--mint-ink);box-shadow:var(--shadow-card);z-index:3;">&lt;/&gt;</div>
-        <div class="stk" data-rot="10"  data-parallax="0.15" style="position:absolute;top:4%;right:2%;width:48px;height:48px;border-radius:22%;background:var(--ink);transform:rotate(10deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--paper);box-shadow:var(--shadow-card);z-index:3;">TS</div>
-        <div class="stk" data-rot="-7"  data-parallax="0.11" style="position:absolute;bottom:-4%;left:14%;width:46px;height:46px;border-radius:22%;background:var(--amber);transform:rotate(-7deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:17px;font-weight:700;color:var(--ink);box-shadow:var(--shadow-card);z-index:3;">$</div>
-        <!-- AppIconStack size=300 -->
-        <div style="position:relative;width:300px;height:300px;flex-shrink:0;">
-          <div style="position:absolute;border-radius:var(--appicon-radius);width:186px;height:186px;background:var(--ink);top:-18px;right:-15px;transform:rotate(8deg);"></div>
-          <div style="position:absolute;border-radius:var(--appicon-radius);width:144px;height:144px;background:var(--mint);bottom:-15px;left:-18px;transform:rotate(-6deg);"></div>
-          <div style="position:absolute;inset:0;width:300px;height:300px;border-radius:var(--appicon-radius);background:var(--amber);transform:rotate(-3deg);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;">
-            <img src="assets/opt/elina-600.jpg"
-                 srcset="assets/opt/elina-600.jpg 600w, assets/opt/elina-900.jpg 900w"
-                 sizes="300px" width="300" height="300"
-                 fetchpriority="high" decoding="async"
-                 alt="Elina Hovakimyan" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;top:5cqw;left:0;width:74cqw;background:var(--white);border:1px solid var(--hairline);border-radius:2.4cqw;box-shadow:var(--shadow-lift);overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:1cqw;height:5.8cqw;padding:0 2.2cqw;border-bottom:1px solid var(--hairline);background:var(--paper);">
+            <span style="width:1.4cqw;height:1.4cqw;border-radius:50%;background:var(--hairline);"></span><span style="width:1.4cqw;height:1.4cqw;border-radius:50%;background:var(--hairline);"></span><span style="width:1.4cqw;height:1.4cqw;border-radius:50%;background:var(--hairline);"></span>
+            <div style="margin:0 auto;width:52%;height:3.4cqw;border-radius:999px;background:var(--white);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:1.5cqw;color:var(--slate);">yourproduct.com</div>
+          </div>
+          <div style="padding:2.8cqw 3.2cqw 3.2cqw;display:flex;flex-direction:column;gap:2.6cqw;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div class="b-text" style="display:flex;align-items:center;gap:0.9cqw;"><span style="width:2.6cqw;height:2.6cqw;border-radius:22%;background:var(--ink);"></span><span style="font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:1.8cqw;color:var(--ink);">yourproduct</span></div>
+              <div class="b-text" style="display:flex;align-items:center;gap:2cqw;font-family:var(--font-mono);font-size:1.35cqw;color:var(--slate);"><span>features</span><span>pricing</span><span style="padding:0.7cqw 1.4cqw;border-radius:999px;background:var(--ink);color:var(--paper);">sign in</span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:2.6cqw;align-items:center;">
+              <div style="display:flex;flex-direction:column;gap:1.4cqw;">
+                <span class="b-text" style="font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:3.7cqw;line-height:1.04;color:var(--ink);">Plan events in minutes.</span>
+                <span class="b-text" style="font-family:var(--font-body);font-size:1.5cqw;line-height:1.5;color:var(--slate);">Invites, venues and payments in one app.</span>
+                <div style="position:relative;display:flex;gap:1.2cqw;align-items:center;margin-top:0.4cqw;">
+                  <div class="b-btn" style="height:4.2cqw;padding:0 2.2cqw;border-radius:999px;background:var(--amber);display:flex;align-items:center;font-family:var(--font-body);font-weight:600;font-size:1.5cqw;color:var(--ink);white-space:nowrap;">Get started</div>
+                  <div class="b-text" style="height:4.2cqw;padding:0 1.8cqw;border-radius:999px;border:1px solid var(--ink);display:flex;align-items:center;font-family:var(--font-body);font-weight:500;font-size:1.5cqw;color:var(--ink);white-space:nowrap;">Watch demo</div>
+                  <svg class="b-cursor" viewBox="0 0 24 24" style="position:absolute;left:9cqw;top:2.2cqw;width:3.4cqw;height:3.4cqw;overflow:visible;z-index:2;"><path d="M4 3l7.5 18 2.4-7.1L21 11.5z" fill="var(--ink)" stroke="var(--white)" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+                </div>
+              </div>
+              <div class="b-card" style="background:var(--paper);border-radius:1.8cqw;padding:1.6cqw;display:flex;flex-direction:column;gap:0.6cqw;">
+                <span style="font-family:var(--font-mono);font-size:1.25cqw;color:var(--slate);">bookings · 30 days</span>
+                <span style="font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:2.8cqw;line-height:1;color:var(--ink);">2,480</span>
+                <svg viewBox="0 0 100 40" preserveAspectRatio="none" style="width:100%;height:8cqw;overflow:visible;"><path d="M0 34 L14 30 L28 32 L42 22 L56 25 L70 14 L84 16 L100 4" fill="none" stroke="var(--hairline)" stroke-width="1" vector-effect="non-scaling-stroke"></path><path class="b-line" pathLength="1" d="M0 34 L14 30 L28 32 L42 22 L56 25 L70 14 L84 16 L100 4" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" style="stroke-dasharray:1;stroke-dashoffset:0;"></path></svg>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6cqw;"><div class="b-card" style="background:var(--paper);border-radius:1.6cqw;padding:1.4cqw;display:flex;flex-direction:column;gap:0.9cqw;"><div style="width:3cqw;height:3cqw;border-radius:22%;background:var(--ink);"></div><span style="font-family:var(--font-body);font-weight:600;font-size:1.5cqw;color:var(--ink);">Invites</span><div style="width:80%;height:0.8cqw;border-radius:999px;background:rgba(22,20,15,.12);"></div><div style="width:56%;height:0.8cqw;border-radius:999px;background:rgba(22,20,15,.08);"></div></div><div class="b-card" style="background:var(--paper);border-radius:1.6cqw;padding:1.4cqw;display:flex;flex-direction:column;gap:0.9cqw;"><div style="width:3cqw;height:3cqw;border-radius:22%;background:var(--amber-tint);"></div><span style="font-family:var(--font-body);font-weight:600;font-size:1.5cqw;color:var(--ink);">Venues</span><div style="width:80%;height:0.8cqw;border-radius:999px;background:rgba(22,20,15,.12);"></div><div style="width:56%;height:0.8cqw;border-radius:999px;background:rgba(22,20,15,.08);"></div></div><div class="b-card" style="background:var(--paper);border-radius:1.6cqw;padding:1.4cqw;display:flex;flex-direction:column;gap:0.9cqw;"><div style="width:3cqw;height:3cqw;border-radius:22%;background:rgba(22,20,15,.12);"></div><span style="font-family:var(--font-body);font-weight:600;font-size:1.5cqw;color:var(--ink);">Payments</span><div style="width:80%;height:0.8cqw;border-radius:999px;background:rgba(22,20,15,.12);"></div><div style="width:56%;height:0.8cqw;border-radius:999px;background:rgba(22,20,15,.08);"></div></div></div>
           </div>
         </div>
+
+        <div style="position:absolute;left:2cqw;top:57cqw;width:46cqw;background:var(--ink);border-radius:2.4cqw;box-shadow:var(--shadow-lift);overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:0.9cqw;height:4.8cqw;padding:0 2cqw;border-bottom:1px solid var(--hairline-ink);">
+            <span style="width:1.2cqw;height:1.2cqw;border-radius:50%;background:rgba(250,246,238,.2);"></span><span style="width:1.2cqw;height:1.2cqw;border-radius:50%;background:rgba(250,246,238,.2);"></span><span style="width:1.2cqw;height:1.2cqw;border-radius:50%;background:rgba(250,246,238,.2);"></span>
+            <span style="margin-left:1.2cqw;font-family:var(--font-mono);font-size:1.35cqw;color:rgba(250,246,238,.6);">Booking.tsx</span>
+          </div>
+          <div style="padding:1.6cqw 2cqw 2cqw;font-family:var(--font-mono);font-size:1.5cqw;line-height:2.45cqw;color:var(--paper);">
+            <div style="display:flex;gap:1.6cqw;white-space:nowrap;"><span style="width:1.8cqw;text-align:right;color:rgba(250,246,238,.28);">1</span><span class="c-line" style="display:inline-block;"><span style="color:var(--mint);">&lt;Sheet</span> <span style="color:rgba(250,246,238,.6);">title=</span>"Confirm"<span style="color:var(--mint);">&gt;</span></span></div><div style="display:flex;gap:1.6cqw;white-space:nowrap;"><span style="width:1.8cqw;text-align:right;color:rgba(250,246,238,.28);">2</span><span class="c-line" style="display:inline-block;">&nbsp;&nbsp;<span style="color:var(--mint);">&lt;Guests</span> <span style="color:rgba(250,246,238,.6);">count=</span>{8} <span style="color:var(--mint);">/&gt;</span></span></div><div style="display:flex;gap:1.6cqw;white-space:nowrap;"><span style="width:1.8cqw;text-align:right;color:rgba(250,246,238,.28);">3</span><span class="c-line" style="display:inline-block;">&nbsp;&nbsp;<span style="color:var(--mint);">&lt;Button</span> <span style="color:rgba(250,246,238,.6);">onPress=</span>{book}<span style="color:var(--mint);">&gt;</span></span></div><div style="display:flex;gap:1.6cqw;white-space:nowrap;"><span style="width:1.8cqw;text-align:right;color:rgba(250,246,238,.28);">4</span><span class="c-line" style="display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;Confirm</span></div><div style="display:flex;gap:1.6cqw;white-space:nowrap;"><span style="width:1.8cqw;text-align:right;color:rgba(250,246,238,.28);">5</span><span class="c-line" style="display:inline-block;">&nbsp;&nbsp;<span style="color:var(--mint);">&lt;/Button&gt;</span></span></div><div style="display:flex;gap:1.6cqw;white-space:nowrap;"><span style="width:1.8cqw;text-align:right;color:rgba(250,246,238,.28);">6</span><span class="c-line" style="display:inline-block;"><span style="color:var(--mint);">&lt;/Sheet&gt;</span></span></div>
+            <div class="c-done" style="display:flex;gap:1.6cqw;margin-top:0.8cqw;padding-top:0.8cqw;border-top:1px solid var(--hairline-ink);color:var(--mint);white-space:nowrap;"><span style="width:1.8cqw;text-align:right;">$</span><span>eas build --all&nbsp;&nbsp;✓ passed</span></div>
+          </div>
+        </div>
+
+        <div style="position:absolute;right:2cqw;top:18cqw;width:32cqw;height:66cqw;background:var(--ink);border-radius:5.8cqw;padding:1.1cqw;box-shadow:var(--shadow-lift);">
+          <div style="position:relative;width:100%;height:100%;background:var(--paper);border-radius:4.8cqw;overflow:hidden;">
+            <div style="position:absolute;top:1.2cqw;left:50%;width:9cqw;height:2.5cqw;margin-left:-4.5cqw;border-radius:999px;background:var(--ink);z-index:5;"></div>
+            <div style="position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:1.5cqw 3.2cqw 1cqw;background:var(--paper);font-family:var(--font-mono);font-size:1.4cqw;font-weight:600;color:var(--ink);"><span>9:41</span><span style="width:3.2cqw;height:1.4cqw;border-radius:0.5cqw;border:1px solid var(--ink);"></span></div>
+            <div class="p-scroll" style="padding:2.2cqw 2.2cqw 0;display:flex;flex-direction:column;gap:1.6cqw;">
+              <div class="p-row" style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;flex-direction:column;gap:0.2cqw;"><span style="font-family:var(--font-mono);font-size:1.3cqw;color:var(--slate);">hi, ana</span><span style="font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:3cqw;line-height:1.05;color:var(--ink);">Your events</span></div><span style="width:4.2cqw;height:4.2cqw;border-radius:50%;background:var(--amber-tint);display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:1.6cqw;color:var(--ink);">A</span></div>
+              <div class="p-card" style="background:var(--ink);border-radius:2.4cqw;padding:2cqw;display:flex;flex-direction:column;gap:1cqw;">
+                <span style="font-family:var(--font-mono);font-size:1.3cqw;color:rgba(250,246,238,.6);">fri · 7:30 pm</span>
+                <span style="font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:2.9cqw;line-height:1;color:var(--paper);">Friday dinner</span>
+                <div style="display:flex;align-items:center;gap:1cqw;"><div style="display:flex;"><span style="width:2.8cqw;height:2.8cqw;border-radius:50%;background:var(--paper);border:2px solid var(--ink);"></span><span style="width:2.8cqw;height:2.8cqw;border-radius:50%;background:var(--amber);border:2px solid var(--ink);margin-left:-1cqw;"></span><span style="width:2.8cqw;height:2.8cqw;border-radius:50%;background:var(--hairline);border:2px solid var(--ink);margin-left:-1cqw;"></span></div><span style="font-family:var(--font-mono);font-size:1.3cqw;color:rgba(250,246,238,.72);">+5 going</span></div>
+                <div style="display:flex;align-items:center;gap:1cqw;"><div style="flex:1;height:0.9cqw;border-radius:999px;background:rgba(250,246,238,.16);overflow:hidden;"><div class="p-fill" style="width:75%;height:100%;border-radius:999px;background:var(--amber);transform-origin:left center;"></div></div><span style="font-family:var(--font-mono);font-size:1.2cqw;color:rgba(250,246,238,.72);">6/8</span></div>
+              </div>
+              <div class="p-row" style="background:var(--white);border-radius:2cqw;padding:1.5cqw;box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:1cqw;"><span style="font-family:var(--font-mono);font-size:1.25cqw;color:var(--slate);">rsvps this week</span><div style="display:flex;align-items:flex-end;gap:0.8cqw;height:6cqw;"><div class="p-bar" style="flex:1;height:38%;border-radius:0.6cqw;background:rgba(22,20,15,.14);transform-origin:bottom center;"></div><div class="p-bar" style="flex:1;height:55%;border-radius:0.6cqw;background:rgba(22,20,15,.14);transform-origin:bottom center;"></div><div class="p-bar" style="flex:1;height:44%;border-radius:0.6cqw;background:rgba(22,20,15,.14);transform-origin:bottom center;"></div><div class="p-bar" style="flex:1;height:70%;border-radius:0.6cqw;background:rgba(22,20,15,.14);transform-origin:bottom center;"></div><div class="p-bar" style="flex:1;height:62%;border-radius:0.6cqw;background:rgba(22,20,15,.14);transform-origin:bottom center;"></div><div class="p-bar" style="flex:1;height:84%;border-radius:0.6cqw;background:rgba(22,20,15,.14);transform-origin:bottom center;"></div><div class="p-bar" style="flex:1;height:100%;border-radius:0.6cqw;background:var(--ink);transform-origin:bottom center;"></div></div></div>
+              <div class="p-row" style="position:relative;overflow:hidden;display:flex;align-items:center;gap:1.4cqw;padding:1.3cqw 1.4cqw;background:var(--white);border-radius:2cqw;box-shadow:var(--shadow-card);"><div style="flex-shrink:0;width:4.4cqw;height:4.4cqw;border-radius:22%;background:var(--amber-tint);"></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:0.3cqw;"><span style="font-family:var(--font-body);font-weight:600;font-size:1.45cqw;line-height:1.2;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Rooftop venue</span><span style="font-family:var(--font-mono);font-size:1.25cqw;color:var(--slate);white-space:nowrap;">fri · 8 guests</span></div><span style="flex-shrink:0;font-family:var(--font-mono);font-size:1.2cqw;padding:0.5cqw 1cqw;border-radius:999px;background:var(--ink);color:var(--paper);">booked</span></div>
+              <div class="p-row" style="position:relative;overflow:hidden;display:flex;align-items:center;gap:1.4cqw;padding:1.3cqw 1.4cqw;background:var(--white);border-radius:2cqw;box-shadow:var(--shadow-card);"><div style="flex-shrink:0;width:4.4cqw;height:4.4cqw;border-radius:22%;background:rgba(22,20,15,.1);"></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:0.3cqw;"><span style="font-family:var(--font-body);font-weight:600;font-size:1.45cqw;line-height:1.2;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Catering</span><span style="font-family:var(--font-mono);font-size:1.25cqw;color:var(--slate);white-space:nowrap;">3 quotes in</span></div><span style="flex-shrink:0;font-family:var(--font-mono);font-size:1.2cqw;padding:0.5cqw 1cqw;border-radius:999px;background:var(--paper);color:var(--ink);border:1px solid var(--hairline);">review</span><div class="p-tap" style="position:absolute;left:50%;top:50%;width:12cqw;height:12cqw;margin:-6cqw 0 0 -6cqw;border-radius:50%;background:var(--ink);opacity:0;pointer-events:none;"></div></div>
+              <div class="p-row" style="position:relative;overflow:hidden;display:flex;align-items:center;gap:1.4cqw;padding:1.3cqw 1.4cqw;background:var(--white);border-radius:2cqw;box-shadow:var(--shadow-card);"><div style="flex-shrink:0;width:4.4cqw;height:4.4cqw;border-radius:22%;background:var(--amber-tint);"></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:0.3cqw;"><span style="font-family:var(--font-body);font-weight:600;font-size:1.45cqw;line-height:1.2;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Invites</span><span style="font-family:var(--font-mono);font-size:1.25cqw;color:var(--slate);white-space:nowrap;">6 of 8 replied</span></div><span style="flex-shrink:0;font-family:var(--font-mono);font-size:1.2cqw;padding:0.5cqw 1cqw;border-radius:999px;background:var(--paper);color:var(--ink);border:1px solid var(--hairline);">6/8</span></div>
+              <div class="p-row" style="position:relative;overflow:hidden;display:flex;align-items:center;gap:1.4cqw;padding:1.3cqw 1.4cqw;background:var(--white);border-radius:2cqw;box-shadow:var(--shadow-card);"><div style="flex-shrink:0;width:4.4cqw;height:4.4cqw;border-radius:22%;background:rgba(22,20,15,.1);"></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:0.3cqw;"><span style="font-family:var(--font-body);font-weight:600;font-size:1.45cqw;line-height:1.2;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Playlist</span><span style="font-family:var(--font-mono);font-size:1.25cqw;color:var(--slate);white-space:nowrap;">shared by mark</span></div><span style="flex-shrink:0;font-family:var(--font-mono);font-size:1.2cqw;padding:0.5cqw 1cqw;border-radius:999px;background:var(--paper);color:var(--ink);border:1px solid var(--hairline);">draft</span></div>
+            </div>
+            <div class="p-push" style="position:absolute;top:4.6cqw;left:1.6cqw;right:1.6cqw;z-index:4;display:flex;align-items:center;gap:1.2cqw;padding:1.3cqw;background:var(--white);border-radius:2.4cqw;box-shadow:var(--shadow-lift);opacity:0;transform:translateY(-140%);">
+              <span style="flex-shrink:0;width:3.6cqw;height:3.6cqw;border-radius:22%;background:var(--amber);"></span>
+              <div style="min-width:0;display:flex;flex-direction:column;gap:0.2cqw;"><span style="font-family:var(--font-body);font-weight:600;font-size:1.45cqw;color:var(--ink);">New RSVP</span><span style="font-family:var(--font-body);font-size:1.3cqw;color:var(--slate);white-space:nowrap;">Mark is coming on Friday</span></div>
+            </div>
+            <div style="position:absolute;left:0;right:0;bottom:0;height:6.6cqw;background:var(--white);border-top:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-around;padding:0 2cqw 0.8cqw;z-index:2;">
+              <span style="width:2.3cqw;height:2.3cqw;border-radius:22%;background:var(--ink);"></span><span style="width:2.3cqw;height:2.3cqw;border-radius:22%;background:var(--hairline);"></span><span style="width:2.3cqw;height:2.3cqw;border-radius:22%;background:var(--hairline);"></span><span style="width:2.3cqw;height:2.3cqw;border-radius:22%;background:var(--hairline);"></span>
+            </div>
+            <div class="p-sheet" style="position:absolute;left:0;right:0;bottom:0;z-index:3;background:var(--white);border-radius:3.8cqw 3.8cqw 0 0;box-shadow:0 -8px 24px rgba(22,20,15,.12);padding:1.5cqw 2.4cqw 3.2cqw;display:flex;flex-direction:column;gap:1.2cqw;transform:translateY(110%);">
+              <div style="align-self:center;width:6cqw;height:0.8cqw;border-radius:999px;background:var(--hairline);"></div>
+              <span style="font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:2.4cqw;color:var(--ink);">Confirm catering</span>
+              <span style="font-family:var(--font-mono);font-size:1.3cqw;color:var(--slate);">fri 7:30 pm · 8 guests</span>
+              <div class="p-confirm" style="margin-top:0.6cqw;height:4.8cqw;border-radius:999px;background:var(--amber);display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:1.7cqw;color:var(--ink);">Confirm</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:8cqw;bottom:2cqw;">
+          <div class="p-toast" style="display:flex;align-items:center;gap:1.4cqw;padding:1.6cqw 2.6cqw;background:var(--ink);border-radius:999px;box-shadow:var(--shadow-lift);font-family:var(--font-mono);font-size:1.85cqw;color:var(--mint);white-space:nowrap;"><span style="width:1.4cqw;height:1.4cqw;border-radius:50%;background:var(--mint);"></span>$ shipped: v1.0 → app store · play · web</div>
+        </div>
+        </div>
+        <div class="stk" data-rot="12" data-parallax="0.16" style="position:absolute;top:11cqw;right:-3cqw;width:8.5cqw;height:8.5cqw;border-radius:22%;background:var(--white);transform:rotate(12deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:2.3cqw;font-weight:700;color:var(--ink);box-shadow:var(--shadow-card);z-index:4;">RN</div>
+        <div class="stk" data-rot="-9" data-parallax="0.12" style="position:absolute;top:-2cqw;left:-3cqw;width:8cqw;height:8cqw;border-radius:22%;background:var(--mint);transform:rotate(-9deg);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:2.2cqw;font-weight:700;color:var(--mint-ink);box-shadow:var(--shadow-card);z-index:4;">TS</div>
       </div>
     </div>
   </header>
@@ -910,108 +978,6 @@
       <span style="font-family:var(--font-mono);font-size:var(--fs-mono-caption);color:var(--mint);white-space:nowrap;letter-spacing:var(--tracking-mono);"><span style="opacity:.55;">$&nbsp;</span>currently: helping founders ship — remotely</span>
     </div>
   </div>
-
-  <!-- ── SERVICES ── -->
-  <section id="services" aria-label="Services" style="background:var(--paper);position:relative;overflow:hidden;">
-    <div aria-hidden="true" style="position:absolute;top:-28px;left:5%;width:84px;height:84px;border-radius:22%;background:var(--mint);opacity:.45;transform:rotate(-9deg);"></div>
-    <div aria-hidden="true" style="position:absolute;bottom:-30px;right:6%;width:58px;height:58px;border-radius:22%;border:2px solid var(--hairline);transform:rotate(12deg);"></div>
-    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);position:relative;">
-      <span class="eyebrow">what i do</span>
-      <h2 style="margin:16px 0 8px;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Three ways I help founders ship.</h2>
-      <p style="margin:0 0 44px;max-width:52ch;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--slate);">Pick the one that sounds like you — every project starts with a short call to scope it honestly.</p>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:stretch;">
-
-        <!-- Service: Build a mobile app from scratch -->
-        <div class="svc-card reveal" style="display:flex;flex-direction:column;gap:16px;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:30px 28px 28px;">
-          <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:1.28rem;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);">Build a mobile app from scratch</h3>
-          <p style="margin:0;font-family:var(--font-body);font-size:15.5px;line-height:1.62;color:var(--slate);">iOS + Android, from idea to the App Store and Google Play. I scope the MVP, build it in React Native, and ship it to real stores — with the founder-brain to tell you what has to exist for launch and what can wait.</p>
-          <p style="margin:0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-60);"><span style="opacity:.55;">$&nbsp;</span>best for: founders with an idea and no app yet.</p>
-          <!-- P1-7: TODO(elin): confirm range, e.g. "MVP in 6-10 weeks" -->
-          <p class="svc-scope"><span style="opacity:.55;">$&nbsp;</span>starts with: a short scoping call</p>
-          <div style="margin-top:auto;padding-top:6px;">
-            <a href="#contact" data-service="mobile-app" class="btn btn-primary btn-sm">Start your app →</a>
-          </div>
-        </div>
-        <!-- Service: Build a website from scratch -->
-        <div class="svc-card reveal" style="display:flex;flex-direction:column;gap:16px;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:30px 28px 28px;">
-          <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:1.28rem;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);">Build a website from scratch</h3>
-          <p style="margin:0;font-family:var(--font-body);font-size:15.5px;line-height:1.62;color:var(--slate);">A fast, modern marketing site or web app, built and launched end-to-end. Design, build, and deploy — no hand-off gaps.</p>
-          <p style="margin:0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-60);"><span style="opacity:.55;">$&nbsp;</span>best for: founders who need a real web presence or web product, not a template.</p>
-          <!-- P1-7: TODO(elin): confirm range, e.g. "live in 2-4 weeks" -->
-          <p class="svc-scope"><span style="opacity:.55;">$&nbsp;</span>starts with: a short scoping call</p>
-          <div style="margin-top:auto;padding-top:6px;">
-            <a href="#contact" data-service="website" class="btn btn-primary btn-sm">Build my site →</a>
-          </div>
-        </div>
-        <!-- Service: Improve an existing app or website -->
-        <div class="svc-card reveal" style="display:flex;flex-direction:column;gap:16px;background:var(--white);border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:30px 28px 28px;">
-          <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:1.28rem;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);">Improve an existing app or website</h3>
-          <p style="margin:0;font-family:var(--font-body);font-size:15.5px;line-height:1.62;color:var(--slate);">Inherited a messy codebase, a slow app, or a stalled build? I audit what you have, fix what&rsquo;s broken, and get it back to shipping — performance, crashes, App Store rejections, or a rescue of a half-finished product.</p>
-          <p style="margin:0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-60);"><span style="opacity:.55;">$&nbsp;</span>best for: founders with something already live or in progress.</p>
-          <!-- P1-7: TODO(elin): confirm range, e.g. "audit in 1 week" -->
-          <p class="svc-scope"><span style="opacity:.55;">$&nbsp;</span>starts with: a short scoping call</p>
-          <div style="margin-top:auto;padding-top:6px;">
-            <a href="#contact" data-service="improve" class="btn btn-primary btn-sm">Fix what I have →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── How we work together ── -->
-      <div style="margin-top:44px;border:1.5px dashed var(--hairline);border-radius:var(--radius-card);background:rgba(255,255,255,.5);padding:30px clamp(20px,3vw,34px);">
-        <span class="eyebrow">how we work together</span>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px 28px;margin-top:20px;">
-          <div>
-            <span class="tag tag-mint">MVP sprint</span>
-            <!-- TODO(elin): add a duration here, e.g. "2-6 weeks" -->
-            <span class="mode-dur"></span>
-            <p style="margin:12px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--slate);">A focused build to get your first version into real users&rsquo; hands, fast.</p>
-          </div>
-          <div>
-            <span class="tag tag-mint">Full build</span>
-            <!-- TODO(elin): add a duration here, e.g. "2-6 weeks" -->
-            <span class="mode-dur"></span>
-            <p style="margin:12px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--slate);">End-to-end from scope to store launch, with you in the loop the whole way.</p>
-          </div>
-          <div>
-            <span class="tag tag-mint">Retainer / improvements</span>
-            <!-- TODO(elin): add a duration here, e.g. "2-6 weeks" -->
-            <span class="mode-dur"></span>
-            <p style="margin:12px 0 0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--slate);">Ongoing work to fix, optimize, and keep shipping after launch.</p>
-          </div>
-        </div>
-        <p style="margin:26px 0 0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:var(--ink-80);"><span style="opacity:.55;">$&nbsp;</span>every project starts with a short call to scope it honestly — you&rsquo;ll know what it takes before you commit.</p>
-      </div>
-
-      <!--
-        TODO(elin): client testimonials — see SETUP.md
-        Uncomment this block and fill in 2–3 real quotes from founders/clients you have built for.
-        Student reviews live in #teaching; these should be CLIENT quotes, which buyers of build
-        services weigh far more heavily. Nothing is rendered until you fill these in.
-
-      <div style="margin-top:48px;">
-        <span class="eyebrow">what clients say</span>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:22px;">
-
-          <div class="review-card" style="background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:24px 24px 26px;">
-            <p style="margin:0;font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);">TODO(elin): client quote</p>
-            <div style="display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--hairline);">
-              <span style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:13px;font-weight:700;">??</span>
-              <div>
-                <div style="font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--ink);">TODO(elin): name</div>
-                <span style="font-family:var(--font-mono);font-size:12px;color:var(--slate);">TODO(elin): role, company</span>
-              </div>
-            </div>
-          </div>
-
-          (repeat the card above for testimonial 2 and 3)
-
-        </div>
-      </div>
-      -->
-
-    </div>
-  </section>
 
   <!-- ── ABOUT ── -->
   <section id="about" aria-label="About" style="background:var(--ink);position:relative;overflow:hidden;">
@@ -1053,98 +1019,86 @@
     </div>
   </section>
 
-  <!-- ── SKILLS ── -->
-  <section id="skills" aria-label="Skills" style="background:var(--paper);position:relative;overflow:hidden;">
-    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
-      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:44px;">
-        <span class="eyebrow">what i work with</span>
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Built to ship, not to impress.</h2>
-        <p style="margin:0;font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:var(--slate);">$ hover — the pills scatter</p>
+  <!-- ── SERVICES ── -->
+  <section id="services" aria-label="Services" style="background:var(--paper);position:relative;overflow:hidden;">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(40px,5vw,64px);">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <span class="eyebrow">how i can help</span>
+          <h2 style="margin:0;font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.04;color:var(--ink);text-wrap:balance;">From idea to <span style="position:relative;display:inline-block;"><span aria-hidden="true" style="position:absolute;left:-0.05em;right:-0.05em;bottom:0.08em;height:0.38em;background:var(--amber);border-radius:0.12em;transform:rotate(-1.5deg);"></span><span style="position:relative;">launch.</span></span></h2>
+        </div>
       </div>
-      <div style="position:relative;max-width:960px;margin:0 auto;">
-        <div aria-hidden="true" style="position:absolute;inset:-14px -6px;border:1.5px dashed var(--hairline);border-radius:36px;transform:rotate(-1.4deg);background:rgba(255,255,255,.45);"></div>
-        <div aria-hidden="true" style="position:absolute;top:-22px;left:-10px;width:56px;height:56px;border-radius:22%;background:var(--mint);transform:rotate(-9deg);box-shadow:var(--shadow-card);z-index:2;"></div>
-        <div aria-hidden="true" style="position:absolute;bottom:-24px;right:-8px;width:44px;height:44px;border-radius:22%;background:var(--ink);transform:rotate(11deg);box-shadow:var(--shadow-card);z-index:2;"></div>
-        <div id="skill-cloud" style="position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:12px;padding:36px 28px;min-height:230px;">
-          <span class="skill-group-label" aria-hidden="true">$ ship</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Native</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Expo</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">App Store</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Play</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Push Notifications</span>
-          <span class="skill-group-label" aria-hidden="true">$ scale</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">TypeScript</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Node.js</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GraphQL</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CI/CD</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase</span>
-          <span class="skill-group-label" aria-hidden="true">$ ai</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Code</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">OpenAI API</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Prompt Engineering</span>
-          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AI Integrations</span>
-          <span class="skill-group-label skill-extra" aria-hidden="true">$ the rest of the stack</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">JavaScript</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React.js</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Redux</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Next.js</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">REST APIs</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Cursor</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Copilot</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Messaging</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Video streaming</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Animations</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Calls</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Authentication</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Hooks</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Apple Pay</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Pay</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Mixpanel</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AppsFlyer</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Analytics</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Jest</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Purchases</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Stripe</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">E2E Testing</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Unit Testing</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Visual Testing</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CircleCI</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Git</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GitHub Actions</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">npm</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Yarn</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Profiling</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Reactatron</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Native SDKs</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Lazy Loading</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Code Reviews</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Agile</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Scrum</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">UI / UX</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Figma</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Design</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Fastlane</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Deep Linking</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Offline Mode</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Maps / Geolocation</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Permissions</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Social Login</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">i18n / Localization</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Accessibility</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">WebSockets</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Monorepo</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Design Systems</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Feature Flags</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Sentry</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase Crashlytics</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Performance Optimization</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Detox</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Flipper</span>
-          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Automation</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px;">
+        <article class="svc-card reveal" style="display:flex;flex-direction:column;background:var(--white);border:1px solid var(--ink);border-radius:20px;box-shadow:var(--shadow-card);padding:12px 12px 24px;">
+          <div style="position:relative;height:170px;border-radius:14px;background:var(--amber-tint);overflow:hidden;"><div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:128px;height:128px;margin:-64px 0 0 -64px;border-radius:22%;background:var(--amber);transform:rotate(-6deg);"></div><div style="position:absolute;left:50%;top:22px;width:78px;height:156px;margin-left:-39px;background:var(--ink);border-radius:17px;padding:4px;box-shadow:var(--shadow-lift);"><div style="width:100%;height:100%;background:var(--white);border-radius:13px;padding:14px 8px 8px;display:flex;flex-direction:column;gap:6px;"><div style="height:34px;border-radius:7px;background:var(--ink);"></div><div style="width:80%;height:6px;border-radius:999px;background:rgba(22,20,15,.14);"></div><div style="width:55%;height:6px;border-radius:999px;background:rgba(22,20,15,.14);"></div><div style="height:16px;border-radius:5px;background:var(--paper);"></div><div style="height:16px;border-radius:5px;background:var(--paper);"></div><div style="margin-top:2px;height:14px;border-radius:999px;background:var(--amber);"></div></div></div><span style="position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--font-body);font-weight:600;font-size:12px;color:var(--ink);background:var(--white);padding:5px 11px;border-radius:999px;box-shadow:var(--shadow-card);">In your customers’ pockets</span></div>
+          <div style="display:flex;flex-direction:column;gap:16px;padding:22px 12px 0;flex:1;">
+            <span style="font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--slate);">Most requested</span>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:26px;line-height:1.12;color:var(--ink);text-wrap:balance;">Launch your mobile app</h3>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--slate);text-wrap:pretty;">Your idea, live on the App Store and Google Play. Launch sooner, spend less.</p>
+            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;"><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Clear plan and price upfront</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Weekly progress you can try</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Live in both app stores</span></li></ul>
+            <p style="margin:auto 0 0;padding:14px 16px;border-radius:12px;background:var(--paper);font-family:var(--font-body);font-size:14.5px;line-height:1.5;color:var(--ink);text-wrap:pretty;"><strong style="font-weight:600;">Perfect if</strong> you have an idea and no app yet.</p>
+            <div style="display:flex;padding-top:4px;">
+              <a href="#contact" data-service="mobile-app" class="btn btn-primary">Start your app →</a>
+            </div>
+          </div>
+        </article>
+        <article class="svc-card reveal" style="display:flex;flex-direction:column;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:12px 12px 24px;">
+          <div style="position:relative;height:170px;border-radius:14px;background:var(--amber-tint);overflow:hidden;"><div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:128px;height:128px;margin:-64px 0 0 -64px;border-radius:22%;background:var(--amber);transform:rotate(5deg);"></div><div style="position:absolute;left:50%;top:26px;width:176px;height:156px;margin-left:-88px;background:var(--ink);border-radius:12px;padding:4px;box-shadow:var(--shadow-lift);"><div style="width:100%;height:100%;background:var(--white);border-radius:9px;overflow:hidden;"><div style="display:flex;gap:4px;align-items:center;height:16px;padding:0 8px;background:var(--paper);"><span style="width:5px;height:5px;border-radius:50%;background:var(--hairline);"></span><span style="width:5px;height:5px;border-radius:50%;background:var(--hairline);"></span><span style="width:5px;height:5px;border-radius:50%;background:var(--hairline);"></span></div><div style="padding:12px;display:flex;flex-direction:column;gap:6px;"><div style="width:72%;height:8px;border-radius:999px;background:var(--ink);"></div><div style="width:48%;height:8px;border-radius:999px;background:var(--ink);"></div><div style="width:60%;height:6px;border-radius:999px;background:rgba(22,20,15,.14);"></div><div style="margin-top:3px;width:52px;height:14px;border-radius:999px;background:var(--amber);"></div></div></div></div><span style="position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--font-body);font-weight:600;font-size:12px;color:var(--ink);background:var(--white);padding:5px 11px;border-radius:999px;box-shadow:var(--shadow-card);">Open for business 24/7</span></div>
+          <div style="display:flex;flex-direction:column;gap:16px;padding:22px 12px 0;flex:1;">
+            <span style="font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--slate);">For your brand</span>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:26px;line-height:1.12;color:var(--ink);text-wrap:balance;">Get a website that sells</h3>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--slate);text-wrap:pretty;">A fast site that turns visitors into customers. Design, build and launch in one place.</p>
+            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;"><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Built around your customers</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Looks great on every screen</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Live and ready for traffic</span></li></ul>
+            <p style="margin:auto 0 0;padding:14px 16px;border-radius:12px;background:var(--paper);font-family:var(--font-body);font-size:14.5px;line-height:1.5;color:var(--ink);text-wrap:pretty;"><strong style="font-weight:600;">Perfect if</strong> you need more than a template.</p>
+            <div style="display:flex;padding-top:4px;">
+              <a href="#contact" data-service="website" class="btn btn-primary">Build my site →</a>
+            </div>
+          </div>
+        </article>
+        <article class="svc-card reveal" style="display:flex;flex-direction:column;background:var(--white);border:1px solid var(--hairline);border-radius:20px;box-shadow:var(--shadow-card);padding:12px 12px 24px;">
+          <div style="position:relative;height:170px;border-radius:14px;background:var(--amber-tint);overflow:hidden;"><div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:128px;height:128px;margin:-64px 0 0 -64px;border-radius:22%;background:var(--amber);transform:rotate(-4deg);"></div><div style="position:absolute;left:50%;top:22px;width:78px;height:156px;margin-left:-39px;background:var(--ink);border-radius:17px;padding:4px;box-shadow:var(--shadow-lift);"><div style="width:100%;height:100%;background:var(--white);border-radius:13px;padding:14px 8px 8px;display:flex;flex-direction:column;gap:6px;"><div style="height:34px;border-radius:7px;background:var(--ink);"></div><div style="padding:6px;border-radius:6px;background:var(--paper);display:flex;flex-direction:column;gap:4px;"><div style="display:flex;gap:1px;font-size:9px;line-height:1;color:var(--ink);">★★★★★<span style="color:var(--hairline);"></span></div><div style="width:70%;height:6px;border-radius:999px;background:rgba(22,20,15,.14);"></div></div><div style="padding:6px;border-radius:6px;background:var(--paper);display:flex;flex-direction:column;gap:4px;"><div style="display:flex;gap:1px;font-size:9px;line-height:1;color:var(--ink);">★★★★★<span style="color:var(--hairline);"></span></div><div style="width:56%;height:6px;border-radius:999px;background:rgba(22,20,15,.14);"></div></div></div></div><div style="position:absolute;right:14px;top:18px;z-index:2;display:flex;flex-direction:column;gap:3px;padding:8px 11px;background:var(--white);border-radius:12px;box-shadow:var(--shadow-card);"><div style="font-size:11px;letter-spacing:1px;color:var(--ink);">★★★★★</div><span style="font-family:var(--font-body);font-size:11.5px;font-weight:600;color:var(--ink);">“Finally works.”</span></div><span style="position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--font-body);font-weight:600;font-size:12px;color:var(--ink);background:var(--white);padding:5px 11px;border-radius:999px;box-shadow:var(--shadow-card);">Working for your customers again</span></div>
+          <div style="display:flex;flex-direction:column;gap:16px;padding:22px 12px 0;flex:1;">
+            <span style="font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--slate);">For existing products</span>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:26px;line-height:1.12;color:var(--ink);text-wrap:balance;">Fix the product you already have</h3>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--slate);text-wrap:pretty;">Crashes, bad reviews or a stalled project? I get it working again.</p>
+            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;"><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Honest review of what you have</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Fixes that matter most first</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink);"><span style="flex-shrink:0;margin-top:6px;width:10px;height:10px;border-radius:22%;background:var(--amber);"></span><span>Back on track, shipping again</span></li></ul>
+            <p style="margin:auto 0 0;padding:14px 16px;border-radius:12px;background:var(--paper);font-family:var(--font-body);font-size:14.5px;line-height:1.5;color:var(--ink);text-wrap:pretty;"><strong style="font-weight:600;">Perfect if</strong> your product isn’t where it should be.</p>
+            <div style="display:flex;padding-top:4px;">
+              <a href="#contact" data-service="improve" class="btn btn-primary">Fix what I have →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:32px;padding-top:8px;">
+        <span class="eyebrow">ways to work together</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:32px;">
+          <div style="position:relative;display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:2px solid var(--ink);">
+            <span style="position:absolute;top:-8px;left:0;width:14px;height:14px;border-radius:22%;background:var(--ink);"></span>
+            <span style="font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--slate);">Start small</span>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:22px;line-height:1.15;color:var(--ink);">MVP sprint</h3>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--slate);text-wrap:pretty;">Get a first version in front of real customers fast, so you learn what they want before spending more.</p>
+          </div>
+          <div style="position:relative;display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:2px solid var(--ink);">
+            <span style="position:absolute;top:-8px;left:0;width:14px;height:14px;border-radius:22%;background:var(--ink);"></span>
+            <span style="font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--slate);">Go all the way</span>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:22px;line-height:1.15;color:var(--ink);">Full build</h3>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--slate);text-wrap:pretty;">From first sketch to launch day. You’re in the loop every week and never have to guess what’s happening.</p>
+          </div>
+          <div style="position:relative;display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:2px solid var(--ink);">
+            <span style="position:absolute;top:-8px;left:0;width:14px;height:14px;border-radius:22%;background:var(--ink);"></span>
+            <span style="font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--slate);">Keep growing</span>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:22px;line-height:1.15;color:var(--ink);">Ongoing support</h3>
+            <p style="margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--slate);text-wrap:pretty;">I stay on after launch to fix, improve and add what your customers ask for.</p>
+          </div>
         </div>
-        <div style="display:flex;justify-content:center;margin-top:10px;">
-          <button type="button" id="stack-toggle" class="stack-toggle" aria-expanded="false" aria-controls="skill-cloud">$ show full stack &rarr;</button>
+      </div>
+      <div style="position:relative;overflow:hidden;background:var(--ink);border-radius:20px;padding:clamp(28px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap;">
+        <div aria-hidden="true" style="position:absolute;right:-30px;bottom:-50px;width:150px;height:150px;border-radius:22%;border:2px solid rgba(250,246,238,.12);transform:rotate(12deg);"></div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:10px;max-width:640px;">
+          <span style="font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.15;color:var(--paper);text-wrap:balance;">Not sure which one fits? That’s what the call is for.</span>
+          <span style="font-family:var(--font-body);font-size:16px;line-height:1.6;color:rgba(250,246,238,.78);">Tell me about your idea. You’ll leave knowing what it takes, whatever you decide.</span>
         </div>
+        <div style="position:relative;"><a href="#contact" class="btn btn-primary" style="background:var(--amber);color:var(--ink);">Tell me about your app</a></div>
       </div>
     </div>
   </section>
@@ -1368,6 +1322,8 @@
           <p style="margin:14px 0 0;font-family:var(--font-mono);font-size:var(--fs-mono-caption);letter-spacing:var(--tracking-mono);color:rgba(250,246,238,.5);line-height:1.6;">Tell me what you want to build &mdash; I&rsquo;ll reply personally to see if it&rsquo;s a fit.</p>
         </div>
 
+        </div>
+
         <!-- P1-6: balances the section and makes the offer concrete.
              TODO(elin): confirm these three steps match how you actually run the
              program - I drafted them from the section copy, you know the real shape. -->
@@ -1525,6 +1481,102 @@
 
       <div style="margin-top:36px;">
         <a href="https://www.udemy.com/user/elina-hovakimyan/" target="_blank" rel="noopener" class="btn btn-secondary">See my courses on Udemy →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" aria-label="Skills" style="background:var(--paper);position:relative;overflow:hidden;">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(20px,4vw,48px);">
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:44px;">
+        <span class="eyebrow">what i work with</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);">Built to ship, not to impress.</h2>
+        <p style="margin:0;font-family:var(--font-mono);font-size:13px;letter-spacing:.04em;color:var(--slate);">$ hover — the pills scatter</p>
+      </div>
+      <div style="position:relative;max-width:960px;margin:0 auto;">
+        <div aria-hidden="true" style="position:absolute;inset:-14px -6px;border:1.5px dashed var(--hairline);border-radius:36px;transform:rotate(-1.4deg);background:rgba(255,255,255,.45);"></div>
+        <div aria-hidden="true" style="position:absolute;top:-22px;left:-10px;width:56px;height:56px;border-radius:22%;background:var(--mint);transform:rotate(-9deg);box-shadow:var(--shadow-card);z-index:2;"></div>
+        <div aria-hidden="true" style="position:absolute;bottom:-24px;right:-8px;width:44px;height:44px;border-radius:22%;background:var(--ink);transform:rotate(11deg);box-shadow:var(--shadow-card);z-index:2;"></div>
+        <div id="skill-cloud" style="position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:12px;padding:36px 28px;min-height:230px;">
+          <span class="skill-group-label" aria-hidden="true">$ ship</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Native</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Expo</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">App Store</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Play</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Push Notifications</span>
+          <span class="skill-group-label" aria-hidden="true">$ scale</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">TypeScript</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Node.js</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GraphQL</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CI/CD</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase</span>
+          <span class="skill-group-label" aria-hidden="true">$ ai</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Code</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">OpenAI API</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Prompt Engineering</span>
+          <span class="skill-pill" data-mint="true" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--mint);color:var(--mint-ink);border:1px solid transparent;cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AI Integrations</span>
+          <span class="skill-group-label skill-extra" aria-hidden="true">$ the rest of the stack</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">JavaScript</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React.js</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Redux</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Next.js</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">REST APIs</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Cursor</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Copilot</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Messaging</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Video streaming</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Animations</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Calls</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Authentication</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">React Hooks</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Apple Pay</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Pay</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Mixpanel</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">AppsFlyer</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Google Analytics</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Jest</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">In-App Purchases</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Stripe</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">E2E Testing</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Unit Testing</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Visual Testing</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">CircleCI</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Git</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">GitHub Actions</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">npm</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Yarn</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Profiling</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Reactatron</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Native SDKs</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Lazy Loading</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Code Reviews</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Agile</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Scrum</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">UI / UX</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Figma</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Claude Design</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Fastlane</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Deep Linking</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Offline Mode</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Maps / Geolocation</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Permissions</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Social Login</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">i18n / Localization</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Accessibility</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">WebSockets</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Monorepo</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Design Systems</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Feature Flags</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Sentry</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Firebase Crashlytics</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Performance Optimization</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Detox</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Flipper</span>
+          <span class="skill-pill skill-extra" data-mint="false" style="font-family:var(--font-mono);font-size:13px;font-weight:500;letter-spacing:.02em;line-height:1;padding:9px 14px;border-radius:999px;white-space:nowrap;background:var(--white);color:var(--slate);border:1px solid var(--hairline);cursor:default;user-select:none;will-change:transform;box-shadow:var(--shadow-card);">Automation</span>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:10px;">
+          <button type="button" id="stack-toggle" class="stack-toggle" aria-expanded="false" aria-controls="skill-cloud">$ show full stack &rarr;</button>
+        </div>
       </div>
     </div>
   </section>
@@ -1839,7 +1891,7 @@
 
   // ── Hero sticker parallax ──
   (function() {
-    const hero = document.getElementById('hero-area');
+    const hero = document.getElementById('hero-illo');
     if (!hero) return;
     if (typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -1859,6 +1911,90 @@
     hero.addEventListener('pointerleave', () => {
       items.forEach(it => { it.style.transform = 'translate(0,0) rotate(' + (it.dataset.rot || 0) + 'deg)'; });
     });
+  })();
+
+  // ── Hero headline underline mark (grows in once) ──
+  (function() {
+    const mark = document.getElementById('hero-mark');
+    if (!mark) return;
+    if (typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    mark.animate(
+      [{ transform: 'rotate(-1.5deg) scaleX(0)' }, { transform: 'rotate(-1.5deg) scaleX(1)' }],
+      { duration: 700, delay: 350, easing: 'cubic-bezier(0.22,0.61,0.36,1)', fill: 'backwards' }
+    );
+  })();
+
+  // ── Hero product illustration timeline (browser → code → phone loop) ──
+  (function() {
+    const el = document.getElementById('hero-illo');
+    if (!el) return;
+    if (typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const D = 9000, E = 'cubic-bezier(0.22,0.61,0.36,1)';
+    const run = (sel, frames, stagger) => el.querySelectorAll(sel).forEach((n, i) => {
+      n.animate(frames.map(f => Object.assign({ easing: E }, f)), { duration: D, iterations: Infinity, delay: i * (stagger || 0), fill: 'both' });
+    });
+    const inOut = (a, b, from, to) => [
+      Object.assign({ offset: 0, opacity: 0 }, from), Object.assign({ offset: a, opacity: 0 }, from),
+      Object.assign({ offset: b, opacity: 1 }, to), Object.assign({ offset: 0.93, opacity: 1 }, to),
+      Object.assign({ offset: 0.975, opacity: 0 }, to), Object.assign({ offset: 1, opacity: 0 }, from),
+    ];
+    const pulse = (at, s) => [
+      { offset: 0, transform: 'scale(1)' }, { offset: at, transform: 'scale(1)' },
+      { offset: at + 0.01, transform: 'scale(' + s + ')' }, { offset: at + 0.03, transform: 'scale(1)' }, { offset: 1, transform: 'scale(1)' },
+    ];
+    const hold = (prop, a0, v0, a1, v1, a2, v2) => [
+      { offset: 0, [prop]: v0 }, { offset: a0, [prop]: v0 }, { offset: a1, [prop]: v1 }, { offset: a2, [prop]: v1 }, { offset: Math.min(1, a2 + 0.04), [prop]: v2 }, { offset: 1, [prop]: v2 },
+    ];
+    // code editor
+    run('.c-line', [
+      { offset: 0, clipPath: 'inset(0 100% 0 0)' }, { offset: 0.01, clipPath: 'inset(0 100% 0 0)', easing: 'steps(16)' },
+      { offset: 0.045, clipPath: 'inset(0 0% 0 0)' }, { offset: 0.93, clipPath: 'inset(0 0% 0 0)' },
+      { offset: 0.97, clipPath: 'inset(0 100% 0 0)' }, { offset: 1, clipPath: 'inset(0 100% 0 0)' },
+    ], 300);
+    run('.c-done', inOut(0.30, 0.34, { transform: 'translateY(6px)' }, { transform: 'translateY(0)' }));
+    // website mockup
+    run('.b-text', inOut(0.05, 0.10, { transform: 'translateY(8px)' }, { transform: 'translateY(0)' }), 55);
+    run('.b-card', inOut(0.08, 0.13, { transform: 'translateY(12px)' }, { transform: 'translateY(0)' }), 70);
+    run('.b-line', hold('strokeDashoffset', 0.11, 1, 0.20, 0, 0.93, 1));
+    run('.b-btn', [
+      { offset: 0, opacity: 0, transform: 'scale(.6)' }, { offset: 0.07, opacity: 0, transform: 'scale(.6)' },
+      { offset: 0.11, opacity: 1, transform: 'scale(1)' }, { offset: 0.18, transform: 'scale(1)' },
+      { offset: 0.19, transform: 'scale(.92)' }, { offset: 0.21, transform: 'scale(1)' },
+      { offset: 0.93, opacity: 1, transform: 'scale(1)' }, { offset: 0.975, opacity: 0, transform: 'scale(1)' }, { offset: 1, opacity: 0, transform: 'scale(.6)' },
+    ]);
+    run('.b-cursor', [
+      { offset: 0, opacity: 0, transform: 'translate(28cqw,20cqw)' }, { offset: 0.11, opacity: 0, transform: 'translate(28cqw,20cqw)' },
+      { offset: 0.13, opacity: 1, transform: 'translate(24cqw,17cqw)' }, { offset: 0.18, transform: 'translate(0,0) scale(1)' },
+      { offset: 0.19, transform: 'translate(0,0) scale(.82)' }, { offset: 0.21, opacity: 1, transform: 'translate(0,0) scale(1)' },
+      { offset: 0.27, opacity: 0, transform: 'translate(34cqw,6cqw)' }, { offset: 1, opacity: 0, transform: 'translate(34cqw,6cqw)' },
+    ]);
+    // phone app
+    run('.p-row', inOut(0.18, 0.24, { transform: 'translateY(10px)' }, { transform: 'translateY(0)' }), 60);
+    run('.p-card', inOut(0.18, 0.22, { transform: 'scale(.94)' }, { transform: 'scale(1)' }));
+    run('.p-fill', hold('transform', 0.24, 'scaleX(0)', 0.32, 'scaleX(1)', 0.95, 'scaleX(0)'));
+    run('.p-bar', hold('transform', 0.23, 'scaleY(0)', 0.30, 'scaleY(1)', 0.95, 'scaleY(0)'), 40);
+    run('.p-push', [
+      { offset: 0, opacity: 0, transform: 'translateY(-140%)' }, { offset: 0.34, opacity: 0, transform: 'translateY(-140%)' },
+      { offset: 0.37, opacity: 1, transform: 'translateY(0)' }, { offset: 0.46, opacity: 1, transform: 'translateY(0)' },
+      { offset: 0.49, opacity: 0, transform: 'translateY(-140%)' }, { offset: 1, opacity: 0, transform: 'translateY(-140%)' },
+    ]);
+    run('.p-scroll', hold('transform', 0.50, 'translateY(0)', 0.56, 'translateY(-13cqw)', 0.95, 'translateY(0)'));
+    run('.p-tap', [
+      { offset: 0, opacity: 0, transform: 'scale(.2)' }, { offset: 0.57, opacity: 0, transform: 'scale(.2)' },
+      { offset: 0.58, opacity: 0.22, transform: 'scale(.3)' }, { offset: 0.62, opacity: 0, transform: 'scale(1.6)' }, { offset: 1, opacity: 0, transform: 'scale(1.6)' },
+    ]);
+    run('.p-sheet', [
+      { offset: 0, transform: 'translateY(110%)' }, { offset: 0.60, transform: 'translateY(110%)' },
+      { offset: 0.64, transform: 'translateY(0)' }, { offset: 0.74, transform: 'translateY(0)' },
+      { offset: 0.78, transform: 'translateY(110%)' }, { offset: 1, transform: 'translateY(110%)' },
+    ]);
+    run('.p-confirm', pulse(0.68, 0.94));
+    run('.p-toast', [
+      { offset: 0, opacity: 0, transform: 'translateY(14px)' }, { offset: 0.85, opacity: 0, transform: 'translateY(14px)' },
+      { offset: 0.88, opacity: 1, transform: 'translateY(0)' }, { offset: 0.95, opacity: 1, transform: 'translateY(0)' },
+      { offset: 0.985, opacity: 0, transform: 'translateY(0)' }, { offset: 1, opacity: 0, transform: 'translateY(14px)' },
+    ]);
   })();
 
   // ── Project tile stagger tilt ──
