@@ -1,21 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://elinahovakimyan.com/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/rouge-staircase.webp</image:loc><image:title>Eleene AI photography - rouge staircase</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/rouge-white-mare.webp</image:loc><image:title>Eleene AI photography - rouge white mare</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/rouge-crosswalk.webp</image:loc><image:title>Eleene AI photography - rouge crosswalk</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/rouge-checkmate.webp</image:loc><image:title>Eleene AI photography - rouge checkmate</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/rouge-against-the-current.webp</image:loc><image:title>Eleene AI photography - rouge against the current</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/rouge-queens-square.webp</image:loc><image:title>Eleene AI photography - rouge queens square</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/rouge-headlines.webp</image:loc><image:title>Eleene AI photography - rouge headlines</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/ivory-bloom.webp</image:loc><image:title>Eleene AI photography - ivory bloom</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/ivory-labyrinth.webp</image:loc><image:title>Eleene AI photography - ivory labyrinth</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/ivory-suspended-spring.webp</image:loc><image:title>Eleene AI photography - ivory suspended spring</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/ivory-gown-unworn.webp</image:loc><image:title>Eleene AI photography - ivory gown unworn</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/ivory-behind-the-glass.webp</image:loc><image:title>Eleene AI photography - ivory behind the glass</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/ivory-barefoot.webp</image:loc><image:title>Eleene AI photography - ivory barefoot</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/ivory-meadow.webp</image:loc><image:title>Eleene AI photography - ivory meadow</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/source-spring.webp</image:loc><image:title>Eleene AI photography - source spring</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/source-golden-hour.webp</image:loc><image:title>Eleene AI photography - source golden hour</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/source-rainforest.webp</image:loc><image:title>Eleene AI photography - source rainforest</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/source-breakfast.webp</image:loc><image:title>Eleene AI photography - source breakfast</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/source-volcanic-shore.webp</image:loc><image:title>Eleene AI photography - source volcanic shore</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/source-riverbank.webp</image:loc><image:title>Eleene AI photography - source riverbank</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/quiet-nocturne.webp</image:loc><image:title>Eleene AI photography - quiet nocturne</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/quiet-late-draft.webp</image:loc><image:title>Eleene AI photography - quiet late draft</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/quiet-blanket-fort.webp</image:loc><image:title>Eleene AI photography - quiet blanket fort</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/quiet-sketch-at-dusk.webp</image:loc><image:title>Eleene AI photography - quiet sketch at dusk</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/quiet-first-night.webp</image:loc><image:title>Eleene AI photography - quiet first night</image:title></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://elinahovakimyan.com/assets/films/atelier-poster.jpg</video:thumbnail_loc>
+      <video:title>Atelier - AI bridal brand film</video:title>
+      <video:description>A cinematic AI brand film following a bridal gown from sketch to greenhouse, by Eleene.</video:description>
+      <video:content_loc>https://elinahovakimyan.com/assets/films/atelier.mp4</video:content_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://elinahovakimyan.com/assets/films/house-on-the-cliff-poster.jpg</video:thumbnail_loc>
+      <video:title>The House on the Cliff - AI cinematic short</video:title>
+      <video:description>An AI cinematic short by Eleene: a climb to an impossible house above the city.</video:description>
+      <video:content_loc>https://elinahovakimyan.com/assets/films/house-on-the-cliff.mp4</video:content_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://elinahovakimyan.com/assets/films/free-fall-poster.jpg</video:thumbnail_loc>
+      <video:title>Free Fall - AI beauty ad</video:title>
+      <video:description>An AI beauty commercial by Eleene: a woman in a red tulle gown falls through pink clouds among cosmetics.</video:description>
+      <video:content_loc>https://elinahovakimyan.com/assets/films/free-fall.mp4</video:content_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://elinahovakimyan.com/assets/films/double-booked-ep1-poster.jpg</video:thumbnail_loc>
+      <video:title>Double Booked Episode 1 - AI micro-drama</video:title>
+      <video:description>Episode one of an AI romantic micro-drama series with consistent characters, by Eleene.</video:description>
+      <video:content_loc>https://elinahovakimyan.com/assets/films/double-booked-ep1.mp4</video:content_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://elinahovakimyan.com/assets/films/double-booked-ep2-poster.jpg</video:thumbnail_loc>
+      <video:title>Double Booked Episode 2 - AI micro-drama</video:title>
+      <video:description>Episode two of an AI romantic micro-drama series with consistent characters, by Eleene.</video:description>
+      <video:content_loc>https://elinahovakimyan.com/assets/films/double-booked-ep2.mp4</video:content_loc>
+    </video:video>
   </url>
   <url>
     <loc>https://elinahovakimyan.com/apple-review.html</loc>
     <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://elinahovakimyan.com/react-native-vs-native-apps.html</loc>
     <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>
