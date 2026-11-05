@@ -1999,8 +1999,8 @@ footer a:hover{color:var(--moon)}
   /* ---------- enquiry: project type preselect + submission ---------- */
   // TODO(eleene): paste a form endpoint (e.g. https://formspree.io/f/XXXX) to receive enquiries directly.
   const CONTACT_ENDPOINT = '';
-  // TODO(eleene): optionally set a studio email; used as a mailto fallback when no endpoint is configured.
-  const CONTACT_EMAIL = '';
+  // Enquiries go to the same inbox the previous site's contact form used.
+  const CONTACT_EMAIL = 'elinahovakimyan@gmail.com';
   const form = $('#enquiry'), typeSel = $('#f-type');
   const TYPES = ['visuals', 'films', 'website', 'app', 'multiple', 'unsure'];
   const setType = t => { if (typeSel && TYPES.includes(t)) typeSel.value = t; };
@@ -2012,7 +2012,7 @@ footer a:hover{color:var(--moon)}
     const status = $('#enquiryStatus'), submit = $('#enquirySubmit'), note = $('#enquiryNote');
     const direct = !!CONTACT_ENDPOINT, viaMail = !direct && !!CONTACT_EMAIL;
     if (!direct && !viaMail) { submit.textContent = 'Prepare my message'; note.innerHTML = 'Your message will be copied so you can send it to <a href="https://www.instagram.com/eleene.ai/" target="_blank" rel="noopener">@eleene.ai</a> on Instagram.'; }
-    else if (viaMail) { note.textContent = 'This opens your email app with your message ready to send.'; }
+    else if (viaMail) { note.textContent = 'Your email app will open with everything filled in — just press send.'; }
     else { note.textContent = 'I read every enquiry myself.'; }
     const opened = Date.now();
     const setErr = (id, msg) => { const f = $('#f-' + id), e = $('#e-' + id); f.setAttribute('aria-invalid', msg ? 'true' : 'false'); e.textContent = msg; };
@@ -2040,7 +2040,7 @@ footer a:hover{color:var(--moon)}
         } finally { submit.disabled = false; }
       } else if (viaMail) {
         location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Project enquiry — ' + label)}&body=${encodeURIComponent(text)}`;
-        say('Your email app should open with the message ready to send.', 'success');
+        say('Your email app should now be open with your enquiry ready — press send and it will reach me. If nothing opened, message <a href="https://www.instagram.com/eleene.ai/" target="_blank" rel="noopener">@eleene.ai</a> on Instagram.', 'success');
       } else {
         let copied = false;
         try { await navigator.clipboard.writeText(text); copied = true; } catch (err) {}

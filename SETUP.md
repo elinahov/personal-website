@@ -1,26 +1,22 @@
 # Setup notes
 
-## Enquiry form (`#contact`) — needs one setting to send directly
+## Enquiry form (`#contact`)
 
-The form validates, shows loading/success/error states, preselects the project type from
-service CTAs (`data-type`, or `?type=visuals|films|website|app|multiple|unsure` in the URL),
-and has a honeypot + minimum fill-time spam check.
+Enquiries are sent to **elinahovakimyan@gmail.com** — the same inbox the previous site's contact form used.
+On submit the form validates, then opens the visitor's email app with a prefilled message
+(subject "Project enquiry — <type>", their idea, name, email, brand and project type) addressed to that inbox.
+Service CTAs preselect the project type (`data-type`, or `?type=visuals|films|website|app|multiple|unsure`).
+A honeypot and a minimum fill-time check filter simple spam.
 
-It does **not** pretend to send anything until a destination is configured. In `index.html`,
-search for `TODO(eleene)` and set **one** of:
+Optional upgrade — send without opening an email app: create a free form at https://formspree.io with the
+notification email set to the same inbox, then in `index.html` (search `CONTACT_ENDPOINT`) paste its URL:
 
 ```js
-const CONTACT_ENDPOINT = 'https://formspree.io/f/YOUR_ID'; // recommended: real submissions by email
-const CONTACT_EMAIL = '';                                  // or: opens the visitor's email app (mailto)
+const CONTACT_ENDPOINT = 'https://formspree.io/f/YOUR_ID';
 ```
 
-- With `CONTACT_ENDPOINT` (e.g. a free Formspree form whose notification email is your studio inbox),
-  the form POSTs JSON and shows a real success or error message.
-- With only `CONTACT_EMAIL`, submitting opens the visitor's email app with the message prefilled.
-- With neither (current state), the button reads "Prepare my message": the message is copied to
-  the clipboard and the visitor is pointed to @eleene.ai on Instagram.
-
-Both values are safe to commit (an endpoint ID and a public address are not secrets).
+When set, the form POSTs directly and shows a real success/error message; the email fallback is no longer used.
+(The previous site's form also relied on Formspree, but its ID was never filled in, so it never delivered messages.)
 
 ## Please confirm
 
