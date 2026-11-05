@@ -794,7 +794,13 @@ footer a:hover{color:var(--moon)}
 @media(min-width:900px){.founder-grid{grid-template-columns:.8fr 1.2fr;gap:7vw}}
 .founder__photo{position:relative;max-width:440px;margin:0 auto;width:100%}
 .founder__photo .arch{aspect-ratio:4/5.2;border-radius:999px 999px 20px 20px;overflow:hidden;box-shadow:0 40px 70px -34px rgba(60,30,20,.5),0 0 0 7px rgba(255,255,255,.55),0 0 0 8px rgba(168,138,90,.3)}
-.founder__photo img{width:100%;height:100%;object-fit:cover}
+.arch--type{position:relative;display:grid;place-items:center;align-content:center;gap:18px;
+  background:radial-gradient(70% 55% at 30% 30%,rgba(231,201,190,.75),transparent 70%),radial-gradient(60% 50% at 75% 75%,rgba(217,208,230,.85),transparent 70%),#F7F1EA}
+.arch--type .mono{font-family:var(--font-display);font-style:italic;font-weight:300;font-size:clamp(170px,22vw,300px);line-height:.8;color:var(--rouge);text-shadow:0 20px 40px rgba(142,27,31,.18)}
+.arch--type .mono-words{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft)}
+.arch--type .mono-words i{font-style:normal;color:var(--gold);margin:0 6px}
+.arch--type .spark{position:absolute;color:var(--gold);animation:twinkle 3.4s ease-in-out infinite}
+.arch--type .s-a{top:22%;right:24%;font-size:22px}.arch--type .s-b{top:38%;left:18%;font-size:16px;animation-delay:-1.2s}.arch--type .s-c{bottom:20%;right:20%;font-size:14px;animation-delay:-2.1s}
 .founder__sig{position:absolute;right:-6px;bottom:-30px;font-family:var(--font-display);font-style:italic;font-size:clamp(46px,5vw,72px);color:var(--rouge);rotate:-6deg;line-height:1}
 .founder__text h2{font-size:clamp(42px,5.4vw,88px);margin:20px 0 34px}
 .founder__text p{font-size:clamp(16px,1.25vw,18.5px);color:var(--ink-soft);max-width:34em;margin:0 0 16px}
@@ -1345,9 +1351,13 @@ footer a:hover{color:var(--moon)}
 <!-- ============ THE PERSON BEHIND ELEENE ============ -->
 <section class="founder sec-pad" id="studio" aria-labelledby="studio-title">
   <div class="wrap founder-grid">
-    <figure class="founder__photo" style="margin:0" data-fade>
-      <div class="arch"><img src="assets/work/elina-portrait.webp" alt="Elina, founder and creative director of Eleene, working on a laptop" loading="lazy" decoding="async" width="900" height="1350"></div>
-      <span class="founder__sig" aria-hidden="true">Elina</span>
+    <figure class="founder__photo" style="margin:0" aria-hidden="true" data-fade>
+      <div class="arch arch--type">
+        <span class="mono">E</span>
+        <span class="mono-words">Art <i>✦</i> Technology <i>✦</i> Imagination</span>
+        <span class="spark s-a">✦</span><span class="spark s-b">✧</span><span class="spark s-c">✦</span>
+      </div>
+      <span class="founder__sig">Elina</span>
     </figure>
     <div class="founder__text">
       <span class="eyebrow">The person behind Eleene</span>
@@ -1360,7 +1370,7 @@ footer a:hover{color:var(--moon)}
       <ul class="creds" aria-label="Background">
         <li>8+ years building digital products</li>
         <li>40+ apps shipped</li>
-        <li>5,500+ developers taught</li>
+        <li>5,500+ students taught</li>
       </ul>
     </div>
   </div>

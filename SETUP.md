@@ -23,5 +23,5 @@ When set, the form POSTs directly and shows a real success/error message; the em
 1. **Film labels.** Only *Double Booked* is labelled "Original series". If *Atelier*, *The House on the Cliff*
    or *Free Fall* were client commissions or independent concepts, add that to their `.film__kind` line.
 2. **Source.** Labelled "Independent concept · Not commissioned by the brand". Change it if that is not accurate.
-3. **Founder credentials.** "8+ years building digital products · 40+ apps shipped · 5,500+ developers taught"
+3. **Founder credentials.** "8+ years building digital products · 40+ apps shipped · 5,500+ students taught"
    come from the previous version of the site — update if anything has changed.
