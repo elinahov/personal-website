@@ -61,4 +61,16 @@
       <video:content_loc>https://elinahovakimyan.com/assets/films/double-booked-ep2.mp4</video:content_loc>
     </video:video>
   </url>
+  <url>
+    <loc>https://elinahovakimyan.com/websites-apps.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/site-eleene-desktop.webp</image:loc><image:title>Eleene website</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/app-evoria.webp</image:loc><image:title>Evoria app</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/app-culinar.webp</image:loc><image:title>Culinar app</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/app-travio.webp</image:loc><image:title>Travio app</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/app-prehab101.webp</image:loc><image:title>Prehab101 app</image:title></image:image>
+    <image:image><image:loc>https://elinahovakimyan.com/assets/work/app-casana.webp</image:loc><image:title>Casana app</image:title></image:image>
+  </url>
 </urlset>
