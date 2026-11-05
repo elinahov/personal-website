@@ -582,7 +582,7 @@ section{position:relative}
   .svc__thumb img{width:100%;height:100%;object-fit:cover}
   .svc__desc{grid-row:3;grid-column:1/3;margin-top:6px}
 }
-.svc-preview{position:fixed;left:0;top:0;width:250px;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:scale(.8);transition:opacity .4s,transform .5s var(--ease);box-shadow:0 30px 60px -20px rgba(0,0,0,.4)}
+.svc-preview{position:fixed;left:0;top:0;width:170px;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:scale(.8);transition:opacity .4s,transform .5s var(--ease);box-shadow:0 30px 60px -20px rgba(0,0,0,.4)}
 .svc-preview.on{opacity:1;transform:scale(1)}
 .svc-preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
 .svc-preview img.on{opacity:1}
@@ -1126,7 +1126,7 @@ footer a:hover{color:var(--moon)}
           <div class="tags"><span>Campaigns</span><span>E-commerce</span><span>Lookbooks</span><span>Social</span></div></div>
         <div class="svc__thumb"><img src="assets/work/source-spring-sm.webp" alt="" loading="lazy"></div>
       </article>
-      <article class="svc" data-img="assets/films/free-fall-poster.jpg">
+      <article class="svc" data-img="assets/work/rouge-staircase-sm.webp">
         <span class="roman">II.</span>
         <div class="svc__body svc__name"><h3>Cinematic <em>films &amp; ads</em></h3></div>
         <div class="svc__body svc__desc">
@@ -1139,7 +1139,7 @@ footer a:hover{color:var(--moon)}
             <li>Vertical reels, cutdowns and seamless loops for every platform</li>
           </ul>
           <div class="tags"><span>Brand films</span><span>Ads</span><span>Reels</span><span>Series</span></div></div>
-        <div class="svc__thumb"><img src="assets/films/free-fall-poster.jpg" alt="" loading="lazy"></div>
+        <div class="svc__thumb"><img src="assets/work/rouge-staircase-sm.webp" alt="" loading="lazy"></div>
       </article>
       <article class="svc" data-img="assets/work/ivory-gown-unworn-sm.webp">
         <span class="roman">III.</span>
@@ -1156,7 +1156,7 @@ footer a:hover{color:var(--moon)}
           <div class="tags"><span>Brand sites</span><span>Portfolios</span><span>Lookbooks</span><span>Launches</span></div></div>
         <div class="svc__thumb"><img src="assets/work/ivory-gown-unworn-sm.webp" alt="" loading="lazy"></div>
       </article>
-      <article class="svc" data-img="assets/work/ivory-behind-the-glass-sm.webp">
+      <article class="svc" data-img="assets/work/quiet-late-draft-sm.webp">
         <span class="roman">IV.</span>
         <div class="svc__body svc__name"><h3>AI <em>mobile apps</em></h3></div>
         <div class="svc__body svc__desc">
@@ -1169,7 +1169,7 @@ footer a:hover{color:var(--moon)}
             <li>Ongoing design, new features and refinements after launch</li>
           </ul>
           <div class="tags"><span>iPhone</span><span>Android</span><span>Bookings</span><span>Loyalty</span></div></div>
-        <div class="svc__thumb"><img src="assets/work/ivory-behind-the-glass-sm.webp" alt="" loading="lazy"></div>
+        <div class="svc__thumb"><img src="assets/work/quiet-late-draft-sm.webp" alt="" loading="lazy"></div>
       </article>
     </div>
 
@@ -1678,7 +1678,7 @@ footer a:hover{color:var(--moon)}
       s.addEventListener('mouseleave', () => { on = false; prev.classList.remove('on'); });
     });
     addEventListener('mousemove', e => { px = e.clientX; py = e.clientY; });
-    const loop = () => { cx = lerp(cx, px + 30, .12); cy = lerp(cy, py - 160, .12); prev.style.left = cx + 'px'; prev.style.top = cy + 'px'; requestAnimationFrame(loop); };
+    const loop = () => { cx = lerp(cx, px + 48, .12); cy = lerp(cy, py - 130, .12); prev.style.left = cx + 'px'; prev.style.top = cy + 'px'; requestAnimationFrame(loop); };
     loop();
   }
 
