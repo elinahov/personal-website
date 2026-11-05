@@ -1,0 +1,13 @@
+{
+  "name": "Eleene — AI Creative Studio",
+  "short_name": "Eleene",
+  "description": "The impossible, beautifully made. Surreal AI visuals, films, websites and apps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4EFE7",
+  "theme_color": "#8E1B1F",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
