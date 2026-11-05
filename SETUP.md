@@ -1,9 +1,31 @@
 # Setup notes
 
-The site needs no configuration — every call to action points to Instagram (@eleene.ai).
+## Enquiry form (`#contact`) — needs one setting to send directly
 
-Optional follow-ups:
+The form validates, shows loading/success/error states, preselects the project type from
+service CTAs (`data-type`, or `?type=visuals|films|website|app|multiple|unsure` in the URL),
+and has a honeypot + minimum fill-time spam check.
 
-1. **Captions.** Piece titles (e.g. "The Grand Staircase") and series names were written for the site. Rename freely in `index.html`; the lightbox reads `data-title` / `data-meta`.
-2. **Client credits.** "Source" is labelled as a self-initiated spec campaign and "Atelier" as a bridal brand film. If any piece was a paid client commission you are allowed to name, add the client to its placard — named clients are the strongest trust signal for luxury buyers.
-3. **Testimonials.** None are shown because none were provided. One or two short quotes from real clients would fit under the Studio section.
+It does **not** pretend to send anything until a destination is configured. In `index.html`,
+search for `TODO(eleene)` and set **one** of:
+
+```js
+const CONTACT_ENDPOINT = 'https://formspree.io/f/YOUR_ID'; // recommended: real submissions by email
+const CONTACT_EMAIL = '';                                  // or: opens the visitor's email app (mailto)
+```
+
+- With `CONTACT_ENDPOINT` (e.g. a free Formspree form whose notification email is your studio inbox),
+  the form POSTs JSON and shows a real success or error message.
+- With only `CONTACT_EMAIL`, submitting opens the visitor's email app with the message prefilled.
+- With neither (current state), the button reads "Prepare my message": the message is copied to
+  the clipboard and the visitor is pointed to @eleene.ai on Instagram.
+
+Both values are safe to commit (an endpoint ID and a public address are not secrets).
+
+## Please confirm
+
+1. **Film labels.** Only *Double Booked* is labelled "Original series". If *Atelier*, *The House on the Cliff*
+   or *Free Fall* were client commissions or independent concepts, add that to their `.film__kind` line.
+2. **Source.** Labelled "Independent concept · Not commissioned by the brand". Change it if that is not accurate.
+3. **Founder credentials.** "8+ years building digital products · 40+ apps shipped · 5,500+ developers taught"
+   come from the previous version of the site — update if anything has changed.
