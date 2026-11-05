@@ -142,6 +142,7 @@ section{position:relative}
 .float{animation:float 9s ease-in-out infinite}
 .float.b{animation-duration:7.5s;animation-delay:-3s}
 .tilt-l{rotate:-1.5deg}.tilt-r{rotate:3deg}
+.site-card .tilt-r{rotate:1.5deg}
 @keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
 [data-cycle] img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1.6s ease,transform 7s linear}
 [data-cycle] img.on{opacity:1;transform:scale(1)}
@@ -347,7 +348,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
     <article class="exhibit flip" id="aybora">
       <div class="exhibit__media" data-fade>
         <a class="site-card tone-sage" href="https://aybora.app/" target="_blank" rel="noopener" aria-label="Visit Aybora — aybora.app (opens in a new tab)">
-          <div class="browser float tilt-l"><div class="browser__bar"><i></i><i></i><i></i><span>aybora.app</span></div>
+          <div class="browser float tilt-r"><div class="browser__bar"><i></i><i></i><i></i><span>aybora.app</span></div>
             <div class="browser__screen site-cover">
               <span class="site-cover__star" aria-hidden="true">✦</span>
               <b>Aybora</b>
