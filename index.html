@@ -775,18 +775,11 @@ footer a:hover{color:var(--moon)}
 .svc__label{display:block;font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;color:var(--rouge);margin-bottom:16px}
 .svc__head{display:block;font-family:var(--font-display);font-weight:300;font-size:clamp(32px,3.5vw,56px);line-height:1.05;transition:transform .8s var(--ease)}
 .svc:hover .svc__head{transform:translateX(10px)}
-.svc__thumb{width:150px;aspect-ratio:3/4;border-radius:999px 999px 12px 12px;overflow:hidden;box-shadow:0 26px 50px -26px rgba(60,30,20,.45),0 0 0 5px rgba(255,255,255,.55),0 0 0 6px rgba(168,138,90,.3);transition:transform .9s var(--ease)}
-.svc:nth-child(even) .svc__thumb{align-self:flex-end;rotate:2deg}
-.svc:nth-child(odd) .svc__thumb{rotate:-2deg}
-.svc:hover .svc__thumb{transform:translateY(-6px) rotate(1deg)}
-.svc__thumb img{width:100%;height:100%;object-fit:cover}
 .svc__desc>p{margin:0 0 14px;color:var(--ink-soft);max-width:36em}
 .svc__desc>p:first-child{color:var(--ink);font-size:clamp(16px,1.25vw,18px)}
 .svc .link-arrow{display:inline-block;margin-top:26px}
 @media(max-width:899px){
   .svc{grid-template-columns:1fr;gap:16px}
-  .svc__name{flex-direction:row;justify-content:space-between;align-items:flex-start;gap:16px}
-  .svc__thumb{width:86px;flex:none;align-self:flex-start!important}
   .svc__head{font-size:clamp(28px,8vw,40px)}
 }
 .svc-combined{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;margin-top:clamp(50px,6vw,80px);padding:clamp(28px,3vw,44px) clamp(24px,3vw,48px);border-radius:999px;background:rgba(255,255,255,.45);box-shadow:inset 0 0 0 1px rgba(168,138,90,.25)}
@@ -1296,7 +1289,6 @@ footer a:hover{color:var(--moon)}
         <span class="roman">I.</span>
         <div class="svc__name">
           <h3 class="svc__title"><span class="svc__label">Product &amp; campaign visuals</span><span class="svc__head">Every product has a story <em>worth seeing.</em></span></h3>
-          <div class="svc__thumb"><img src="assets/work/source-spring-sm.webp" alt="" loading="lazy" decoding="async"></div>
         </div>
         <div class="svc__desc">
           <p>From sophisticated studio photography to expressive fashion editorials and imaginative campaign settings, I create beautifully art-directed visuals that bring products and brands into focus.</p><p>Whether the direction is timeless and minimal or bold and unexpected, every image is shaped around your brand's character.</p>
@@ -1309,7 +1301,6 @@ footer a:hover{color:var(--moon)}
         <span class="roman">II.</span>
         <div class="svc__name">
           <h3 class="svc__title"><span class="svc__label">Cinematic films &amp; ads</span><span class="svc__head">Stories made <em>to be felt.</em></span></h3>
-          <div class="svc__thumb"><img src="assets/work/rouge-staircase-sm.webp" alt="" loading="lazy" decoding="async"></div>
         </div>
         <div class="svc__desc">
           <p>Cinematic storytelling shaped by emotion, atmosphere and imagination. From intimate, realistic moments to extraordinary visual concepts, every frame is created to leave an impression.</p><p>I bring ideas into motion through creative direction, visual storytelling and carefully crafted production.</p>
@@ -1321,26 +1312,24 @@ footer a:hover{color:var(--moon)}
       <article class="svc" id="svc-websites">
         <span class="roman">III.</span>
         <div class="svc__name">
-          <h3 class="svc__title"><span class="svc__label">Websites &amp; digital experiences</span><span class="svc__head">Not just a website. <em>A world of your own.</em></span></h3>
-          <div class="svc__thumb"><img src="assets/work/ivory-gown-unworn-sm.webp" alt="" loading="lazy" decoding="async"></div>
+          <h3 class="svc__title"><span class="svc__label">Websites &amp; digital experiences</span><span class="svc__head">Your website, designed <em>and built.</em></span></h3>
         </div>
         <div class="svc__desc">
-          <p>Some websites are made to be visited. Others are made to be remembered.</p><p>I design and build immersive websites where visual storytelling meets thoughtful functionality — unexpected details, beautiful interactions and everything working quietly behind the scenes.</p>
+          <p>I design and develop complete, working websites for brands — from the first sketch to a live site on your own domain.</p><p>You get an editorial look with your imagery and gentle motion, and everything visitors need working quietly underneath: fast on every phone, easy to navigate, enquiry and contact forms, and a structure search engines understand.</p>
           <span class="poss-label">What you can commission</span>
-          <ul class="poss"><li>Immersive brand and studio websites</li><li>Luxury product and collection showcases</li><li>Editorial portfolios and digital lookbooks</li><li>Campaign landing pages and launch experiences</li><li>Custom interactive websites</li></ul>
+          <ul class="poss"><li>Brand, studio and portfolio websites</li><li>Product and collection showcases</li><li>Digital lookbooks and editorial pages</li><li>Campaign and launch landing pages</li><li>Custom animations and interactive features</li><li>Launch on your domain, with updates after launch as agreed</li></ul>
           <a class="link-arrow" href="#contact" data-type="website">Enquire about a website <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="svc" id="svc-apps">
         <span class="roman">IV.</span>
         <div class="svc__name">
-          <h3 class="svc__title"><span class="svc__label">Mobile apps</span><span class="svc__head">Beautiful ideas, <em>brought to life.</em></span></h3>
-          <div class="svc__thumb"><img src="assets/work/quiet-late-draft-sm.webp" alt="" loading="lazy" decoding="async"></div>
+          <h3 class="svc__title"><span class="svc__label">Mobile apps</span><span class="svc__head">Mobile apps for iPhone <em>and Android.</em></span></h3>
         </div>
         <div class="svc__desc">
-          <p>Beautiful things should work beautifully, too.</p><p>I turn ambitious app ideas into real mobile experiences — designed to feel intuitive, built to be dependable, and thoughtful down to the smallest interaction.</p>
+          <p>I design and develop real mobile apps that your customers download from the App Store and Google Play.</p><p>From the first idea to launch day — the screens, the experience and the working app behind them — built to feel intuitive, dependable and as considered as your brand.</p>
           <span class="poss-label">What you can commission</span>
-          <ul class="poss"><li>iOS and Android mobile applications</li><li>MVPs and new digital product launches</li><li>Booking, membership and customer experiences</li><li>AI-powered mobile features</li><li>App redesigns, improvements and new functionality</li></ul>
+          <ul class="poss"><li>iPhone (iOS) and Android apps</li><li>First versions (MVPs) for new product ideas</li><li>Booking, membership and loyalty apps</li><li>AI-powered features inside your app</li><li>Redesigns and new features for an existing app</li><li>Publishing to the App Store and Google Play</li></ul>
           <a class="link-arrow" href="#contact" data-type="app">Enquire about an app <span aria-hidden="true">→</span></a>
         </div>
       </article>
