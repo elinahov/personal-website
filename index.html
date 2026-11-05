@@ -1724,6 +1724,14 @@ footer a:hover{color:var(--moon)}
     }
   };
 
+  /* ---------- image safety net: load lazy images well before they are reached ---------- */
+  const eagerIO = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; const im = e.target; im.loading = 'eager'; eagerIO.unobserve(im);
+  }), { rootMargin: '150% 60%' }) : null;
+  $$('img[loading="lazy"]').forEach(im => eagerIO ? eagerIO.observe(im) : (im.loading = 'eager'));
+  // after the page settles, quietly fetch the rest so nothing is ever blank (Safari can skip clipped lazy images)
+  addEventListener('load', () => setTimeout(() => $$('img[loading="lazy"]').forEach(im => { im.loading = 'eager'; }), 4000));
+
   /* ---------- reveal observer ---------- */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
   $$('.reveal,[data-fade]').forEach(el => io.observe(el));
