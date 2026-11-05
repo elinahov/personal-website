@@ -25,7 +25,7 @@ The homepage lives in a single file: **`index.html`** (inline `<style>` in the h
 
 ## Assets
 
-- `assets/portfolio/` — original, full-resolution source files (not referenced by the site).
+- Original full-resolution source files are kept outside the repo (removed from `assets/portfolio/` to keep deploys small).
 - `assets/work/` — optimized WebP: `<key>.webp` (1600w) and `<key>-sm.webp` (760w), plus app mockups and the portrait.
 - `assets/films/` — `<key>.mp4` (720p with sound), `<key>-loop.mp4` (silent preview), `<key>-poster.jpg`.
 - `assets/og-image.jpg` — 1200×630 social card. `assets/opt/` is still used by the archive pages.
