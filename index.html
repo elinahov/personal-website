@@ -425,13 +425,17 @@ section{position:relative}
 .source-hero__copy p{max-width:32em;color:rgba(237,230,218,.86)}
 .source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,32px);align-items:start}
 .source-grid .piece__frame{aspect-ratio:4/5}
-.sg2{margin-top:12vw}.sg3{margin-top:4vw}.sg4{margin-top:-8vw}.sg5{margin-top:4vw}
-.source-note{grid-column:3;align-self:center;margin-top:-4vw}
+.source-grid.is-cols{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2vw,32px)}
+.src-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:clamp(30px,4vw,64px)}
+.src-col--2{padding-top:10vw}.src-col--3{padding-top:4vw}
+.src-full{flex:0 0 100%}
+.source-note{padding:6px 4px}
 @media(max-width:899px){
-  .source-grid{grid-template-columns:1fr 1fr;row-gap:40px}
-  .sg2{margin-top:24vw}.sg3{margin-top:0}.sg4{margin-top:0}.sg5{margin-top:0}
-  .sg4{margin-top:-24vw}
-  .source-note{grid-column:1/3;margin-top:0}
+  .source-grid.is-cols{gap:14px}
+  .src-col{gap:30px}
+  .src-col--2{padding-top:64px}
+  .src-full .piece__frame{aspect-ratio:4/3.4}
+  .src-full + .src-col{margin-top:20px}
 }
 
 /* Room IV — cabinet */
@@ -511,16 +515,37 @@ section{position:relative}
 .sparkle{position:absolute;z-index:3;color:var(--gold);font-size:22px;animation:twinkle 3.2s ease-in-out infinite}
 .s1{left:-2%;top:12%}.s2{right:30%;top:-5%;font-size:28px;animation-delay:-1s}.s3{right:-1%;top:30%;font-size:16px;animation-delay:-2s}.s4{left:20%;bottom:2%;font-size:34px;animation-delay:-.5s}
 @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(25deg)}}
-.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,28px);margin-top:clamp(60px,8vw,110px);position:relative;z-index:1}
-.promise{text-align:center;padding:30px 22px 32px;border-radius:999px 999px 18px 18px;background:rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(168,138,90,.22)}
-.promise__icon{display:grid;place-items:center;width:52px;height:52px;margin:6px auto 16px;border-radius:50%;background:var(--paper);color:var(--rouge);font-size:22px;box-shadow:0 0 0 1px rgba(168,138,90,.3)}
+.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,28px);row-gap:76px;margin-top:clamp(90px,10vw,140px);position:relative;z-index:1}
+.promise{--cloud:#FBF7F4;position:relative;isolation:isolate;text-align:center;padding:26px 22px 34px;border-radius:46px;background:var(--cloud);
+  filter:drop-shadow(0 22px 26px rgba(120,80,90,.13)) drop-shadow(0 1px 1px rgba(168,138,90,.12));
+  animation:float 9s ease-in-out infinite}
+.promise:nth-child(2){animation-duration:11s;animation-delay:-4s;--cloud:#FBF5F6}
+.promise:nth-child(3){animation-duration:10s;animation-delay:-7s;--cloud:#F8F6FB}
+.promise:nth-child(4){animation-duration:12s;animation-delay:-2s}
+/* puffy top */
+.promise::before{content:"";position:absolute;z-index:-1;left:-5%;right:-5%;top:-58px;height:120px;pointer-events:none;background:
+  radial-gradient(circle at 13% 82px,var(--cloud) 38px,transparent 39px),
+  radial-gradient(circle at 34% 58px,var(--cloud) 50px,transparent 51px),
+  radial-gradient(circle at 60% 52px,var(--cloud) 47px,transparent 48px),
+  radial-gradient(circle at 85% 78px,var(--cloud) 38px,transparent 39px)}
+/* soft scalloped bottom */
+.promise::after{content:"";position:absolute;z-index:-1;left:8%;right:8%;bottom:-17px;height:44px;pointer-events:none;background:
+  radial-gradient(circle at 18% 14px,var(--cloud) 22px,transparent 23px),
+  radial-gradient(circle at 50% 12px,var(--cloud) 27px,transparent 28px),
+  radial-gradient(circle at 82% 14px,var(--cloud) 22px,transparent 23px)}
+.promise:nth-child(even)::before{background:
+  radial-gradient(circle at 16% 74px,var(--cloud) 40px,transparent 41px),
+  radial-gradient(circle at 42% 50px,var(--cloud) 48px,transparent 49px),
+  radial-gradient(circle at 68% 60px,var(--cloud) 44px,transparent 45px),
+  radial-gradient(circle at 88% 84px,var(--cloud) 34px,transparent 35px)}
+.promise__icon{position:relative;display:grid;place-items:center;width:54px;height:54px;margin:-30px auto 14px;border-radius:50%;background:#fff;color:var(--rouge);font-size:22px;box-shadow:0 6px 16px -6px rgba(142,27,31,.25),0 0 0 1px rgba(168,138,90,.25)}
 .promise h3{font-size:clamp(24px,2vw,30px);font-weight:400;font-style:italic;margin-bottom:10px}
 .promise p{margin:0;font-size:14.5px;color:var(--ink-soft)}
 @media(max-width:899px){
   .showcase{padding:0 10% 14% 0}
   .phone{width:36%}
-  .promises{grid-template-columns:1fr 1fr;gap:14px}
-  .promise{padding:26px 14px 24px}
+  .promises{grid-template-columns:1fr 1fr;column-gap:14px;row-gap:80px}
+  .promise{padding:22px 16px 28px}
   .promise p{font-size:13.5px}
 }
 @media(max-width:520px){.promises{grid-template-columns:1fr}}
@@ -1287,6 +1312,32 @@ footer a:hover{color:var(--moon)}
       if (nx.dataset.src) { nx.src = nx.dataset.src; nx.removeAttribute('data-src'); nx.decode ? nx.decode().then(swap, swap) : swap(); } else swap();
     }, 4200), j * 1600);
   });
+
+  /* ---------- Source masonry: columns with no empty gaps ---------- */
+  const sgrid = $('.source-grid');
+  if (sgrid) {
+    const items = [...sgrid.children];           // sg1..sg5 + note, in document order
+    const note = items.find(el => el.classList.contains('source-note'));
+    const pieces = items.filter(el => el !== note);
+    let mode = '';
+    const layoutSource = () => {
+      const m = isMobile() ? 'm' : 'd';
+      if (m === mode) return; mode = m;
+      sgrid.innerHTML = ''; sgrid.classList.add('is-cols');
+      const col = n => { const c = document.createElement('div'); c.className = 'src-col src-col--' + n; sgrid.appendChild(c); return c; };
+      if (m === 'd') {
+        const c1 = col(1), c2 = col(2), c3 = col(3);
+        c1.append(pieces[0], pieces[3]); c2.append(pieces[1], pieces[4]); c3.append(pieces[2], note);
+      } else {
+        const full = document.createElement('div'); full.className = 'src-full'; full.append(pieces[0]); sgrid.appendChild(full);
+        const c1 = col(1), c2 = col(2);
+        c1.append(pieces[1], pieces[3]); c2.append(pieces[2], pieces[4]);
+        const nf = document.createElement('div'); nf.className = 'src-full'; nf.append(note); sgrid.appendChild(nf);
+      }
+    };
+    layoutSource();
+    matchMedia('(max-width:899px)').addEventListener('change', layoutSource);
+  }
 
   /* ---------- clouds ---------- */
   if (!RM) $$('[data-clouds]').forEach(sec => {
