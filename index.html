@@ -739,9 +739,24 @@ footer a:hover{color:var(--moon)}
 .std p{margin:0 auto;max-width:24em;color:var(--ink-soft);font-size:15px}
 @media(max-width:899px){.standard{grid-template-columns:1fr;gap:56px}.std__arch{width:62vw}}
 
+/* magic dust: appears only while scrolling */
+.mote{position:absolute;left:0;top:0;pointer-events:none;will-change:transform,opacity;opacity:0;line-height:1}
+.m-spark{color:#B38A45;font-size:var(--sz,12px);text-shadow:0 0 8px rgba(214,182,122,.7),0 0 2px rgba(255,255,255,.8)}
+.m-spark.light{color:#F3E3BC;text-shadow:0 0 8px rgba(243,227,188,.8)}
+.m-glint{width:var(--sz,6px);height:var(--sz,6px);border-radius:50%;background:radial-gradient(circle,#fff 0,rgba(240,205,140,.95) 35%,rgba(240,205,140,0) 70%)}
+.m-petal{width:var(--sz,11px);height:calc(var(--sz,11px) * .72);border-radius:80% 0 80% 0;background:linear-gradient(135deg,#FBEDE7,#DDA99A);box-shadow:0 2px 6px -2px rgba(142,27,31,.25)}
+.m-seed{width:calc(var(--sz,14px) * .9);height:calc(var(--sz,14px) * 1.5)}
+.m-seed svg{width:100%;height:100%;overflow:visible}
+/* shooting star in the screening room */
+.shooting{position:absolute;z-index:1;top:16%;left:-10%;width:140px;height:1.5px;border-radius:2px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(243,227,188,0),rgba(243,227,188,.95));transform:rotate(14deg);opacity:0;animation:shoot 9s ease-in infinite 2s}
+.shooting::after{content:"";position:absolute;right:-2px;top:-2px;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px rgba(243,227,188,.8)}
+.shooting.two{top:34%;width:100px;animation-duration:13s;animation-delay:7s}
+@keyframes shoot{0%{transform:translate3d(0,0,0) rotate(14deg);opacity:0}3%{opacity:1}12%{transform:translate3d(70vw,18vw,0) rotate(14deg);opacity:0}100%{opacity:0;transform:translate3d(70vw,18vw,0) rotate(14deg)}}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-  .flight,.petals,.fireflies,.bubbles,.spark{display:none}
+  .flight,.petals,.fireflies,.bubbles,.spark,.shooting{display:none}
 }
 </style>
 </head>
@@ -1025,6 +1040,7 @@ footer a:hover{color:var(--moon)}
 <section class="films" id="films" aria-labelledby="films-title" data-dark>
   <canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas>
   <div class="moon" data-par="-0.12" aria-hidden="true"></div>
+  <i class="shooting" aria-hidden="true"></i><i class="shooting two" aria-hidden="true"></i>
   <div class="wrap films__inner">
     <div class="room-head" style="margin-bottom:0">
       <div>
@@ -1449,14 +1465,24 @@ footer a:hover{color:var(--moon)}
     <path d="M25 63 L26 73 M35 63 L34 73" stroke="#1A1714" stroke-width=".7"/>
     <rect x="25" y="73" width="10" height="8" rx="1.5" fill="#A88A5A" stroke="#5a4422" stroke-width=".6"/>`;
   // flights: anchor section, keyframes [progress, x(vw), y(vh)]
+  const SEED = `<path d="M30 46 C 30 38 31 30 30 22" stroke="#8C8378" stroke-width=".8" fill="none"/>
+    <g stroke="#B9AE9F" stroke-width=".6" fill="none" opacity=".9">
+      <path d="M30 22 L18 8 M30 22 L24 4 M30 22 L30 2 M30 22 L36 4 M30 22 L42 8 M30 22 L14 16 M30 22 L46 16"/></g>
+    <g fill="#fff" opacity=".9"><circle cx="18" cy="8" r="1.4"/><circle cx="24" cy="4" r="1.4"/><circle cx="30" cy="2" r="1.4"/><circle cx="36" cy="4" r="1.4"/><circle cx="42" cy="8" r="1.4"/><circle cx="14" cy="16" r="1.2"/><circle cx="46" cy="16" r="1.2"/></g>
+    <ellipse cx="30" cy="47" rx="1.6" ry="2.6" fill="#8C8378"/>`;
   const FLIGHTS = [
+    { anchor: '#rouge', kind: 'fly', fill: '#E7C9BE', vein: '#8E1B1F', scale: .7, pts: [[0.1, -8, 24], [0.35, 30, 14], [0.6, 62, 26], [0.88, 108, 12]] },
+    { anchor: '#quiet', kind: 'fly', fill: '#D9D0E6', vein: '#6E6386', scale: .75, pts: [[0.1, 108, 30], [0.4, 70, 18], [0.65, 40, 30], [0.92, -10, 16]] },
+    { anchor: '#faq', kind: 'float', svg: SEED, vb: '0 0 60 50', w: 46, h: 40, scale: 1, pts: [[0.0, 8, 105], [0.35, 14, 66], [0.65, 6, 36], [1.0, 16, -12]] },
+    { anchor: '#contact', kind: 'fly', fill: '#EDE6DA', vein: '#A88A5A', scale: .75, pts: [[0.05, 104, 86], [0.4, 78, 52], [0.7, 88, 24], [1.0, 70, -10]] },
+    { anchor: '#contact', kind: 'fly', fill: '#8E1B1F', vein: '#EDE6DA', scale: .6, pts: [[0.1, -6, 70], [0.45, 16, 44], [0.75, 8, 20], [1.0, 24, -10]] },
     { anchor: '#hero', kind: 'fly', fill: '#8E1B1F', vein: '#3b0d0f', scale: .9, pts: [[0.38, -8, 70], [0.5, 22, 58], [0.62, 46, 36], [0.8, 76, 22], [0.98, 112, 4]] },
     { anchor: '#collection', kind: 'fly', fill: '#8E1B1F', vein: '#3b0d0f', scale: 1, pts: [[0.05, -8, 70], [0.3, 22, 40], [0.5, 48, 58], [0.72, 78, 30], [0.95, 112, 12]] },
     { anchor: '#ivory', kind: 'fly', fill: '#F7F1E6', vein: '#A88A5A', scale: .9, pts: [[0.02, 108, 82], [0.25, 74, 50], [0.5, 36, 66], [0.75, 14, 30], [0.98, -10, 8]] },
     { anchor: '#ivory', kind: 'fly', fill: '#E7C9BE', vein: '#8E1B1F', scale: .7, pts: [[0.12, -8, 30], [0.4, 30, 22], [0.62, 64, 40], [0.9, 110, 26]] },
     { anchor: '#source', kind: 'swim', svg: FISH, vb: '0 0 86 50', w: 96, h: 56, scale: 1, pts: [[0.3, 110, 62], [0.48, 72, 44], [0.62, 46, 64], [0.78, 20, 40], [0.95, -14, 52]] },
     { anchor: '#digital', kind: 'plane', svg: PLANE, vb: '-40 0 104 42', w: 120, h: 48, scale: 1, pts: [[0.08, -14, 74], [0.35, 26, 40], [0.5, 50, 52], [0.66, 70, 28], [0.92, 114, 14]] },
-    { anchor: '#services', kind: 'float', svg: BALLOON, vb: '0 0 60 84', w: 70, h: 98, scale: 1, pts: [[0.0, 86, 118], [0.3, 82, 70], [0.6, 88, 34], [1.0, 80, -30]] },
+    { anchor: '#services', kind: 'float', svg: BALLOON, vb: '0 0 60 84', w: 70, h: 98, scale: 1, pts: [[0.0, 55, 118], [0.3, 53, 70], [0.6, 56, 34], [1.0, 54, -30]], mpts: [[0.0, 93, 118], [0.3, 91, 70], [0.6, 94, 34], [1.0, 92, -30]] },
     { anchor: '#studio', kind: 'fly', fill: '#C9A46A', vein: '#5a4422', scale: .8, pts: [[0.05, 108, 70], [0.4, 70, 40], [0.65, 34, 56], [0.95, -10, 24]] }
   ];
   const flight = $('#flight');
@@ -1623,14 +1649,56 @@ footer a:hover{color:var(--moon)}
   };
 
   if (FINE) addEventListener('mousemove', e => { pmx = e.clientX / vw - .5; pmy = e.clientY / vh - .5; });
+  /* ---------- magic dust: a few motes drift while the page is scrolled ---------- */
+  const dust = [], DUST_TYPES = ['spark', 'spark', 'glint', 'petal', 'seed'];
+  let dustEnergy = 0, dustLastY = scrollY, dustDir = 1;
+  const darkAt = y => darkSecs.some(sec => { const r = sec.getBoundingClientRect(); return r.top < y && r.bottom > y; });
+  const spawnMote = () => {
+    const max = isMobile() ? 6 : 10;
+    if (dust.length >= max) return;
+    const dark = darkAt(vh * .5);
+    let type = DUST_TYPES[Math.floor(Math.random() * DUST_TYPES.length)];
+    if (dark && (type === 'petal' || type === 'seed')) type = 'spark';
+    const el = document.createElement('span');
+    el.className = 'mote m-' + type + (dark ? ' light' : '');
+    if (type === 'spark') el.textContent = Math.random() > .3 ? '✦' : '✧';
+    if (type === 'seed') el.innerHTML = `<svg viewBox="0 0 60 50">${SEED}</svg>`;
+    const sz = { spark: 11 + Math.random() * 9, glint: 8 + Math.random() * 6, petal: 11 + Math.random() * 7, seed: 18 + Math.random() * 10 }[type] * (isMobile() ? .85 : 1);
+    el.style.setProperty('--sz', sz + 'px');
+    // keep motes mostly in the margins so reading is never disturbed
+    const edge = Math.random() < (isMobile() ? .85 : .75);
+    const x = edge ? (Math.random() < .5 ? Math.random() * .12 : .88 + Math.random() * .12) * vw : (.15 + Math.random() * .7) * vw;
+    const y = dustDir > 0 ? vh * (.55 + Math.random() * .45) : vh * Math.random() * .45;
+    flight.appendChild(el);
+    dust.push({ el, x, y, vx: (Math.random() - .5) * .35, vy: -dustDir * (.25 + Math.random() * .45), r: Math.random() * 360, vr: (Math.random() - .5) * (type === 'seed' ? .6 : 2.4),
+      born: performance.now(), life: 0, max: 2600 + Math.random() * 1600, peak: edge ? .95 : .6, ph: Math.random() * 6.28 });
+  };
+  const stepDust = sy => {
+    const dy = sy - dustLastY; dustLastY = sy;
+    if (Math.abs(dy) > .5) { dustDir = dy > 0 ? 1 : -1; dustEnergy += Math.min(Math.abs(dy), 60); }
+    while (dustEnergy > 140) { dustEnergy -= 140; spawnMote(); }
+    for (let i = dust.length - 1; i >= 0; i--) {
+      const m = dust[i];
+      m.life++; const age = performance.now() - m.born;
+      m.x += m.vx + Math.sin(m.life / 40 + m.ph) * .35;
+      m.y += m.vy - dy * .12;
+      m.r += m.vr;
+      const k = Math.min(1, age / m.max);
+      const o = k < .08 ? k / .08 : k > .7 ? (1 - k) / .3 : 1;
+      m.el.style.opacity = (o * m.peak).toFixed(3);
+      m.el.style.transform = `translate3d(${m.x}px,${m.y}px,0) rotate(${m.r}deg)`;
+      if (k >= 1 || m.y < -40 || m.y > vh + 40) { m.el.remove(); dust.splice(i, 1); }
+    }
+  };
   const tick = t => {
+    if (!RM) stepDust(scrollY);
     const sy = scrollY;
     if (sy < vh * 1.6) orbitStep(t, sy);
     for (const f of flies) {
       const p = prog(f.host);
       const first = f.pts[0][0], last = f.pts[f.pts.length - 1][0];
       const vis = p > first && p < last;
-      let [tx, ty] = pathAt(f.pts, p);
+      let [tx, ty] = pathAt((isMobile() && f.mpts) || f.pts, p);
       tx = tx * vw / 100; ty = ty * vh / 100;
       ty += Math.sin(t / 420 + f.seed) * 10; tx += Math.cos(t / 900 + f.seed) * 8;
       if (!f.init) { f.x = tx; f.y = ty; f.init = true; }
