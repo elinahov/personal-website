@@ -477,15 +477,53 @@ section{position:relative}
 
 /* digital */
 .digital{overflow:hidden}
-.apps{display:flex;gap:clamp(16px,2vw,28px);will-change:transform;margin-top:clamp(50px,7vw,90px);padding-left:var(--gutter)}
-.app{flex:none;margin:0;width:clamp(280px,34vw,520px);background:var(--paper-2);border-radius:var(--radius);overflow:hidden;position:relative}
-.app img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;mix-blend-mode:multiply;transform:scale(1.06)}
-.app figcaption{position:absolute;left:18px;bottom:16px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
-.digital-copy{display:grid;gap:40px}
-@media(min-width:900px){.digital-copy{grid-template-columns:1.1fr .9fr;align-items:end;gap:6vw}}
-.stats{display:flex;gap:clamp(28px,5vw,70px);margin-top:36px;flex-wrap:wrap}
-.stat b{display:block;font-family:var(--font-display);font-weight:300;font-size:clamp(48px,5.6vw,84px);line-height:1}
-.stat span{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint)}
+.digital{overflow:hidden;background:linear-gradient(var(--paper),#F1E7E3 45%,#EEEAF2 80%,var(--paper))}
+.dg-head{text-align:center;max-width:860px;margin:0 auto;position:relative;z-index:1}
+.dg-head h2{font-size:clamp(46px,7vw,112px)}
+.dg-head .lede{margin:28px auto 0}
+.showcase{position:relative;z-index:1;max-width:1040px;margin:clamp(56px,8vw,100px) auto 0;padding:0 6% 8% 0}
+.browser{position:relative;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 50px 90px -40px rgba(70,35,30,.45),0 0 0 1px rgba(26,23,20,.06);animation:float 10s ease-in-out infinite;rotate:-1.2deg}
+.browser__bar{display:flex;align-items:center;gap:6px;height:34px;padding:0 14px;background:#F7F2EB;border-bottom:1px solid rgba(26,23,20,.06)}
+.browser__bar i{width:9px;height:9px;border-radius:50%;background:var(--blush)}
+.browser__bar i:nth-child(2){background:#E9D9B8}.browser__bar i:nth-child(3){background:var(--lilac)}
+.browser__bar span{margin:0 auto;padding:4px 18px;border-radius:999px;background:#fff;font-size:10.5px;letter-spacing:.08em;color:var(--ink-faint)}
+.browser__screen{position:relative;aspect-ratio:16/9.4;overflow:hidden}
+[data-cycle] img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.1);transition:opacity 1.6s ease,transform 7s linear}
+[data-cycle] img.on{opacity:1;transform:scale(1)}
+.mock{position:absolute;inset:0;z-index:1;color:#fff;font-family:var(--font-display);pointer-events:none}
+.mock--web{background:linear-gradient(180deg,rgba(10,8,6,.35),transparent 30%,transparent 55%,rgba(10,8,6,.45))}
+.mock__nav{display:flex;align-items:center;gap:12px;padding:3% 4%}
+.mock__nav b{font-weight:400;font-size:clamp(14px,2vw,26px);margin-right:auto}
+.mock__nav span{width:clamp(18px,3vw,40px);height:1px;background:rgba(255,255,255,.8)}
+.mock__hero{position:absolute;left:5%;bottom:9%;display:grid;gap:4px;justify-items:start}
+.mock__hero em{font-size:clamp(11px,1.4vw,18px);font-weight:300}
+.mock__hero b{font-weight:300;font-size:clamp(24px,4.6vw,62px);line-height:1}
+.mock__pill{margin-top:10px;font-family:var(--font-body);font-size:clamp(8px,.85vw,11px);letter-spacing:.22em;text-transform:uppercase;padding:.8em 1.6em;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink)}
+.phone{position:absolute;right:0;bottom:0;width:27%;aspect-ratio:9/19;border-radius:clamp(22px,3.4vw,44px);background:#16130f;padding:clamp(4px,.7vw,9px);
+  box-shadow:0 50px 90px -30px rgba(40,20,15,.55);animation:float 8s ease-in-out infinite;animation-delay:-3s;rotate:3deg}
+.phone__screen{position:relative;width:100%;height:100%;border-radius:clamp(18px,2.8vw,36px);overflow:hidden}
+.phone__screen::before{content:"";position:absolute;z-index:2;top:2.4%;left:50%;width:32%;height:3.4%;margin-left:-16%;border-radius:999px;background:#16130f}
+.mock--app{background:linear-gradient(180deg,rgba(10,8,6,.35),transparent 25%,transparent 55%,rgba(10,8,6,.55));display:flex;flex-direction:column;align-items:center;padding-top:12%}
+.mock--app>b{font-weight:400;font-size:clamp(13px,1.8vw,22px)}
+.mock__bottom{position:absolute;left:0;right:0;bottom:6%;display:grid;justify-items:center;gap:6px}
+.mock__bottom em{font-size:clamp(11px,1.4vw,18px);font-weight:300}
+.mock__dots{display:flex;gap:5px;margin-top:6px}.mock__dots i{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.6)}.mock__dots i:first-child{background:#fff}
+.sparkle{position:absolute;z-index:3;color:var(--gold);font-size:22px;animation:twinkle 3.2s ease-in-out infinite}
+.s1{left:-2%;top:12%}.s2{right:30%;top:-5%;font-size:28px;animation-delay:-1s}.s3{right:-1%;top:30%;font-size:16px;animation-delay:-2s}.s4{left:20%;bottom:2%;font-size:34px;animation-delay:-.5s}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(25deg)}}
+.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,28px);margin-top:clamp(60px,8vw,110px);position:relative;z-index:1}
+.promise{text-align:center;padding:30px 22px 32px;border-radius:999px 999px 18px 18px;background:rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(168,138,90,.22)}
+.promise__icon{display:grid;place-items:center;width:52px;height:52px;margin:6px auto 16px;border-radius:50%;background:var(--paper);color:var(--rouge);font-size:22px;box-shadow:0 0 0 1px rgba(168,138,90,.3)}
+.promise h3{font-size:clamp(24px,2vw,30px);font-weight:400;font-style:italic;margin-bottom:10px}
+.promise p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+@media(max-width:899px){
+  .showcase{padding:0 10% 14% 0}
+  .phone{width:36%}
+  .promises{grid-template-columns:1fr 1fr;gap:14px}
+  .promise{padding:26px 14px 24px}
+  .promise p{font-size:13.5px}
+}
+@media(max-width:520px){.promises{grid-template-columns:1fr}}
 
 /* services */
 .services{background:var(--paper-2);overflow:hidden}
@@ -985,28 +1023,46 @@ footer a:hover{color:var(--moon)}
 </section>
 
 <!-- ============ DIGITAL ============ -->
-<section class="digital sec-pad" id="digital" aria-labelledby="digital-title">
+<section class="digital sec-pad" id="digital" aria-labelledby="digital-title" data-clouds='[{"y":"10%","w":260,"d":140,"dl":-30,"c":"#F6E3DC"},{"y":"58%","w":220,"d":110,"dl":-80,"c":"#ECE6F3"}]'>
   <div class="wrap">
-    <div class="digital-copy">
-      <div>
-        <div class="room-no"><span class="roman">VI.</span><span class="eyebrow">Websites &amp; apps</span></div>
-        <h2 class="display" id="digital-title">From image <br>to <em>interface</em></h2>
+    <div class="dg-head">
+      <div class="room-no" style="justify-content:center"><span class="roman">VI.</span><span class="eyebrow">Websites &amp; apps</span></div>
+      <h2 class="display" id="digital-title">Your brand, <br><em>a world to wander.</em></h2>
+      <p class="lede" data-fade>Websites and mobile apps as marvelous as your imagery — places your clients want to linger. Soft motion, beautiful details and little moments of wonder, dreamt with AI and polished by hand until they feel effortless on every screen.</p>
+    </div>
+
+    <div class="showcase" aria-hidden="true">
+      <span class="sparkle s1">✦</span><span class="sparkle s2">✧</span><span class="sparkle s3">✦</span><span class="sparkle s4">·</span>
+      <div class="browser">
+        <div class="browser__bar"><i></i><i></i><i></i><span>yourmaison.com</span></div>
+        <div class="browser__screen" data-cycle>
+          <img class="on" src="assets/work/ivory-meadow-sm.webp" alt="" loading="lazy"><img data-src="assets/work/rouge-staircase-sm.webp" alt="" loading="lazy"><img data-src="assets/work/source-golden-hour-sm.webp" alt="" loading="lazy"><img data-src="assets/work/ivory-labyrinth-sm.webp" alt="" loading="lazy">
+          <div class="mock mock--web">
+            <div class="mock__nav"><b>Maison</b><span></span><span></span><span></span></div>
+            <div class="mock__hero"><em>A new collection</em><b>In full bloom</b><span class="mock__pill">Discover</span></div>
+          </div>
+        </div>
       </div>
-      <div data-fade>
-        <p class="lede">The same imagination, now interactive. Eleene designs and builds AI-native websites and mobile apps that feel as considered as a campaign — fluid, alive, and engineered to perform, backed by real engineering experience shipping products to the App Store and Google Play.</p>
-        <div class="stats">
-          <div class="stat"><b>40+</b><span>Apps shipped</span></div>
-          <div class="stat"><b>3</b><span>iOS · Android · Web</span></div>
+      <div class="phone">
+        <div class="phone__screen" data-cycle>
+          <img class="on" src="assets/work/ivory-bloom-sm.webp" alt="" loading="lazy"><img data-src="assets/work/rouge-headlines-sm.webp" alt="" loading="lazy"><img data-src="assets/work/quiet-late-draft-sm.webp" alt="" loading="lazy"><img data-src="assets/work/source-spring-sm.webp" alt="" loading="lazy">
+          <div class="mock mock--app">
+            <b>Maison</b>
+            <div class="mock__bottom"><em>Your private fitting</em><span class="mock__pill">Book a moment</span><div class="mock__dots"><i></i><i></i><i></i></div></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="apps" id="apps">
-    <figure class="app"><img src="assets/work/app-evoria.webp" alt="Evoria event-vendor mobile app screens: calendar, services and packages" loading="lazy" decoding="async" width="1100" height="1100"><figcaption>Evoria · Events app</figcaption></figure>
-    <figure class="app"><img src="assets/work/app-travio.webp" alt="Travio travel companion app screens with destination cards and maps" loading="lazy" decoding="async" width="1100" height="1100"><figcaption>Travio · Travel app</figcaption></figure>
-    <figure class="app"><img src="assets/work/app-culinar.webp" alt="Culinar recipe app screens with featured recipes and cooking steps" loading="lazy" decoding="async" width="1100" height="1100"><figcaption>Culinar · Recipes app</figcaption></figure>
-    <figure class="app"><img src="assets/work/app-prehab101.webp" alt="Prehab101 rehabilitation training app screens with workout phases" loading="lazy" decoding="async" width="1100" height="1100"><figcaption>Prehab101 · Fitness app</figcaption></figure>
-    <figure class="app"><img src="assets/work/app-casana.webp" alt="Casana wellness content app screens with articles and video" loading="lazy" decoding="async" width="1100" height="1100"><figcaption>Casana · Wellness app</figcaption></figure>
+
+    <div class="promises">
+      <div class="promise" data-fade><span class="promise__icon">❀</span><h3>A boutique, online</h3><p>Websites that feel like stepping into your flagship — editorial typography, soft motion and every detail considered.</p></div>
+      <div class="promise" data-fade><span class="promise__icon">☾</span><h3>Apps they love to open</h3><p>Elegant apps for bookings, collections and your most loyal clients, made with the same eye as your campaigns.</p></div>
+      <div class="promise" data-fade><span class="promise__icon">✧</span><h3>Little moments of wonder</h3><p>Floating details, gentle animation and small surprises that make people stay — like the butterflies on this page.</p></div>
+      <div class="promise" data-fade><span class="promise__icon">✦</span><h3>Effortless everywhere</h3><p>Beautiful on every phone, quick to open, and easy to find when your clients go looking.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:clamp(44px,6vw,72px)" data-fade>
+      <a class="btn" href="https://www.instagram.com/eleene.ai/" target="_blank" rel="noopener" data-ig="digital">Dream up your website</a>
+    </div>
   </div>
 </section>
 
@@ -1056,31 +1112,31 @@ footer a:hover{color:var(--moon)}
         <span class="roman">III.</span>
         <div class="svc__body svc__name"><h3>AI <em>websites</em></h3></div>
         <div class="svc__body svc__desc">
-          <p class="svc__q">Editorial websites that feel like stepping into a flagship boutique — fluid motion, considered typography, fast on every phone, and structured to be found on Google and by AI assistants.</p>
+          <p class="svc__q">Websites that feel like stepping into your flagship boutique — fluid motion, considered typography, and a little magic on every scroll, beautiful on every phone.</p>
           <span class="poss-label">What becomes possible</span>
           <ul class="poss">
             <li>A living, scroll-animated brand world — like the one you are walking through</li>
             <li>Portfolios, launch pages and digital lookbooks</li>
             <li>Collection and product stories that sell the feeling, not just the item</li>
-            <li>SEO and AI-search (GEO) structure built in from day one</li>
+            <li>Easy to find on Google and when clients ask AI assistants</li>
           </ul>
-          <div class="tags"><span>Brand sites</span><span>Portfolios</span><span>Landing pages</span><span>SEO &amp; GEO</span></div></div>
+          <div class="tags"><span>Brand sites</span><span>Portfolios</span><span>Lookbooks</span><span>Launches</span></div></div>
         <div class="svc__thumb"><img src="assets/work/ivory-gown-unworn-sm.webp" alt="" loading="lazy"></div>
       </article>
-      <article class="svc" data-img="assets/work/app-travio.webp">
+      <article class="svc" data-img="assets/work/ivory-behind-the-glass-sm.webp">
         <span class="roman">IV.</span>
         <div class="svc__body svc__name"><h3>AI <em>mobile apps</em></h3></div>
         <div class="svc__body svc__desc">
-          <p class="svc__q">iOS and Android apps designed with the same eye and engineered for real use — smooth, stable, and ready for the App Store and Google Play.</p>
+          <p class="svc__q">Elegant apps for iPhone and Android, designed with the same eye as your campaigns — a pocket-sized version of your world that clients carry with them.</p>
           <span class="poss-label">What becomes possible</span>
           <ul class="poss">
             <li>Brand and membership apps for your most loyal clients</li>
             <li>Booking, concierge and shopping experiences that feel bespoke</li>
-            <li>An idea taken from first sketch to the store, quickly</li>
+            <li>An idea taken gently from first sketch to the App Store</li>
             <li>Ongoing design, new features and refinements after launch</li>
           </ul>
-          <div class="tags"><span>iOS</span><span>Android</span><span>MVPs</span><span>Launch</span></div></div>
-        <div class="svc__thumb"><img src="assets/work/app-travio.webp" alt="" loading="lazy"></div>
+          <div class="tags"><span>iPhone</span><span>Android</span><span>Bookings</span><span>Loyalty</span></div></div>
+        <div class="svc__thumb"><img src="assets/work/ivory-behind-the-glass-sm.webp" alt="" loading="lazy"></div>
       </article>
     </div>
 
@@ -1138,7 +1194,7 @@ footer a:hover{color:var(--moon)}
       <details><summary>Will my real product stay accurate?<i></i></summary><p>Yes. Your product is built from your own reference photos, so its shape, materials, colour and label stay faithful. Every image is reviewed and retouched by hand before it reaches you.</p></details>
       <details><summary>Do I need to ship products or organise a shoot?<i></i></summary><p>No. Clear reference photos of your product — plus brand guidelines if you have them — are enough to begin. No studio hire, travel, models or location fees.</p></details>
       <details><summary>What does a commission cost?<i></i></summary><p>Every commission is quoted individually after a short conversation about scope, the number of visuals or length of film, and where they will be used. Send a message on Instagram and we will start there.</p></details>
-      <details><summary>Can Eleene build my website or app too?<i></i></summary><p>Yes. The studio is built on real engineering experience — more than forty apps shipped — so your imagery, website and app can be created as one coherent brand world.</p></details>
+      <details><summary>Can Eleene create my website or app too?<i></i></summary><p>Yes — and it is one of the loveliest parts of the work. Your imagery, your website and your app can be created together as one coherent world, so everything your clients touch feels like your brand.</p></details>
       <details><summary>How do we start?<i></i></summary><p>Send a direct message to <a class="link-line" href="https://www.instagram.com/eleene.ai/" target="_blank" rel="noopener" data-ig="faq">@eleene.ai</a> on Instagram with your brand, what you would like to create and your timing. Every message receives a personal reply.</p></details>
     </div>
   </div>
@@ -1218,6 +1274,18 @@ footer a:hover{color:var(--moon)}
       if (nx.dataset.src) { nx.src = nx.dataset.src; nx.removeAttribute('data-src'); nx.decode ? nx.decode().then(swap, swap) : (nx.onload = swap); } else swap();
     };
     if (!RM) setTimeout(() => setInterval(next, 5200), 2600 + i * 900);
+  });
+
+  /* ---------- image cyclers (digital showcase) ---------- */
+  $$('[data-cycle]').forEach((box, j) => {
+    const ims = $$('img', box); let k = 0;
+    if (RM || ims.length < 2) return;
+    setTimeout(() => setInterval(() => {
+      const r = box.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh || document.hidden) return;
+      const n = (k + 1) % ims.length, nx = ims[n];
+      const swap = () => { ims[k].classList.remove('on'); nx.classList.add('on'); k = n; };
+      if (nx.dataset.src) { nx.src = nx.dataset.src; nx.removeAttribute('data-src'); nx.decode ? nx.decode().then(swap, swap) : swap(); } else swap();
+    }, 4200), j * 1600);
   });
 
   /* ---------- clouds ---------- */
@@ -1407,7 +1475,6 @@ footer a:hover{color:var(--moon)}
   const heroCopy = $('#heroCopy');
   const pars = $$('[data-par]');
   const sourceImg = $('#sourceImg'), sourceHero = $('.source-hero');
-  const apps = $('#apps'), digital = $('#digital');
 
   const prog = el => { const r = el.getBoundingClientRect(); return clamp((vh - r.top) / (vh + r.height)); };
 
@@ -1443,8 +1510,6 @@ footer a:hover{color:var(--moon)}
     pars.forEach(el => { const r = el.getBoundingClientRect(); const c = (r.top + r.height / 2 - vh / 2); el.style.transform = `translate3d(0,${c * parseFloat(el.dataset.par)}px,0)`; });
     // source
     if (sourceHero) { const p = prog(sourceHero); sourceImg.style.transform = `translate3d(0,${(p - .5) * 14}%,0) scale(${1.12 - p * .12})`; }
-    // apps drift
-    if (apps) { const p = prog(digital); apps.style.transform = `translate3d(${-p * Math.max(0, apps.scrollWidth - vw * .6)}px,0,0)`; }
     // flowers
     flowers.forEach(f => {
       const r = f.el.getBoundingClientRect();
