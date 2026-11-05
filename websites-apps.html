@@ -12,7 +12,7 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Websites &amp; Mobile Apps — Selected Digital Work | Eleene</title>
-<meta name="description" content="Websites and mobile apps designed and developed by Eleene: an immersive studio website, a brand concept, and iOS and Android apps for events, recipes, travel, recovery and wellness.">
+<meta name="description" content="Websites and mobile apps designed and developed by Eleene: live websites for Evoria and Aybora, the Eleene studio site, and iOS and Android apps for events, recipes, travel, recovery and wellness.">
 <meta name="theme-color" content="#F4EFE7">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://elinahovakimyan.com/websites-apps.html">
@@ -41,12 +41,14 @@
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "name": "Eleene", "url": "https://elinahovakimyan.com/" } },
-      { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "Evoria", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, Android" } },
-      { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "Culinar", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS, Android" } },
-      { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareApplication", "name": "Travio", "applicationCategory": "TravelApplication", "operatingSystem": "iOS, Android" } },
-      { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "Prehab101", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android" } },
-      { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "Casana", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS, Android" } }
+      { "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "name": "Evoria", "url": "https://evoria.io/hy" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "WebSite", "name": "Aybora", "url": "https://aybora.app/" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "WebSite", "name": "Eleene", "url": "https://elinahovakimyan.com/" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareApplication", "name": "Evoria", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, Android" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "Culinar", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS, Android" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "Travio", "applicationCategory": "TravelApplication", "operatingSystem": "iOS, Android" } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareApplication", "name": "Prehab101", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android" } },
+      { "@type": "ListItem", "position": 8, "item": { "@type": "SoftwareApplication", "name": "Casana", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS, Android" } }
     ]
   }
 }
@@ -171,6 +173,19 @@ section{position:relative}
 @keyframes path1{0%{transform:translate(0,0) rotate(10deg);opacity:0}6%{opacity:1}30%{transform:translate(38vw,-6vh) rotate(-6deg)}55%{transform:translate(62vw,8vh) rotate(12deg)}80%{transform:translate(90vw,-4vh) rotate(-4deg);opacity:1}100%{transform:translate(115vw,2vh);opacity:0}}
 @keyframes path2{0%{transform:translate(0,0);opacity:0}8%{opacity:1}40%{transform:translate(45vw,-10vh) rotate(8deg)}70%{transform:translate(80vw,4vh) rotate(-8deg);opacity:1}100%{transform:translate(118vw,-6vh);opacity:0}}
 
+.site-card{display:block;position:relative;padding:0 6% 8% 0}
+.site-cover{display:grid;place-items:center;align-content:center;gap:10px;text-align:center;color:var(--ink);
+  background:radial-gradient(70% 60% at 25% 25%,rgba(255,255,255,.85),transparent 70%),var(--cover,#ECE6F3)}
+.tone-lilac{--cover:linear-gradient(135deg,#EFE9F6,#DCD3EA)}
+.tone-sage{--cover:linear-gradient(135deg,#EEF0E6,#DCE2D2)}
+.tone-lilac .site-cover{background:radial-gradient(70% 60% at 25% 25%,rgba(255,255,255,.85),transparent 70%),linear-gradient(135deg,#EFE9F6,#D9CFE9)}
+.tone-sage .site-cover{background:radial-gradient(70% 60% at 25% 25%,rgba(255,255,255,.85),transparent 70%),linear-gradient(135deg,#F0F1E8,#D7DECB)}
+.site-cover b{font-family:var(--font-display);font-weight:300;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.01em}
+.site-cover em{font-family:var(--font-display);font-size:clamp(16px,1.5vw,20px);color:var(--ink-soft)}
+.site-cover__star{color:var(--rouge);font-size:18px}
+.site-cover__cta{margin-top:10px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1px rgba(168,138,90,.3);transition:background .4s,color .4s}
+.site-card:hover .site-cover__cta{background:var(--ink);color:var(--paper)}
+.site-card:hover .browser{translate:0 -8px}
 /* section heads */
 .sec{padding:clamp(100px,12vw,180px) 0}
 .sec-head{display:grid;gap:26px;align-items:end;margin-bottom:clamp(60px,8vw,110px)}
@@ -179,17 +194,16 @@ section{position:relative}
 .room-no{display:flex;gap:14px;align-items:baseline}.room-no .roman{font-size:26px}
 
 /* exhibits */
-.exhibit{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,5vw,90px);align-items:center;margin-bottom:clamp(100px,12vw,180px);scroll-margin-top:90px}
+.exhibit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center;max-width:1120px;margin:0 auto clamp(80px,9vw,140px);scroll-margin-top:90px}
 .exhibit:last-child{margin-bottom:0}
-.exhibit.flip{grid-template-columns:.75fr 1.25fr}
+.exhibit.flip{grid-template-columns:1fr 1fr}
 .exhibit.flip .exhibit__media{order:2}
-.exhibit__media{position:relative}
-.vitrine{position:relative;border-radius:999px 999px 28px 28px;overflow:hidden;background:var(--tint,#EFE7E0);box-shadow:0 50px 90px -50px rgba(70,35,30,.5),inset 0 0 0 1px rgba(168,138,90,.18)}
-.vitrine::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 35%,rgba(255,255,255,.7),transparent 70%);pointer-events:none}
-.vitrine img{position:relative;width:100%;aspect-ratio:1/1.08;object-fit:contain;padding:17% 5% 3%;mix-blend-mode:multiply;transition:transform 1.4s var(--ease)}
-.exhibit:hover .vitrine img{transform:scale(1.03)}
+.exhibit__media{position:relative;width:100%;max-width:520px;justify-self:center}
+.vitrine{position:relative}
+.vitrine img{position:relative;width:100%;height:auto;filter:drop-shadow(0 28px 30px rgba(70,35,30,.22)) drop-shadow(0 4px 6px rgba(70,35,30,.12));transition:transform 1.2s var(--ease)}
+.exhibit:hover .vitrine img{transform:translateY(-8px)}
 .placard .no{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint)}
-.placard h3{font-family:var(--font-display);font-weight:300;font-size:clamp(46px,5.4vw,84px);line-height:1;margin:14px 0 6px;letter-spacing:-.01em}
+.placard h3{font-family:var(--font-display);font-weight:300;font-size:clamp(40px,4.2vw,64px);line-height:1;margin:14px 0 6px;letter-spacing:-.01em}
 .placard .kind{font-family:var(--font-display);font-style:italic;font-size:clamp(20px,1.8vw,26px);color:var(--rouge)}
 .placard p{color:var(--ink-soft);margin:20px 0 0;max-width:30em}
 .facts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:0;border-top:1px solid var(--line);max-width:30em}
@@ -201,7 +215,7 @@ section{position:relative}
 @media(max-width:899px){
   .exhibit,.exhibit.flip{grid-template-columns:1fr;gap:34px}
   .exhibit.flip .exhibit__media{order:0}
-  .vitrine{border-radius:200px 200px 22px 22px}
+  .exhibit__media{max-width:440px}
 }
 
 /* apps section band */
@@ -279,7 +293,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
     <div>
       <div class="room-no" data-fade><span class="roman">VI.</span><span class="eyebrow">Selected digital work</span></div>
       <h1 class="display" id="page-title" data-fade>Digital places, <br><em>designed and built.</em></h1>
-      <p class="lede" data-fade>Websites and mobile apps I've designed and developed — real products in real hands, alongside concepts that show where a brand could go next.</p>
+      <p class="lede" data-fade>Websites and mobile apps I've designed and developed — real products, live online and in the App Store and Google Play.</p>
       <div class="chips" data-fade>
         <a class="chip" href="#websites"><b>i.</b> Websites</a>
         <a class="chip" href="#apps"><b>ii.</b> Mobile apps</a>
@@ -304,6 +318,58 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
       <p class="lede" data-fade>Designed and developed end to end — art direction, layout, motion and the code underneath — so the site feels as considered as the brand behind it, and works on every screen.</p>
     </div>
 
+    <article class="exhibit" id="evoria-site">
+      <div class="exhibit__media" data-fade>
+        <a class="site-card tone-lilac" href="https://evoria.io/hy" target="_blank" rel="noopener" aria-label="Visit Evoria — evoria.io (opens in a new tab)">
+          <div class="browser float tilt-l"><div class="browser__bar"><i></i><i></i><i></i><span>evoria.io</span></div>
+            <div class="browser__screen site-cover">
+              <span class="site-cover__star" aria-hidden="true">✦</span>
+              <b>Evoria</b>
+              <em>evoria.io</em>
+              <span class="site-cover__cta">Visit the live site ↗</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="placard" data-fade>
+        <span class="no">No. 01 · Live</span>
+        <h3>Evoria</h3>
+        <span class="kind">Website for an event-planning platform</span>
+        <p>The public home of Evoria — the event-planning platform whose vendor app you will find further down this page. Shown here in its Armenian edition.</p>
+        <ul class="facts">
+          <li><span>Role</span><span>Design &amp; development</span></li>
+          <li><span>Live at</span><span>evoria.io</span></li>
+        </ul>
+        <a class="link-arrow" href="https://evoria.io/hy" target="_blank" rel="noopener">Visit evoria.io <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="exhibit flip" id="aybora">
+      <div class="exhibit__media" data-fade>
+        <a class="site-card tone-sage" href="https://aybora.app/" target="_blank" rel="noopener" aria-label="Visit Aybora — aybora.app (opens in a new tab)">
+          <div class="browser float tilt-l"><div class="browser__bar"><i></i><i></i><i></i><span>aybora.app</span></div>
+            <div class="browser__screen site-cover">
+              <span class="site-cover__star" aria-hidden="true">✦</span>
+              <b>Aybora</b>
+              <em>aybora.app</em>
+              <span class="site-cover__cta">Visit the live site ↗</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="placard" data-fade>
+        <span class="no">No. 02 · Live</span>
+        <h3>Aybora</h3>
+        <span class="kind">Live website</span>
+        <p>A live website, designed and developed from first layout to launch.</p>
+        <ul class="facts">
+          <li><span>Role</span><span>Design &amp; development</span></li>
+          <li><span>Live at</span><span>aybora.app</span></li>
+        </ul>
+        <a class="link-arrow" href="https://aybora.app/" target="_blank" rel="noopener">Visit aybora.app <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
     <article class="exhibit" id="eleene">
       <div class="exhibit__media" data-fade>
         <span class="sparkle" style="right:2%;top:-4%">✦</span>
@@ -313,7 +379,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
         </div>
       </div>
       <div class="placard" data-fade>
-        <span class="no">No. 01 · Live</span>
+        <span class="no">No. 03 · Live</span>
         <h3>Eleene</h3>
         <span class="kind">An immersive studio website</span>
         <p>The site you are on. A portfolio told as a walk through museum rooms: images that orbit the headline, a gallery that moves sideways as you scroll, a screening room after dark, and small living details — butterflies, drifting petals, a hot-air balloon — that appear without getting in the way of reading.</p>
@@ -326,33 +392,6 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
       </div>
     </article>
 
-    <article class="exhibit flip" id="maison">
-      <div class="exhibit__media" data-fade>
-        <span class="sparkle" style="left:0;top:4%;animation-delay:-1.5s">✧</span>
-        <div style="position:relative;padding:0 9% 11% 0">
-          <div class="browser float tilt-l"><div class="browser__bar"><i></i><i></i><i></i><span>yourmaison.com</span></div>
-            <div class="browser__screen" data-cycle>
-              <img class="on" src="assets/work/ivory-meadow-sm.webp" alt="" loading="lazy"><img data-src="assets/work/rouge-staircase-sm.webp" alt=""><img data-src="assets/work/source-golden-hour-sm.webp" alt="">
-              <div class="mock"><div class="mock__nav"><b>Maison</b><span></span><span></span><span></span></div><div class="mock__hero"><em>A new collection</em><b>In full bloom</b><span class="mock__pill">Discover</span></div></div>
-            </div></div>
-          <div class="phone float b tilt-r"><div class="phone__screen" data-cycle>
-            <img class="on" src="assets/work/ivory-bloom-sm.webp" alt="" loading="lazy"><img data-src="assets/work/rouge-headlines-sm.webp" alt=""><img data-src="assets/work/quiet-late-draft-sm.webp" alt="">
-            <div class="mock mock--app"><b>Maison</b></div>
-          </div></div>
-        </div>
-      </div>
-      <div class="placard" data-fade>
-        <span class="no">No. 02 · Concept</span>
-        <h3>Maison</h3>
-        <span class="kind">A fashion house, imagined online</span>
-        <p>An illustrative concept for how a brand's website and app could feel together: full-bleed campaign imagery that slowly changes, quiet navigation, and one clear invitation on every screen — discover the collection, or book a private fitting.</p>
-        <span class="badge">Concept · illustrative brand</span>
-        <ul class="facts">
-          <li><span>Explores</span><span>Website + companion app</span></li>
-          <li><span>Imagery</span><span>From the Eleene collection</span></li>
-        </ul>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -367,10 +406,10 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
       <p class="lede" data-fade>Apps I've designed and built for iPhone and Android — real products shipped to the stores, from first sketch to launch. A few favourites, newest first.</p>
     </div>
 
-    <article class="exhibit" style="--tint:#ECE6F3">
+    <article class="exhibit">
       <div class="exhibit__media"><div class="vitrine reveal"><img src="assets/work/app-evoria.webp" srcset="assets/work/app-evoria-sm.webp 760w, assets/work/app-evoria.webp 1400w" sizes="(max-width:899px) 92vw, 55vw" alt="Evoria app screens: a vendor's daily schedule, a monthly booking calendar, and a public profile with services and packages" decoding="async"></div></div>
       <div class="placard" data-fade>
-        <span class="no">No. 03</span>
+        <span class="no">No. 04</span>
         <h3>Evoria</h3>
         <span class="kind">AI event planning</span>
         <p>A home for event vendors: today's bookings at a glance, a calendar of upcoming events, and a shareable public profile where clients browse services and packages.</p>
@@ -378,10 +417,10 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
       </div>
     </article>
 
-    <article class="exhibit flip" style="--tint:#E7EBDF">
+    <article class="exhibit flip">
       <div class="exhibit__media"><div class="vitrine reveal"><img src="assets/work/app-culinar.webp" srcset="assets/work/app-culinar-sm.webp 760w, assets/work/app-culinar.webp 1400w" sizes="(max-width:899px) 92vw, 55vw" alt="Culinar app screens: a welcome screen, featured recipes by category, and a recipe with nutrition and step-by-step instructions" decoding="async"></div></div>
       <div class="placard" data-fade>
-        <span class="no">No. 04</span>
+        <span class="no">No. 05</span>
         <h3>Culinar</h3>
         <span class="kind">Recipes &amp; meal planning</span>
         <p>A recipe app with an appetite for detail: featured and seasonal collections, nutrition at a glance, and calm step-by-step instructions for cooking along.</p>
@@ -389,10 +428,10 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
       </div>
     </article>
 
-    <article class="exhibit" style="--tint:#E3E8EE">
+    <article class="exhibit">
       <div class="exhibit__media"><div class="vitrine reveal"><img src="assets/work/app-travio.webp" srcset="assets/work/app-travio-sm.webp 760w, assets/work/app-travio.webp 1400w" sizes="(max-width:899px) 92vw, 55vw" alt="Travio app screens: a Colosseum destination card, a welcome screen, and a city map" decoding="async"></div></div>
       <div class="placard" data-fade>
-        <span class="no">No. 05</span>
+        <span class="no">No. 06</span>
         <h3>Travio</h3>
         <span class="kind">Trip planning &amp; maps</span>
         <p>A travel companion for planning the days ahead — destination cards, places worth the detour and maps that keep everything in reach.</p>
@@ -400,10 +439,10 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
       </div>
     </article>
 
-    <article class="exhibit flip" style="--tint:#EEE4DA">
+    <article class="exhibit flip">
       <div class="exhibit__media"><div class="vitrine reveal"><img src="assets/work/app-prehab101.webp" srcset="assets/work/app-prehab101-sm.webp 760w, assets/work/app-prehab101.webp 1400w" sizes="(max-width:899px) 92vw, 55vw" alt="Prehab101 app screens: a recovery programme with exercise videos, set tracking, and phase progress" decoding="async"></div></div>
       <div class="placard" data-fade>
-        <span class="no">No. 06</span>
+        <span class="no">No. 07</span>
         <h3>Prehab101</h3>
         <span class="kind">Guided recovery</span>
         <p>Step-by-step recovery programmes, organised in phases, with exercise videos, set tracking and progress that shows how far you've come.</p>
@@ -411,10 +450,10 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}footer a:hover{color:var(--moon)
       </div>
     </article>
 
-    <article class="exhibit" style="--tint:#F1E3DE">
+    <article class="exhibit">
       <div class="exhibit__media"><div class="vitrine reveal"><img src="assets/work/app-casana.webp" srcset="assets/work/app-casana-sm.webp 760w, assets/work/app-casana.webp 1400w" sizes="(max-width:899px) 92vw, 55vw" alt="Casana app screens: a Spanish-language home feed, a guided meditation, and a list of routines and recipes" decoding="async"></div></div>
       <div class="placard" data-fade>
-        <span class="no">No. 07</span>
+        <span class="no">No. 08</span>
         <h3>Casana</h3>
         <span class="kind">Home &amp; lifestyle</span>
         <p>A Spanish-language wellbeing app: guided meditations, gentle routines and healthy recipes, with video at the heart of every screen.</p>

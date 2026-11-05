@@ -16,7 +16,7 @@ There are no build, lint, or test commands.
 
 ## Architecture
 
-The homepage lives in **`index.html`**; **`websites-apps.html`** is a standalone digital portfolio page (same tokens and motifs, self-contained CSS/JS: hero with device frames, website exhibits Eleene + Maison concept, five shipped apps in arch "vitrines", what's included, CTA to `index.html?type=website|app#contact`). Service and Digital CTAs on the homepage link to it ("Check my works"). The homepage itself is a single file (inline `<style>` in the head, inline `<script>` at the end of body, Google Fonts only).
+The homepage lives in **`index.html`**; **`websites-apps.html`** is a standalone digital portfolio page (same tokens and motifs, self-contained CSS/JS: hero with device frames, website exhibits Evoria (evoria.io/hy) + Aybora (aybora.app) as typographic browser covers linking to the live sites, then Eleene with real screenshots; five shipped apps as transparent cut-outs (no backgrounds), what's included, CTA to `index.html?type=website|app#contact`). Service and Digital CTAs on the homepage link to it ("Check my works"). The homepage itself is a single file (inline `<style>` in the head, inline `<script>` at the end of body, Google Fonts only).
 
 - **Design tokens** on `:root`: colours `--paper`, `--ink`, `--rouge`, `--gold`, `--night`, `--moon`…; fonts `--font-display` (Cormorant Garamond) and `--font-body` (Jost); `--gutter`, `--ease`.
 - **Nav:** Work · Films · Digital · Services · Studio · Contact. Directly under the hero, the running line (`.marquee`, a `<nav>`) is the service index: every word links to its service (`#svc-visuals`, `#svc-films`, `#svc-websites`, `#svc-apps`) and the line pauses on hover/focus.
