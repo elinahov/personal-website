@@ -417,22 +417,23 @@ section{position:relative}
 
 /* Room II — ivory */
 .ivory{background:linear-gradient(var(--paper) 0,#EEEADF 18%,#E9E6DA 70%,var(--paper) 100%);overflow:hidden}
-.ivory-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(14px,2vw,32px);row-gap:clamp(60px,8vw,140px);position:relative;z-index:1}
+.ivory-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(14px,1.8vw,28px);row-gap:clamp(34px,4vw,60px);align-items:start;max-width:1180px;margin:0 auto;position:relative;z-index:1}
 .ivory-grid .piece__frame{aspect-ratio:3/4}
-.ig1{grid-column:1/6}
-.ig2{grid-column:7/12;margin-top:16vw}
-.ig3{grid-column:2/5}
-.ig4{grid-column:6/9;margin-top:12vw}
-.ig5{grid-column:10/13;margin-top:-6vw}
-.ig6{grid-column:1/5;margin-top:4vw}
-.ig7{grid-column:6/12;margin-top:-2vw}
-.ivory-quote{grid-column:2/12;text-align:center;font-family:var(--font-display);font-weight:300;font-style:italic;font-size:clamp(30px,4vw,60px);line-height:1.12;margin:0}
+.ig1{grid-column:1/5}
+.ig2{grid-column:5/9;margin-top:clamp(30px,5vw,80px)}
+.ig3{grid-column:9/13;margin-top:clamp(10px,1.5vw,24px)}
+.ig4{grid-column:1/4}
+.ig5{grid-column:4/7;margin-top:clamp(24px,4vw,64px)}
+.ig6{grid-column:7/10}
+.ig7{grid-column:10/13;margin-top:clamp(24px,4vw,64px)}
+.ivory-quote{text-align:center;font-family:var(--font-display);font-weight:300;font-style:italic;font-size:clamp(28px,3.4vw,52px);line-height:1.12;margin:clamp(60px,7vw,110px) auto 0;max-width:20em;position:relative;z-index:1}
 .ivory-quote small{display:block;margin-top:22px;font-family:var(--font-body);font-style:normal;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
 @media(max-width:899px){
-  .ivory-grid{grid-template-columns:repeat(6,1fr);row-gap:56px}
-  .ig1{grid-column:1/7}.ig2{grid-column:2/7;margin-top:0}.ig3{grid-column:1/5}.ig4{grid-column:3/7;margin-top:0}
-  .ig5{grid-column:1/6;margin-top:0}.ig6{grid-column:2/7;margin-top:0}.ig7{grid-column:1/7;margin-top:0}
-  .ivory-quote{grid-column:1/7}
+  .ivory-grid{grid-template-columns:1fr 1fr;column-gap:14px;row-gap:26px}
+  .ivory-grid .piece{grid-column:auto!important;margin-top:0!important}
+  .ivory-grid .piece:nth-child(even){margin-top:44px!important}
+  .ivory-grid .placard b{font-size:16px}
+  .ivory-grid .placard .no{display:none}
 }
 
 /* Room III — source */
@@ -1071,36 +1072,36 @@ footer a:hover{color:var(--moon)}
       </div>
     </div>
     <div class="ivory-grid">
-      <figure class="piece reveal ig1" data-par="0.06" data-lb="ivory-bloom" data-title="Bloom" data-meta="Ivory, in bloom · Bridal editorial">
-        <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-bloom-sm.webp" srcset="assets/work/ivory-bloom-sm.webp 760w, assets/work/ivory-bloom.webp 1084w" sizes="(max-width:899px) 92vw, 42vw" alt="Freckled bride in an ivory botanical lace gown holding oversized white blooms against a dark green glasshouse" loading="lazy" decoding="async"></div>
+      <figure class="piece reveal ig1" data-lb="ivory-bloom" data-title="Bloom" data-meta="Ivory, in bloom · Bridal editorial">
+        <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-bloom-sm.webp" srcset="assets/work/ivory-bloom-sm.webp 760w, assets/work/ivory-bloom.webp 1084w" sizes="(max-width:899px) 46vw, 30vw" alt="Freckled bride in an ivory botanical lace gown holding oversized white blooms against a dark green glasshouse" loading="lazy" decoding="async"></div>
         <figcaption class="placard"><span><b>Bloom</b>Portrait, glasshouse</span><span class="no">No. 08</span></figcaption>
       </figure>
-      <figure class="piece reveal ig2" data-par="-0.08" data-lb="ivory-labyrinth" data-title="The Labyrinth" data-meta="Ivory, in bloom · Bridal editorial">
+      <figure class="piece reveal ig2" data-lb="ivory-labyrinth" data-title="The Labyrinth" data-meta="Ivory, in bloom · Bridal editorial">
         <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-labyrinth-sm.webp" srcset="assets/work/ivory-labyrinth-sm.webp 760w, assets/work/ivory-labyrinth.webp 1600w" sizes="(max-width:899px) 80vw, 40vw" alt="Aerial view of a bride in an ivory ball gown walking through a hedge maze covered in pink climbing roses" loading="lazy" decoding="async"></div>
         <figcaption class="placard"><span><b>The Labyrinth</b>Aerial, rose garden</span><span class="no">No. 09</span></figcaption>
       </figure>
-      <figure class="piece reveal ig3" data-par="0.04" data-lb="ivory-suspended-spring" data-title="Suspended Spring" data-meta="Ivory, in bloom · Bridal editorial">
+      <figure class="piece reveal ig3" data-lb="ivory-suspended-spring" data-title="Suspended Spring" data-meta="Ivory, in bloom · Bridal editorial">
         <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-suspended-spring-sm.webp" srcset="assets/work/ivory-suspended-spring-sm.webp 760w, assets/work/ivory-suspended-spring.webp 1085w" sizes="(max-width:899px) 64vw, 24vw" alt="Bride reaching toward flowers suspended in the air inside a sunlit glasshouse" loading="lazy" decoding="async"></div>
         <figcaption class="placard"><span><b>Suspended Spring</b>Glasshouse</span><span class="no">No. 10</span></figcaption>
       </figure>
-      <figure class="piece reveal ig4" data-par="-0.05" data-lb="ivory-gown-unworn" data-title="The Gown, Unworn" data-meta="Ivory, in bloom · Bridal editorial">
+      <figure class="piece reveal ig4" data-lb="ivory-gown-unworn" data-title="The Gown, Unworn" data-meta="Ivory, in bloom · Bridal editorial">
         <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-gown-unworn-sm.webp" srcset="assets/work/ivory-gown-unworn-sm.webp 760w, assets/work/ivory-gown-unworn.webp 1084w" sizes="(max-width:899px) 64vw, 24vw" alt="Product still life: an ivory lace ball gown hanging beneath a chandelier in an empty Victorian glasshouse" loading="lazy" decoding="async"></div>
         <figcaption class="placard"><span><b>The Gown, Unworn</b>Product still life</span><span class="no">No. 11</span></figcaption>
       </figure>
-      <figure class="piece reveal ig5" data-par="0.1" data-lb="ivory-behind-the-glass" data-title="Behind the Glass" data-meta="Ivory, in bloom · Bridal editorial">
+      <figure class="piece reveal ig5" data-lb="ivory-behind-the-glass" data-title="Behind the Glass" data-meta="Ivory, in bloom · Bridal editorial">
         <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-behind-the-glass-sm.webp" srcset="assets/work/ivory-behind-the-glass-sm.webp 760w, assets/work/ivory-behind-the-glass.webp 1084w" sizes="(max-width:899px) 80vw, 24vw" alt="A bride seen from behind, pressing her hands to rain-speckled glasshouse panes" loading="lazy" decoding="async"></div>
         <figcaption class="placard"><span><b>Behind the Glass</b>Through glass</span><span class="no">No. 12</span></figcaption>
       </figure>
-      <blockquote class="ivory-quote" data-fade>“The same lace, the same light, frame after frame.”<small>On directing a campaign</small></blockquote>
-      <figure class="piece reveal ig6" data-par="-0.06" data-lb="ivory-barefoot" data-title="Barefoot" data-meta="Ivory, in bloom · Bridal editorial">
+      <figure class="piece reveal ig6" data-lb="ivory-barefoot" data-title="Barefoot" data-meta="Ivory, in bloom · Bridal editorial">
         <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-barefoot-sm.webp" srcset="assets/work/ivory-barefoot-sm.webp 760w, assets/work/ivory-barefoot.webp 1084w" sizes="(max-width:899px) 80vw, 30vw" alt="Barefoot bride running through a leafy greenhouse with a bouquet, gown in motion" loading="lazy" decoding="async"></div>
         <figcaption class="placard"><span><b>Barefoot</b>Motion</span><span class="no">No. 13</span></figcaption>
       </figure>
-      <figure class="piece reveal ig7" data-par="0.05" data-lb="ivory-meadow" data-title="Glasshouse Meadow" data-meta="Ivory, in bloom · Bridal editorial">
+      <figure class="piece reveal ig7" data-lb="ivory-meadow" data-title="Glasshouse Meadow" data-meta="Ivory, in bloom · Bridal editorial">
         <div class="piece__frame" data-cursor="View"><img src="assets/work/ivory-meadow-sm.webp" srcset="assets/work/ivory-meadow-sm.webp 760w, assets/work/ivory-meadow.webp 1084w" sizes="(max-width:899px) 92vw, 46vw" alt="Bride standing among wildflowers inside a grand Victorian glasshouse" loading="lazy" decoding="async"></div>
         <figcaption class="placard"><span><b>Glasshouse Meadow</b>Wide</span><span class="no">No. 14</span></figcaption>
       </figure>
     </div>
+    <blockquote class="ivory-quote" data-fade>“The same lace, the same light, frame after frame.”<small>On directing a campaign</small></blockquote>
   </div>
 </section>
 
