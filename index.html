@@ -849,6 +849,36 @@ footer a:hover{color:var(--moon)}
 .enquiry button[disabled]{opacity:.6;pointer-events:none}
 @media(max-width:600px){.enquiry{grid-template-columns:1fr}}
 
+/* Room V — Halo */
+.halo{--tone:#EFE1CC;background:var(--tone);transition:background-color 1.4s ease;overflow:clip}
+.halo__body{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,6vw,110px);align-items:start;margin-top:clamp(20px,3vw,40px)}
+.halo__stage{position:sticky;top:11vh;height:78vh;display:grid;place-items:center;align-content:center;gap:22px}
+.halo__glow{position:absolute;left:50%;top:46%;width:min(70%,560px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,206,150,.65),rgba(255,206,150,.18) 55%,transparent);filter:blur(24px);animation:breathe 6s ease-in-out infinite;pointer-events:none}
+@keyframes breathe{0%,100%{opacity:.55;scale:.92}50%{opacity:1;scale:1.06}}
+.halo__arch{position:relative;display:block;height:min(66vh,680px);aspect-ratio:1120/1404;max-width:100%;padding:0;border-radius:999px 999px 18px 18px;overflow:hidden;cursor:zoom-in;
+  box-shadow:0 50px 90px -40px rgba(80,45,25,.45),0 0 0 8px rgba(255,255,255,.45),0 0 0 9px rgba(168,138,90,.3)}
+.halo__arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.07);transition:opacity 1.2s ease,transform 2.6s var(--ease)}
+.halo__arch img.on{opacity:1;transform:none}
+.halo__caption{position:relative;display:flex;gap:14px;align-items:baseline;justify-content:center}
+.halo__caption span{font-size:10.5px;letter-spacing:.26em;color:var(--ink-faint)}
+.halo__caption b{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:22px}
+.halo__steps{padding:8vh 0 14vh}
+.hstep{min-height:72vh;display:flex;flex-direction:column;justify-content:center;opacity:.22;transform:translateX(18px);transition:opacity .9s ease,transform 1s var(--ease);cursor:zoom-in}
+.hstep.active{opacity:1;transform:none}
+.hstep__no{font-size:10.5px;letter-spacing:.26em;color:var(--gold)}
+.hstep h3{font-family:var(--font-display);font-weight:300;font-style:italic;font-size:clamp(40px,4.4vw,72px);line-height:1;margin:14px 0 18px}
+.hstep p{margin:0;max-width:24em;color:var(--ink-soft);font-size:clamp(16px,1.25vw,18.5px)}
+@media(max-width:899px){
+  .halo__body{grid-template-columns:1fr;gap:0}
+  .halo__stage{top:64px;height:auto;padding:18px 0 14px;z-index:2;background:var(--tone);transition:background-color 1.4s ease;margin:0 calc(var(--gutter) * -1);gap:14px}
+  .halo__arch{height:48svh}
+  .halo__caption b{font-size:19px}
+  .halo__steps{padding:4vh 0 6vh}
+  .hstep{min-height:46svh;justify-content:flex-start;padding-top:4vh;transform:none}
+  .hstep h3{font-size:clamp(32px,9vw,44px);margin:10px 0 12px}
+}
+
 /* magic dust: appears only while scrolling */
 .mote{position:absolute;left:0;top:0;pointer-events:none;will-change:transform,opacity;opacity:0;line-height:1}
 .m-spark{color:#B38A45;font-size:var(--sz,12px);text-shadow:0 0 8px rgba(214,182,122,.7),0 0 2px rgba(255,255,255,.8)}
@@ -924,6 +954,7 @@ footer a:hover{color:var(--moon)}
   <div data-orbit class="tile t-b" data-speed="-0.08" aria-hidden="true"><div class="tile__in">
     <img class="on" src="assets/work/ivory-suspended-spring-sm.webp" alt="" loading="lazy">
     <img data-src="assets/work/rouge-white-mare-sm.webp" alt="">
+    <img data-src="assets/work/halo-terrace-sm.webp" alt="">
   </div></div>
   <div data-orbit class="tile t-c" data-speed="-0.26"><div class="tile__in">
     <video src="assets/films/atelier-loop.mp4" poster="assets/films/atelier-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
@@ -1164,6 +1195,58 @@ footer a:hover{color:var(--moon)}
   </div>
 </section>
 
+<!-- ============ ROOM V — HALO (product campaign) ============ -->
+<section class="halo sec-pad" id="halo" aria-labelledby="halo-title">
+  <div class="wrap">
+    <div class="room-head">
+      <div>
+        <div class="room-no"><span class="roman">V.</span><span class="eyebrow">Room five · Product campaign</span></div>
+        <h2 class="display" id="halo-title">Halo</h2>
+        <p class="room-line">One light. Five places it belongs.</p>
+      </div>
+      <div class="room-copy" data-fade>
+        <p class="lede">A single rose-marble lamp, followed from a sunlit terrace to a rainy window. The object never changes — its veining, its glow, its quiet weight — while the world around it is rebuilt five times over.</p>
+        <p class="room-meta">Product campaign · Lighting &amp; interiors · Material and form consistency</p>
+        <div class="room-cta"><a class="link-arrow" href="#contact" data-type="visuals">Commission a product campaign <span aria-hidden="true">→</span></a><a class="link-soft" href="#svc-visuals">About this service</a></div>
+      </div>
+    </div>
+    <div class="halo__body">
+      <div class="halo__stage">
+        <div class="halo__glow" aria-hidden="true"></div>
+        <button class="halo__arch" type="button" aria-label="View this image larger" data-cursor="View"><img class="on" src="assets/work/halo-terrace-sm.webp" srcset="assets/work/halo-terrace-sm.webp 760w, assets/work/halo-terrace.webp 1120w" sizes="(max-width:899px) 80vw, 40vw" alt="" decoding="async"><img src="assets/work/halo-alcove-sm.webp" srcset="assets/work/halo-alcove-sm.webp 760w, assets/work/halo-alcove.webp 1120w" sizes="(max-width:899px) 80vw, 40vw" alt="" decoding="async"><img src="assets/work/halo-ruin-sm.webp" srcset="assets/work/halo-ruin-sm.webp 760w, assets/work/halo-ruin.webp 1120w" sizes="(max-width:899px) 80vw, 40vw" alt="" decoding="async" loading="lazy"><img src="assets/work/halo-window-sm.webp" srcset="assets/work/halo-window-sm.webp 760w, assets/work/halo-window.webp 1120w" sizes="(max-width:899px) 80vw, 40vw" alt="" decoding="async" loading="lazy"><img src="assets/work/halo-temple-sm.webp" srcset="assets/work/halo-temple-sm.webp 760w, assets/work/halo-temple.webp 1120w" sizes="(max-width:899px) 80vw, 40vw" alt="" decoding="async" loading="lazy"></button>
+        <div class="halo__caption" aria-live="polite"><span id="haloNo">01 / 05</span><b id="haloTitle">The Terrace</b></div>
+      </div>
+      <div class="halo__steps">
+        <article class="hstep" data-step="0" data-tone="#EFE1CC" data-lb="halo-terrace" data-title="The Terrace" data-meta="Halo · Product campaign" data-cursor="View">
+          <span class="hstep__no">01 / 05</span>
+          <h3>The Terrace</h3>
+          <p>Sunset on limestone steps. The marble catches the last of the light and an arch of sky does the rest.</p>
+        </article>
+        <article class="hstep" data-step="1" data-tone="#DFE4DE" data-lb="halo-alcove" data-title="The Alcove" data-meta="Halo · Product campaign" data-cursor="View">
+          <span class="hstep__no">02 / 05</span>
+          <h3>The Alcove</h3>
+          <p>A still interior: soft shadow, a teal wall, and the lamp as the only warm note in the room.</p>
+        </article>
+        <article class="hstep" data-step="2" data-tone="#EEDDD3" data-lb="halo-ruin" data-title="The Ruin" data-meta="Halo · Product campaign" data-cursor="View">
+          <span class="hstep__no">03 / 05</span>
+          <h3>The Ruin</h3>
+          <p>Raw stone and late sun. The same form on rougher ground, its rose marble a shade deeper.</p>
+        </article>
+        <article class="hstep" data-step="3" data-tone="#E4E4DC" data-lb="halo-window" data-title="The Window" data-meta="Halo · Product campaign" data-cursor="View">
+          <span class="hstep__no">04 / 05</span>
+          <h3>The Window</h3>
+          <p>A rainy morning, linen lifting in the breeze, a book left open — the product as part of a life.</p>
+        </article>
+        <article class="hstep" data-step="4" data-tone="#F2E8DA" data-lb="halo-temple" data-title="The Temple" data-meta="Halo · Product campaign" data-cursor="View">
+          <span class="hstep__no">05 / 05</span>
+          <h3>The Temple</h3>
+          <p>Silk drifting overhead and a travertine plinth: the campaign at its most theatrical.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FILMS ============ -->
 <section class="films" id="films" aria-labelledby="films-title" data-dark>
   <canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas>
@@ -1172,7 +1255,7 @@ footer a:hover{color:var(--moon)}
   <div class="wrap films__inner">
     <div class="room-head" style="margin-bottom:0">
       <div>
-        <div class="room-no"><span class="roman">V.</span><span class="eyebrow">The screening room</span></div>
+        <div class="room-no"><span class="roman">VI.</span><span class="eyebrow">The screening room</span></div>
         <h2 class="display" id="films-title">Stories made <em>to be felt.</em></h2>
       </div>
       <div class="room-copy" data-fade>
@@ -1214,7 +1297,7 @@ footer a:hover{color:var(--moon)}
 <section class="digital sec-pad" id="digital" aria-labelledby="digital-title" data-clouds='[{"y":"10%","w":260,"d":140,"dl":-30,"c":"#F6E3DC"},{"y":"58%","w":220,"d":110,"dl":-80,"c":"#ECE6F3"}]'>
   <div class="wrap">
     <div class="dg-head">
-      <div class="room-no" style="justify-content:center"><span class="roman">VI.</span><span class="eyebrow">Websites &amp; apps</span></div>
+      <div class="room-no" style="justify-content:center"><span class="roman">VII.</span><span class="eyebrow">Websites &amp; apps</span></div>
       <h2 class="display" id="digital-title">Your brand, <br><em>a world to wander.</em></h2>
       <p class="lede" data-fade>What if a website felt like stepping into another universe?</p>
       <p class="lede" data-fade>A place where every scroll reveals something unexpected, every detail tells a story, and beautiful design leads effortlessly to something useful. From immersive websites to intuitive mobile apps, I create digital places people love to explore — and return to.</p>
@@ -1667,6 +1750,7 @@ footer a:hover{color:var(--moon)}
     <g fill="#fff" opacity=".9"><circle cx="18" cy="8" r="1.4"/><circle cx="24" cy="4" r="1.4"/><circle cx="30" cy="2" r="1.4"/><circle cx="36" cy="4" r="1.4"/><circle cx="42" cy="8" r="1.4"/><circle cx="14" cy="16" r="1.2"/><circle cx="46" cy="16" r="1.2"/></g>
     <ellipse cx="30" cy="47" rx="1.6" ry="2.6" fill="#8C8378"/>`;
   const FLIGHTS = [
+    { anchor: '#halo', kind: 'fly', fill: '#E7C9BE', vein: '#8E1B1F', scale: .7, pts: [[0.1, 108, 30], [0.4, 72, 18], [0.7, 58, 34], [0.95, -10, 20]], mpts: [[0.1, 108, 86], [0.4, 70, 92], [0.7, 30, 88], [0.95, -10, 94]] },
     { anchor: '#rouge', kind: 'fly', fill: '#E7C9BE', vein: '#8E1B1F', scale: .7, pts: [[0.1, -8, 24], [0.35, 30, 14], [0.6, 62, 26], [0.88, 108, 12]] },
     { anchor: '#quiet', kind: 'fly', fill: '#D9D0E6', vein: '#6E6386', scale: .75, pts: [[0.1, 108, 30], [0.4, 70, 18], [0.65, 40, 30], [0.92, -10, 16]] },
     { anchor: '#faq', kind: 'float', svg: SEED, vb: '0 0 60 50', w: 46, h: 40, scale: 1, pts: [[0.0, 8, 105], [0.35, 14, 66], [0.65, 6, 36], [1.0, 16, -12]] },
@@ -2040,6 +2124,29 @@ footer a:hover{color:var(--moon)}
           : 'Almost there — please send your note to <a href="https://www.instagram.com/eleene.ai/" target="_blank" rel="noopener">@eleene.ai</a> on Instagram.', 'success');
       }
     });
+  }
+
+  /* ---------- Room V — Halo: scroll-told product story ---------- */
+  const halo = $('#halo');
+  if (halo) {
+    const hImgs = $$('.halo__arch img', halo), hSteps = $$('.hstep', halo), hNo = $('#haloNo'), hTitle = $('#haloTitle');
+    let hCur = -1;
+    const setStep = i => {
+      if (i === hCur) return; hCur = i;
+      hImgs.forEach((im, k) => { if (k === i && im.loading === 'lazy') im.loading = 'eager'; im.classList.toggle('on', k === i); });
+      hSteps.forEach((st, k) => st.classList.toggle('active', k === i));
+      halo.style.setProperty('--tone', hSteps[i].dataset.tone);
+      hNo.textContent = `0${i + 1} / 05`; hTitle.textContent = hSteps[i].querySelector('h3').textContent;
+    };
+    const pickStep = () => {
+      const line = isMobile() ? vh * .78 : vh * .5;
+      let best = 0, bd = Infinity;
+      hSteps.forEach((st, k) => { const r = st.getBoundingClientRect(); const d = Math.abs((isMobile() ? r.top : r.top + r.height / 2) - line); if (d < bd) { bd = d; best = k; } });
+      setStep(best);
+    };
+    addEventListener('scroll', () => requestAnimationFrame(pickStep), { passive: true });
+    setStep(0); pickStep();
+    $('.halo__arch', halo).addEventListener('click', () => hSteps[Math.max(0, hCur)].click());
   }
 
   /* ---------- lightbox ---------- */
