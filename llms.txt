@@ -1,38 +1,49 @@
-# Eleene - independent creative studio (elinahovakimyan.com)
+# Eleene - independent creative studio (eleene.me)
 
-> Eleene is an independent, founder-led creative studio. It combines art direction, cinematic storytelling, AI-assisted production and custom digital development to create product and campaign imagery, editorial visuals, cinematic brand films, immersive websites and mobile apps. Work ranges from realistic and minimal to editorial and imaginative. Tagline: "Not made to blend in. Made to be remembered."
+> Eleene is Elina's independent, founder-led creative studio: cinematic product campaigns, brand films, websites and mobile apps, with one considered creative direction from first impression to launch. AI-assisted production is part of how images and films are made; concept, art direction, editing and finishing are done by Elina. Work ranges from realistic and minimal to editorial, cinematic and imaginative. Tagline: "Not made to blend in. Made to be remembered."
 
-Last updated: 2026-11-05
-Canonical site: https://elinahovakimyan.com/
+Last updated: 2026-11-17
+Canonical site: https://eleene.me/ (also served at https://elinahovakimyan.com/)
 Founder: Elina - creative technologist and visual storyteller, with 8+ years building digital products (40+ apps shipped, 5,500+ students taught)
-Contact: enquiry form at https://elinahovakimyan.com/#contact or Instagram https://www.instagram.com/eleene.ai/
+Contact: enquiry form at https://eleene.me/#contact or Instagram https://www.instagram.com/eleene.ai/
 
 ## Services (by commission)
 
-1. Product & campaign visuals - product campaign imagery and hero visuals; fashion and beauty editorials; e-commerce and lifestyle product images; social collections and seasonal campaigns; digital and print-ready assets to agreed specifications.
-2. Cinematic films & ads - brand films; product commercials and campaign ads; launch teasers and trailers; reels and social cutdowns; episodic branded content.
-3. Websites & digital experiences - immersive brand and studio websites; product and collection showcases; editorial portfolios and digital lookbooks; campaign landing pages; custom interactive websites. Designed and developed, not only visual concepts.
-4. Mobile apps - iOS and Android apps; MVPs and launches; booking, membership and customer experiences; AI-powered features; redesigns and new functionality.
+1. Product & campaign visuals - product hero images, lifestyle scenes, editorial collections and launch assets.
+2. Cinematic films - product films, collection teasers, brand stories and short social edits.
+3. Websites - brand websites, launch pages, product showcases and portfolios; designed, developed and launched.
+4. Mobile apps - scoped MVPs, customer-facing apps and improvements to existing products, for iOS and Android.
 
-Services can be commissioned individually or as a connected project (campaign, film and website shaped by one creative vision). Pricing is not published; each project begins with a proposal covering deliverables, timeline, revisions and pricing.
+Services can be commissioned individually or together as one coordinated project (for example campaign images, a short film and a launch page under one creative direction and one proposal). Pricing is not published; each project begins with a proposal covering deliverables, timeline, revisions and pricing.
 
 ## Who it suits
 
-Fashion, beauty, skincare, fragrance, jewelry, bridal, interior, design, lifestyle and hospitality brands; creative agencies needing campaign production; founders commissioning distinctive websites or mobile products.
+Focus areas: independent lighting and premium home-decor brands; perfume and home-fragrance brands; bridal and occasionwear designers. Other brands with a product to show are welcome.
 
 ## Portfolio (on the homepage)
 
-- Rouge - fashion editorial: one red gown across seven settings, with wardrobe and character consistency.
-- Ivory, in bloom - bridal editorial concept in a glasshouse with fabric and silhouette continuity.
-- Source - independent spec campaign for a mineral water product (not commissioned by the brand) exploring product storytelling in imagined locations.
-- Quiet Hours - naturalistic lifestyle imagery.
-- Halo - product campaign for a rose-marble table lamp shown in seven settings (temple, terrace, alcove, ruin, window, lattice of window shadows, passage of arches) with material and form consistency.
+- Halo - product campaign, lighting & interiors: one rose-marble table lamp shown in seven settings with attention to its form, material and the way it holds light. Independent concept.
+- Ivory, in bloom - bridal editorial in a glasshouse with fabric and silhouette continuity (7 images). Independent concept.
+- Atelier - 14-second bridal film following a gown from sketch to greenhouse. Independent concept.
+- Rouge - fashion editorial: one red gown across seven settings, with wardrobe and character consistency. Independent concept.
+- Source - spec campaign for a mineral water product, not commissioned by the brand.
+- Quiet Hours - naturalistic, lamp-lit lifestyle imagery.
 - The Screening Room - films including Atelier, The House on the Cliff, Free Fall, and the original micro-drama series Double Booked.
-- Websites & apps - full portfolio at https://elinahovakimyan.com/websites-apps.html: live websites Evoria (https://evoria.io) and Aybora (https://aybora.app), the Eleene website itself (live, 2026), and shipped iOS/Android apps Evoria (AI event planning, 2026), Culinar (recipes & meal planning, 2024), Travio (trip planning & maps, 2022), Prehab101 (guided recovery, 2020) and Casana (home & lifestyle, 2019).
+
+## Websites & apps (https://eleene.me/websites-apps.html)
+
+- Evoria (https://evoria.io) - website for a marketplace where families book children's and family celebrations; vendors manage requests in the Evoria Planning app (App Store, Armenia: https://apps.apple.com/am/app/evoria-planning/id6769776875). Design & development.
+- Aybora (https://aybora.app) - content planner for social media: capture ideas, tag them, plan on a calendar and track posts from idea to published. Website and iPhone app (https://apps.apple.com/us/app/aybora-ai-content-planner/id6810120480). Design & development.
+- Eleene - this studio website (personal project, 2026).
+- Apps built for iPhone & Android: Evoria Planning (2026), Culinar - recipes, weekly menu and grocery list (2024, https://apps.apple.com/us/app/culinar-meal-planner/id6523429156), Travio - trip planning & maps (2022), Prehab101 - guided recovery (2020), Casana - Spanish-language wellbeing (2019).
+
+## Learn (https://eleene.me/learn.html)
+
+Teaching is separate from client work. Building websites & apps with AI: React Native and React courses on Udemy (https://www.udemy.com/user/elina-hovakimyan/) and application-based 1:1 build training. AI visuals & cinematic storytelling: lessons in preparation; interest list open.
 
 ## Process
 
-1. The first spark (brief). 2. Finding the direction (vision and scope agreed). 3. Making it real (design, direction, build, milestones). 4. Out into the world (delivery or launch, handover agreed).
+1. The first spark (brief). 2. Finding the direction (vision and scope agreed). 3. Making it real (design, direction, build, milestones). 4. Out into the world (delivery or launch, handover agreed). After an enquiry, Elina reviews the brief and replies with questions, suggested next steps, and a proposal when the scope is clear.
 
 ## FAQ highlights
 

@@ -68,4 +68,4 @@ Allow: /
 User-agent: Timpibot
 Allow: /
 
-Sitemap: https://elinahovakimyan.com/sitemap.xml
+Sitemap: https://eleene.me/sitemap.xml
